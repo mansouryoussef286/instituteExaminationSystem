@@ -1,0 +1,12 @@
+C:\Users\Blu-Ray\OneDrive\Desktop\iti\Sql server Advanced\Institute_system\Institute_system\bin\Debug\Institute_system.exe.config
+C:\Users\Blu-Ray\OneDrive\Desktop\iti\Sql server Advanced\Institute_system\Institute_system\bin\Debug\Institute_system.exe
+C:\Users\Blu-Ray\OneDrive\Desktop\iti\Sql server Advanced\Institute_system\Institute_system\bin\Debug\Institute_system.pdb
+C:\Users\Blu-Ray\OneDrive\Desktop\iti\Sql server Advanced\Institute_system\Institute_system\obj\Debug\Institute_system.csproj.AssemblyReference.cache
+C:\Users\Blu-Ray\OneDrive\Desktop\iti\Sql server Advanced\Institute_system\Institute_system\obj\Debug\Institute_system.instructor.resources
+C:\Users\Blu-Ray\OneDrive\Desktop\iti\Sql server Advanced\Institute_system\Institute_system\obj\Debug\Institute_system.login.resources
+C:\Users\Blu-Ray\OneDrive\Desktop\iti\Sql server Advanced\Institute_system\Institute_system\obj\Debug\Institute_system.Properties.Resources.resources
+C:\Users\Blu-Ray\OneDrive\Desktop\iti\Sql server Advanced\Institute_system\Institute_system\obj\Debug\Institute_system.student.resources
+C:\Users\Blu-Ray\OneDrive\Desktop\iti\Sql server Advanced\Institute_system\Institute_system\obj\Debug\Institute_system.csproj.GenerateResource.cache
+C:\Users\Blu-Ray\OneDrive\Desktop\iti\Sql server Advanced\Institute_system\Institute_system\obj\Debug\Institute_system.csproj.CoreCompileInputs.cache
+C:\Users\Blu-Ray\OneDrive\Desktop\iti\Sql server Advanced\Institute_system\Institute_system\obj\Debug\Institute_system.exe
+C:\Users\Blu-Ray\OneDrive\Desktop\iti\Sql server Advanced\Institute_system\Institute_system\obj\Debug\Institute_system.pdb
