@@ -192,6 +192,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="studentF.resx">
       <DependentUpon>studentF.cs</DependentUpon>
@@ -228,6 +229,7 @@
       <DependentUpon>itiDBmodel.edmx</DependentUpon>
       <LastGenOutput>itiDBmodel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\iti-logo.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

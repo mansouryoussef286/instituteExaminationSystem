@@ -27,3 +27,20 @@ C:\Users\Blu-Ray\OneDrive\Desktop\iti\Sql server Advanced\instituteExaminationSy
 C:\Users\Blu-Ray\OneDrive\Desktop\iti\Sql server Advanced\instituteExaminationSystem\Institute_system\bin\Debug\EntityFramework.xml
 C:\Users\Blu-Ray\OneDrive\Desktop\iti\Sql server Advanced\instituteExaminationSystem\Institute_system\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Blu-Ray\OneDrive\Desktop\iti\Sql server Advanced\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.csproj.CopyComplete
+C:\iti\Sql Project\instituteExaminationSystem\Institute_system\bin\Debug\Institute_system.exe.config
+C:\iti\Sql Project\instituteExaminationSystem\Institute_system\bin\Debug\Institute_system.exe
+C:\iti\Sql Project\instituteExaminationSystem\Institute_system\bin\Debug\Institute_system.pdb
+C:\iti\Sql Project\instituteExaminationSystem\Institute_system\bin\Debug\EntityFramework.dll
+C:\iti\Sql Project\instituteExaminationSystem\Institute_system\bin\Debug\EntityFramework.SqlServer.dll
+C:\iti\Sql Project\instituteExaminationSystem\Institute_system\bin\Debug\EntityFramework.xml
+C:\iti\Sql Project\instituteExaminationSystem\Institute_system\bin\Debug\EntityFramework.SqlServer.xml
+C:\iti\Sql Project\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.csprojAssemblyReference.cache
+C:\iti\Sql Project\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.instructorF.resources
+C:\iti\Sql Project\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.login.resources
+C:\iti\Sql Project\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.Properties.Resources.resources
+C:\iti\Sql Project\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.studentF.resources
+C:\iti\Sql Project\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.csproj.GenerateResource.cache
+C:\iti\Sql Project\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.csproj.CoreCompileInputs.cache
+C:\iti\Sql Project\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.csproj.CopyComplete
+C:\iti\Sql Project\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.exe
+C:\iti\Sql Project\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.pdb
