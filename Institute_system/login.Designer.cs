@@ -43,7 +43,7 @@ namespace Institute_system
             // logInBtn
             // 
             this.logInBtn.Location = new System.Drawing.Point(127, 201);
-            this.logInBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.logInBtn.Margin = new System.Windows.Forms.Padding(4);
             this.logInBtn.Name = "logInBtn";
             this.logInBtn.Size = new System.Drawing.Size(100, 28);
             this.logInBtn.TabIndex = 0;
@@ -54,7 +54,7 @@ namespace Institute_system
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(60, 60);
+            this.label1.Location = new System.Drawing.Point(50, 50);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 17);
@@ -64,7 +64,7 @@ namespace Institute_system
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(60, 114);
+            this.label2.Location = new System.Drawing.Point(50, 104);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 17);
@@ -73,16 +73,16 @@ namespace Institute_system
             // 
             // userNameTextBox
             // 
-            this.userNameTextBox.Location = new System.Drawing.Point(157, 57);
-            this.userNameTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.userNameTextBox.Location = new System.Drawing.Point(132, 50);
+            this.userNameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.userNameTextBox.Name = "userNameTextBox";
             this.userNameTextBox.Size = new System.Drawing.Size(132, 22);
             this.userNameTextBox.TabIndex = 3;
             // 
             // passwordTextBox
             // 
-            this.passwordTextBox.Location = new System.Drawing.Point(157, 111);
-            this.passwordTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.passwordTextBox.Location = new System.Drawing.Point(132, 104);
+            this.passwordTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(132, 22);
             this.passwordTextBox.TabIndex = 4;
@@ -94,15 +94,15 @@ namespace Institute_system
             "student",
             "instructor"});
             this.loginTypeComboBox.Location = new System.Drawing.Point(105, 167);
-            this.loginTypeComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.loginTypeComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.loginTypeComboBox.Name = "loginTypeComboBox";
             this.loginTypeComboBox.Size = new System.Drawing.Size(143, 24);
             this.loginTypeComboBox.TabIndex = 5;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(301, 165);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(301, 185);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 7;
@@ -113,7 +113,7 @@ namespace Institute_system
             // Logo
             // 
             this.Logo.Image = global::Institute_system.Properties.Resources.iti_logo;
-            this.Logo.Location = new System.Drawing.Point(301, 2);
+            this.Logo.Location = new System.Drawing.Point(301, 12);
             this.Logo.Name = "Logo";
             this.Logo.Size = new System.Drawing.Size(105, 145);
             this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -125,6 +125,7 @@ namespace Institute_system
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(435, 267);
             this.Controls.Add(this.Logo);
             this.Controls.Add(this.button1);
@@ -134,7 +135,10 @@ namespace Institute_system
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.logInBtn);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ForeColor = System.Drawing.Color.Black;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "login";
             this.Text = "login";
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();

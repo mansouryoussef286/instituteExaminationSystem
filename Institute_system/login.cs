@@ -35,12 +35,18 @@ namespace Institute_system
                     if (username == student.stud_Username)
                     {
                         success = student.stud_pw == password ? true : false;
+                        if (success)
+                        {
+                            appManager.currentUser = student;
+                        }
+                      
                     }
                 }
                 if (success)
                 {
                     MessageBox.Show("logged in");
                     appManager.studentForm.Show();
+
                 }
                 else
                 {

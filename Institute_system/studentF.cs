@@ -30,5 +30,37 @@ namespace Institute_system
         private void button3_Click(object sender, EventArgs e)
         {
         }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+           string user = textBox1.Text == "" ? appManager.currentUser.stud_Username : textBox1.Text;
+           string pass = textBox2.Text == "" ? appManager.currentUser.stud_pw : textBox2.Text;
+            if (user == textBox1.Text & pass ==textBox2.Text)
+            {
+
+                MessageBox.Show("You didn't enter new password or user name");
+            }
+            else
+            {
+                try
+                {
+                    appManager.entities.students_update(
+                        appManager.currentUser.stud_ID, appManager.currentUser.stud_Fname,
+                        appManager.currentUser.stud_Lname, appManager.currentUser.dept_ID,
+                        user, pass
+
+                        );
+                 
+                    MessageBox.Show("you update your credintials successfully");
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("could not update credintials");
+                }
+            }
+
+          
+        }
     }
 }

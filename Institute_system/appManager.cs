@@ -13,6 +13,7 @@ namespace Institute_system
         public static studentF studentForm;
         public static sqlProjectEntities entities;
         public static string currentUserName;
+        public static student currentUser;
 
         static appManager()
         {
