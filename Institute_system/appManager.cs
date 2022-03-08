@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Institute_system
 {
     public static class appManager
-    {//testttttt
+    {
         public static login loginForm;
         public static instructorF instructorForm;
         public static studentF studentForm;
