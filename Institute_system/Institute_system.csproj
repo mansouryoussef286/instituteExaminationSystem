@@ -33,8 +33,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,11 +55,75 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="appManager.cs" />
+    <Compile Include="choice.cs">
+      <DependentUpon>itiDBmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="choices_select_Result.cs">
+      <DependentUpon>itiDBmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cours.cs">
+      <DependentUpon>itiDBmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="courses_select_Result.cs">
+      <DependentUpon>itiDBmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="department.cs">
+      <DependentUpon>itiDBmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Department_Select_Result.cs">
+      <DependentUpon>itiDBmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="exam.cs">
+      <DependentUpon>itiDBmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="exams_questions.cs">
+      <DependentUpon>itiDBmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="exams_qu_select_Result.cs">
+      <DependentUpon>itiDBmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="exams_select_Result.cs">
+      <DependentUpon>itiDBmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Exam_Student.cs">
+      <DependentUpon>itiDBmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="finalResults_Result.cs">
+      <DependentUpon>itiDBmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="finalResult_Result.cs">
+      <DependentUpon>itiDBmodel.tt</DependentUpon>
+    </Compile>
     <Compile Include="instructor.cs">
+      <DependentUpon>itiDBmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="instructorF.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="instructor.Designer.cs">
-      <DependentUpon>instructor.cs</DependentUpon>
+    <Compile Include="instructorF.Designer.cs">
+      <DependentUpon>instructorF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="instructor_select_Result.cs">
+      <DependentUpon>itiDBmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ins_Courseselect_Result.cs">
+      <DependentUpon>itiDBmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="itiDBmodel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>itiDBmodel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="itiDBmodel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>itiDBmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="itiDBmodel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>itiDBmodel.edmx</DependentUpon>
     </Compile>
     <Compile Include="login.cs">
       <SubType>Form</SubType>
@@ -60,14 +133,53 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="question.cs">
+      <DependentUpon>itiDBmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Questions_Select_Result.cs">
+      <DependentUpon>itiDBmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Report_3_Result.cs">
+      <DependentUpon>itiDBmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="report_examQandA_Result.cs">
+      <DependentUpon>itiDBmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="report_StudentExMA_Result.cs">
+      <DependentUpon>itiDBmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>itiDBmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>itiDBmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="studCourse_select_Result.cs">
+      <DependentUpon>itiDBmodel.tt</DependentUpon>
+    </Compile>
     <Compile Include="student.cs">
+      <DependentUpon>itiDBmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="studentF.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="student.Designer.cs">
-      <DependentUpon>student.cs</DependentUpon>
+    <Compile Include="studentF.Designer.cs">
+      <DependentUpon>studentF.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="instructor.resx">
-      <DependentUpon>instructor.cs</DependentUpon>
+    <Compile Include="students_select_Result.cs">
+      <DependentUpon>itiDBmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>itiDBmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="topic.cs">
+      <DependentUpon>itiDBmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="topic_select_Result.cs">
+      <DependentUpon>itiDBmodel.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="instructorF.resx">
+      <DependentUpon>instructorF.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
@@ -81,9 +193,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="student.resx">
-      <DependentUpon>student.cs</DependentUpon>
+    <EmbeddedResource Include="studentF.resx">
+      <DependentUpon>studentF.cs</DependentUpon>
     </EmbeddedResource>
+    <EntityDeploy Include="itiDBmodel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>itiDBmodel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="itiDBmodel.edmx.diagram">
+      <DependentUpon>itiDBmodel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -96,6 +216,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="itiDBmodel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>itiDBmodel.Context.cs</LastGenOutput>
+      <DependentUpon>itiDBmodel.edmx</DependentUpon>
+    </Content>
+    <Content Include="itiDBmodel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>itiDBmodel.edmx</DependentUpon>
+      <LastGenOutput>itiDBmodel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="67a988cc82f44a6894af3d5923f51a2b" Name="Diagram1">
+        <EntityTypeShape EntityType="sqlProjectModel.choice" Width="1.5" PointX="5.25" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="sqlProjectModel.cours" Width="1.5" PointX="0.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="sqlProjectModel.department" Width="1.5" PointX="5.25" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="sqlProjectModel.Exam_Student" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="sqlProjectModel.exam" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="sqlProjectModel.exams_questions" Width="1.5" PointX="8.25" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="sqlProjectModel.instructor" Width="1.5" PointX="3" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="sqlProjectModel.question" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="sqlProjectModel.student" Width="1.5" PointX="7.5" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="sqlProjectModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sqlProjectModel.topic" Width="1.5" PointX="3" PointY="12.25" IsExpanded="true" />
+        <AssociationConnector Association="sqlProjectModel.FK_choices_questions" ManuallyRouted="false" />
+        <AssociationConnector Association="sqlProjectModel.FK_exams_courses" ManuallyRouted="false" />
+        <AssociationConnector Association="sqlProjectModel.FK_questions_courses" ManuallyRouted="false" />
+        <AssociationConnector Association="sqlProjectModel.FK_topics_courses" ManuallyRouted="false" />
+        <AssociationConnector Association="sqlProjectModel.FK_department_instructor" ManuallyRouted="false" />
+        <AssociationConnector Association="sqlProjectModel.FK_students_department" ManuallyRouted="false" />
+        <AssociationConnector Association="sqlProjectModel.FK_Exam_Student_exams" ManuallyRouted="false" />
+        <AssociationConnector Association="sqlProjectModel.FK_Exam_Student_students" ManuallyRouted="false" />
+        <AssociationConnector Association="sqlProjectModel.FK_exams_questions_exams" ManuallyRouted="false" />
+        <AssociationConnector Association="sqlProjectModel.FK_exams_questions_questions" ManuallyRouted="false" />
+        <AssociationConnector Association="sqlProjectModel.FK_exams_questions_students" ManuallyRouted="false" />
+        <AssociationConnector Association="sqlProjectModel.Inst_Courses" ManuallyRouted="false" />
+        <AssociationConnector Association="sqlProjectModel.stud_courses" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

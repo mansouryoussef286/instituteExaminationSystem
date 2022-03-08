@@ -16,7 +16,9 @@ namespace Institute_system
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new login());
+            //on application start
+            //the login form we assigned in app manager will run
+            Application.Run(appManager.loginForm);
         }
     }
 }

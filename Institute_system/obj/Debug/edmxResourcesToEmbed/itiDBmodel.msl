@@ -1,0 +1,336 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="sqlProjectModelStoreContainer" CdmEntityContainer="sqlProjectEntities">
+    <EntitySetMapping Name="choices">
+      <EntityTypeMapping TypeName="sqlProjectModel.choice">
+        <MappingFragment StoreEntitySet="choices">
+          <ScalarProperty Name="choice_ID" ColumnName="choice_ID" />
+          <ScalarProperty Name="choice_desc" ColumnName="choice_desc" />
+          <ScalarProperty Name="isCorrect" ColumnName="isCorrect" />
+          <ScalarProperty Name="q_ID" ColumnName="q_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="courses">
+      <EntityTypeMapping TypeName="sqlProjectModel.cours">
+        <MappingFragment StoreEntitySet="courses">
+          <ScalarProperty Name="c_ID" ColumnName="c_ID" />
+          <ScalarProperty Name="c_name" ColumnName="c_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="departments">
+      <EntityTypeMapping TypeName="sqlProjectModel.department">
+        <MappingFragment StoreEntitySet="department">
+          <ScalarProperty Name="dept_ID" ColumnName="dept_ID" />
+          <ScalarProperty Name="dept_name" ColumnName="dept_name" />
+          <ScalarProperty Name="manager_ID" ColumnName="manager_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Exam_Student">
+      <EntityTypeMapping TypeName="sqlProjectModel.Exam_Student">
+        <MappingFragment StoreEntitySet="Exam_Student">
+          <ScalarProperty Name="St_ID" ColumnName="St_ID" />
+          <ScalarProperty Name="Exam_ID" ColumnName="Exam_ID" />
+          <ScalarProperty Name="st_grade" ColumnName="st_grade" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="exams">
+      <EntityTypeMapping TypeName="sqlProjectModel.exam">
+        <MappingFragment StoreEntitySet="exams">
+          <ScalarProperty Name="exam_ID" ColumnName="exam_ID" />
+          <ScalarProperty Name="course_ID" ColumnName="course_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="exams_questions">
+      <EntityTypeMapping TypeName="sqlProjectModel.exams_questions">
+        <MappingFragment StoreEntitySet="exams_questions">
+          <ScalarProperty Name="exam_ID" ColumnName="exam_ID" />
+          <ScalarProperty Name="q_ID" ColumnName="q_ID" />
+          <ScalarProperty Name="answer" ColumnName="answer" />
+          <ScalarProperty Name="St_ID" ColumnName="St_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="instructors">
+      <EntityTypeMapping TypeName="sqlProjectModel.instructor">
+        <MappingFragment StoreEntitySet="instructor">
+          <ScalarProperty Name="inst_ID" ColumnName="inst_ID" />
+          <ScalarProperty Name="inst_name" ColumnName="inst_name" />
+          <ScalarProperty Name="inst_username" ColumnName="inst_username" />
+          <ScalarProperty Name="inst_pw" ColumnName="inst_pw" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="questions">
+      <EntityTypeMapping TypeName="sqlProjectModel.question">
+        <MappingFragment StoreEntitySet="questions">
+          <ScalarProperty Name="q_ID" ColumnName="q_ID" />
+          <ScalarProperty Name="q_desc" ColumnName="q_desc" />
+          <ScalarProperty Name="q_type" ColumnName="q_type" />
+          <ScalarProperty Name="c_ID" ColumnName="c_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="students">
+      <EntityTypeMapping TypeName="sqlProjectModel.student">
+        <MappingFragment StoreEntitySet="students">
+          <ScalarProperty Name="stud_ID" ColumnName="stud_ID" />
+          <ScalarProperty Name="stud_Fname" ColumnName="stud_Fname" />
+          <ScalarProperty Name="stud_Lname" ColumnName="stud_Lname" />
+          <ScalarProperty Name="dept_ID" ColumnName="dept_ID" />
+          <ScalarProperty Name="stud_Username" ColumnName="stud_Username" />
+          <ScalarProperty Name="stud_pw" ColumnName="stud_pw" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="sqlProjectModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="topics">
+      <EntityTypeMapping TypeName="sqlProjectModel.topic">
+        <MappingFragment StoreEntitySet="topics">
+          <ScalarProperty Name="topic_ID" ColumnName="topic_ID" />
+          <ScalarProperty Name="topic_name" ColumnName="topic_name" />
+          <ScalarProperty Name="course_ID" ColumnName="course_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Inst_Courses" TypeName="sqlProjectModel.Inst_Courses" StoreEntitySet="Inst_Courses">
+      <EndProperty Name="courses">
+        <ScalarProperty Name="c_ID" ColumnName="course_ID" />
+      </EndProperty>
+      <EndProperty Name="instructor">
+        <ScalarProperty Name="inst_ID" ColumnName="inst_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="stud_courses" TypeName="sqlProjectModel.stud_courses" StoreEntitySet="stud_courses">
+      <EndProperty Name="courses">
+        <ScalarProperty Name="c_ID" ColumnName="course_ID" />
+      </EndProperty>
+      <EndProperty Name="students">
+        <ScalarProperty Name="stud_ID" ColumnName="stud_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="choices_delete" FunctionName="sqlProjectModel.Store.choices_delete" />
+    <FunctionImportMapping FunctionImportName="choices_insert" FunctionName="sqlProjectModel.Store.choices_insert" />
+    <FunctionImportMapping FunctionImportName="choices_select" FunctionName="sqlProjectModel.Store.choices_select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sqlProjectModel.choices_select_Result">
+          <ScalarProperty Name="choice_ID" ColumnName="choice_ID" />
+          <ScalarProperty Name="choice_desc" ColumnName="choice_desc" />
+          <ScalarProperty Name="isCorrect" ColumnName="isCorrect" />
+          <ScalarProperty Name="q_ID" ColumnName="q_ID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="choices_update" FunctionName="sqlProjectModel.Store.choices_update" />
+    <FunctionImportMapping FunctionImportName="courses_delete" FunctionName="sqlProjectModel.Store.courses_delete" />
+    <FunctionImportMapping FunctionImportName="courses_insert" FunctionName="sqlProjectModel.Store.courses_insert" />
+    <FunctionImportMapping FunctionImportName="courses_select" FunctionName="sqlProjectModel.Store.courses_select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sqlProjectModel.courses_select_Result">
+          <ScalarProperty Name="c_ID" ColumnName="c_ID" />
+          <ScalarProperty Name="c_name" ColumnName="c_name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="courses_update" FunctionName="sqlProjectModel.Store.courses_update" />
+    <FunctionImportMapping FunctionImportName="Department_Delete" FunctionName="sqlProjectModel.Store.Department_Delete" />
+    <FunctionImportMapping FunctionImportName="Department_Insert" FunctionName="sqlProjectModel.Store.Department_Insert" />
+    <FunctionImportMapping FunctionImportName="Department_Select" FunctionName="sqlProjectModel.Store.Department_Select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sqlProjectModel.Department_Select_Result">
+          <ScalarProperty Name="dept_ID" ColumnName="dept_ID" />
+          <ScalarProperty Name="dept_name" ColumnName="dept_name" />
+          <ScalarProperty Name="manager_ID" ColumnName="manager_ID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Department_Update" FunctionName="sqlProjectModel.Store.Department_Update" />
+    <FunctionImportMapping FunctionImportName="exams_delete" FunctionName="sqlProjectModel.Store.exams_delete" />
+    <FunctionImportMapping FunctionImportName="exams_insert" FunctionName="sqlProjectModel.Store.exams_insert" />
+    <FunctionImportMapping FunctionImportName="exams_qu_delete" FunctionName="sqlProjectModel.Store.exams_qu_delete" />
+    <FunctionImportMapping FunctionImportName="exams_qu_insert" FunctionName="sqlProjectModel.Store.exams_qu_insert" />
+    <FunctionImportMapping FunctionImportName="exams_qu_select" FunctionName="sqlProjectModel.Store.exams_qu_select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sqlProjectModel.exams_qu_select_Result">
+          <ScalarProperty Name="exam_ID" ColumnName="exam_ID" />
+          <ScalarProperty Name="q_ID" ColumnName="q_ID" />
+          <ScalarProperty Name="answer" ColumnName="answer" />
+          <ScalarProperty Name="St_ID" ColumnName="St_ID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="exams_qu_update" FunctionName="sqlProjectModel.Store.exams_qu_update" />
+    <FunctionImportMapping FunctionImportName="exams_select" FunctionName="sqlProjectModel.Store.exams_select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sqlProjectModel.exams_select_Result">
+          <ScalarProperty Name="exam_ID" ColumnName="exam_ID" />
+          <ScalarProperty Name="course_ID" ColumnName="course_ID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="exams_update" FunctionName="sqlProjectModel.Store.exams_update" />
+    <FunctionImportMapping FunctionImportName="finalResult" FunctionName="sqlProjectModel.Store.finalResult">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sqlProjectModel.finalResult_Result">
+          <ScalarProperty Name="Exam_ID" ColumnName="Exam_ID" />
+          <ScalarProperty Name="st_grade" ColumnName="st_grade" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ins_courseDelete" FunctionName="sqlProjectModel.Store.ins_courseDelete" />
+    <FunctionImportMapping FunctionImportName="ins_courseInsert" FunctionName="sqlProjectModel.Store.ins_courseInsert" />
+    <FunctionImportMapping FunctionImportName="ins_Courseselect" FunctionName="sqlProjectModel.Store.ins_Courseselect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sqlProjectModel.ins_Courseselect_Result">
+          <ScalarProperty Name="inst_ID" ColumnName="inst_ID" />
+          <ScalarProperty Name="course_ID" ColumnName="course_ID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ins_courseupdate" FunctionName="sqlProjectModel.Store.ins_courseupdate" />
+    <FunctionImportMapping FunctionImportName="instructor_delete" FunctionName="sqlProjectModel.Store.instructor_delete" />
+    <FunctionImportMapping FunctionImportName="instructor_insert" FunctionName="sqlProjectModel.Store.instructor_insert" />
+    <FunctionImportMapping FunctionImportName="instructor_select" FunctionName="sqlProjectModel.Store.instructor_select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sqlProjectModel.instructor_select_Result">
+          <ScalarProperty Name="inst_ID" ColumnName="inst_ID" />
+          <ScalarProperty Name="inst_name" ColumnName="inst_name" />
+          <ScalarProperty Name="inst_username" ColumnName="inst_username" />
+          <ScalarProperty Name="inst_pw" ColumnName="inst_pw" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="instructor_update" FunctionName="sqlProjectModel.Store.instructor_update" />
+    <FunctionImportMapping FunctionImportName="Questions_Delete" FunctionName="sqlProjectModel.Store.Questions_Delete" />
+    <FunctionImportMapping FunctionImportName="Questions_Insert" FunctionName="sqlProjectModel.Store.Questions_Insert" />
+    <FunctionImportMapping FunctionImportName="Questions_Select" FunctionName="sqlProjectModel.Store.Questions_Select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sqlProjectModel.Questions_Select_Result">
+          <ScalarProperty Name="q_ID" ColumnName="q_ID" />
+          <ScalarProperty Name="q_desc" ColumnName="q_desc" />
+          <ScalarProperty Name="q_type" ColumnName="q_type" />
+          <ScalarProperty Name="c_ID" ColumnName="c_ID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Questions_Update" FunctionName="sqlProjectModel.Store.Questions_Update" />
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="sqlProjectModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="sqlProjectModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="sqlProjectModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="sqlProjectModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sqlProjectModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="sqlProjectModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sqlProjectModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="sqlProjectModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="sqlProjectModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="studCourse_delete" FunctionName="sqlProjectModel.Store.studCourse_delete" />
+    <FunctionImportMapping FunctionImportName="studCourse_insert" FunctionName="sqlProjectModel.Store.studCourse_insert" />
+    <FunctionImportMapping FunctionImportName="studCourse_select" FunctionName="sqlProjectModel.Store.studCourse_select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sqlProjectModel.studCourse_select_Result">
+          <ScalarProperty Name="stud_ID" ColumnName="stud_ID" />
+          <ScalarProperty Name="course_ID" ColumnName="course_ID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="studCourse_update" FunctionName="sqlProjectModel.Store.studCourse_update" />
+    <FunctionImportMapping FunctionImportName="students_delete" FunctionName="sqlProjectModel.Store.students_delete" />
+    <FunctionImportMapping FunctionImportName="students_insert" FunctionName="sqlProjectModel.Store.students_insert" />
+    <FunctionImportMapping FunctionImportName="students_select" FunctionName="sqlProjectModel.Store.students_select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sqlProjectModel.students_select_Result">
+          <ScalarProperty Name="stud_ID" ColumnName="stud_ID" />
+          <ScalarProperty Name="stud_Fname" ColumnName="stud_Fname" />
+          <ScalarProperty Name="stud_Lname" ColumnName="stud_Lname" />
+          <ScalarProperty Name="dept_ID" ColumnName="dept_ID" />
+          <ScalarProperty Name="stud_Username" ColumnName="stud_Username" />
+          <ScalarProperty Name="stud_pw" ColumnName="stud_pw" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="students_update" FunctionName="sqlProjectModel.Store.students_update" />
+    <FunctionImportMapping FunctionImportName="topic_delete" FunctionName="sqlProjectModel.Store.topic_delete" />
+    <FunctionImportMapping FunctionImportName="topic_insert" FunctionName="sqlProjectModel.Store.topic_insert" />
+    <FunctionImportMapping FunctionImportName="topic_select" FunctionName="sqlProjectModel.Store.topic_select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sqlProjectModel.topic_select_Result">
+          <ScalarProperty Name="topic_ID" ColumnName="topic_ID" />
+          <ScalarProperty Name="topic_name" ColumnName="topic_name" />
+          <ScalarProperty Name="course_ID" ColumnName="course_ID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="topic_update" FunctionName="sqlProjectModel.Store.topic_update" />
+    <FunctionImportMapping FunctionImportName="AssignExamStudent" FunctionName="sqlProjectModel.Store.AssignExamStudent" />
+    <FunctionImportMapping FunctionImportName="correctExam" FunctionName="sqlProjectModel.Store.correctExam" />
+    <FunctionImportMapping FunctionImportName="examAns" FunctionName="sqlProjectModel.Store.examAns" />
+    <FunctionImportMapping FunctionImportName="generateExam" FunctionName="sqlProjectModel.Store.generateExam" />
+    <FunctionImportMapping FunctionImportName="finalResults" FunctionName="sqlProjectModel.Store.finalResults">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sqlProjectModel.finalResults_Result">
+          <ScalarProperty Name="Exam_ID" ColumnName="Exam_ID" />
+          <ScalarProperty Name="st_grade" ColumnName="st_grade" />
+          <ScalarProperty Name="c_name" ColumnName="c_name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Report_3" FunctionName="sqlProjectModel.Store.Report_3">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sqlProjectModel.Report_3_Result">
+          <ScalarProperty Name="c_name" ColumnName="c_name" />
+          <ScalarProperty Name="studentNo" ColumnName="studentNo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="report_courseTopics" FunctionName="sqlProjectModel.Store.report_courseTopics" />
+    <FunctionImportMapping FunctionImportName="report_examQandA" FunctionName="sqlProjectModel.Store.report_examQandA">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sqlProjectModel.report_examQandA_Result">
+          <ScalarProperty Name="q_ID" ColumnName="q_ID" />
+          <ScalarProperty Name="q_type" ColumnName="q_type" />
+          <ScalarProperty Name="q_desc" ColumnName="q_desc" />
+          <ScalarProperty Name="choice_ID" ColumnName="choice_ID" />
+          <ScalarProperty Name="choice_desc" ColumnName="choice_desc" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="report_StudentExMA" FunctionName="sqlProjectModel.Store.report_StudentExMA">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sqlProjectModel.report_StudentExMA_Result">
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="Student_Answer" ColumnName="Student Answer" />
+          <ScalarProperty Name="Model_Answer" ColumnName="Model Answer" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
