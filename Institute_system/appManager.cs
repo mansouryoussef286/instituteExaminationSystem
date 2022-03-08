@@ -8,6 +8,7 @@ namespace Institute_system
 {
     public static class appManager
     {
+        //test
         public static login loginForm;
         public static instructorF instructorForm;
         public static studentF studentForm;
