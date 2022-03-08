@@ -29,7 +29,6 @@ namespace Institute_system
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(login));
             this.logInBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -64,7 +63,7 @@ namespace Institute_system
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(64, 94);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "password";
             // 
@@ -92,7 +91,6 @@ namespace Institute_system
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.ImageLocation = "C:\\Users\\Blu-Ray\\OneDrive\\Desktop\\iti\\Sql server Advanced\\Project\\iti-logo.png";
             this.pictureBox1.Location = new System.Drawing.Point(235, 12);
             this.pictureBox1.Name = "pictureBox1";
@@ -105,7 +103,7 @@ namespace Institute_system
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(293, 221);
+            this.ClientSize = new System.Drawing.Size(423, 221);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox2);
