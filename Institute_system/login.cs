@@ -45,7 +45,7 @@ namespace Institute_system
                 if (success)
                 {
                     MessageBox.Show("logged in");
-                    appManager.studentForm.Show();
+                    appManager.instructorForm.Show();
 
                 }
                 else

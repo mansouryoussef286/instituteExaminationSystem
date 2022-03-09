@@ -44,3 +44,20 @@ C:\iti\Sql Project\instituteExaminationSystem\Institute_system\obj\Debug\Institu
 C:\iti\Sql Project\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.csproj.CopyComplete
 C:\iti\Sql Project\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.exe
 C:\iti\Sql Project\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.pdb
+C:\Users\Gnrl-30\source\repos\instituteExaminationSystem\Institute_system\bin\Debug\Institute_system.exe.config
+C:\Users\Gnrl-30\source\repos\instituteExaminationSystem\Institute_system\bin\Debug\Institute_system.exe
+C:\Users\Gnrl-30\source\repos\instituteExaminationSystem\Institute_system\bin\Debug\Institute_system.pdb
+C:\Users\Gnrl-30\source\repos\instituteExaminationSystem\Institute_system\bin\Debug\EntityFramework.dll
+C:\Users\Gnrl-30\source\repos\instituteExaminationSystem\Institute_system\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Gnrl-30\source\repos\instituteExaminationSystem\Institute_system\bin\Debug\EntityFramework.xml
+C:\Users\Gnrl-30\source\repos\instituteExaminationSystem\Institute_system\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Gnrl-30\source\repos\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.csprojAssemblyReference.cache
+C:\Users\Gnrl-30\source\repos\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.instructorF.resources
+C:\Users\Gnrl-30\source\repos\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.login.resources
+C:\Users\Gnrl-30\source\repos\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.Properties.Resources.resources
+C:\Users\Gnrl-30\source\repos\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.studentF.resources
+C:\Users\Gnrl-30\source\repos\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.csproj.GenerateResource.cache
+C:\Users\Gnrl-30\source\repos\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.csproj.CoreCompileInputs.cache
+C:\Users\Gnrl-30\source\repos\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.csproj.CopyComplete
+C:\Users\Gnrl-30\source\repos\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.exe
+C:\Users\Gnrl-30\source\repos\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.pdb

@@ -19,10 +19,10 @@ namespace Institute_system
         {
             //initialize the three main forms to use them during the app
             //to show and close them anywhere in the app and easily access them
+            entities = new sqlProjectEntities();
             loginForm = new login();
             instructorForm = new instructorF();
             studentForm = new studentF();
-            entities = new sqlProjectEntities();
         }
     }
 }

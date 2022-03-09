@@ -15,6 +15,17 @@ namespace Institute_system
         public instructorF()
         {
             InitializeComponent();
+
+            //Exams Tab
+            //Generate Exam Tab
+
+            examCourses.Items.Clear();
+            var courses = from c in appManager.entities.courses
+                          select c;
+            foreach (var course in courses)
+            {
+                examCourses.Items.Add(course.c_ID);
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
