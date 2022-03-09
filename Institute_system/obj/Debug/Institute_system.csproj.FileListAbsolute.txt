@@ -61,3 +61,20 @@ C:\Users\Gnrl-30\source\repos\instituteExaminationSystem\Institute_system\obj\De
 C:\Users\Gnrl-30\source\repos\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.csproj.CopyComplete
 C:\Users\Gnrl-30\source\repos\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.exe
 C:\Users\Gnrl-30\source\repos\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.pdb
+C:\Users\ahmed sokary\Source\Repos\instituteExaminationSystem\Institute_system\bin\Debug\Institute_system.exe.config
+C:\Users\ahmed sokary\Source\Repos\instituteExaminationSystem\Institute_system\bin\Debug\Institute_system.exe
+C:\Users\ahmed sokary\Source\Repos\instituteExaminationSystem\Institute_system\bin\Debug\Institute_system.pdb
+C:\Users\ahmed sokary\Source\Repos\instituteExaminationSystem\Institute_system\bin\Debug\EntityFramework.dll
+C:\Users\ahmed sokary\Source\Repos\instituteExaminationSystem\Institute_system\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ahmed sokary\Source\Repos\instituteExaminationSystem\Institute_system\bin\Debug\EntityFramework.xml
+C:\Users\ahmed sokary\Source\Repos\instituteExaminationSystem\Institute_system\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ahmed sokary\Source\Repos\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.csproj.AssemblyReference.cache
+C:\Users\ahmed sokary\Source\Repos\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.instructorF.resources
+C:\Users\ahmed sokary\Source\Repos\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.login.resources
+C:\Users\ahmed sokary\Source\Repos\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.Properties.Resources.resources
+C:\Users\ahmed sokary\Source\Repos\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.studentF.resources
+C:\Users\ahmed sokary\Source\Repos\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.csproj.GenerateResource.cache
+C:\Users\ahmed sokary\Source\Repos\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.csproj.CoreCompileInputs.cache
+C:\Users\ahmed sokary\Source\Repos\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.csproj.CopyComplete
+C:\Users\ahmed sokary\Source\Repos\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.exe
+C:\Users\ahmed sokary\Source\Repos\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.pdb
