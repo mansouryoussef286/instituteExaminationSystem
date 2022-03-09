@@ -62,5 +62,11 @@ namespace Institute_system
 
           
         }
+
+        //on form closing (sigout)
+        private void studentF_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            appManager.loginForm.Show();
+        }
     }
 }
