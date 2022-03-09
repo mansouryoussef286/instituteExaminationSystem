@@ -38,6 +38,7 @@ namespace Institute_system
                         if (username == student.stud_Username)
                         {
                             success = student.stud_pw == password ? true : false;
+                            appManager.currentUser = student;
                         }
                     }
                 }
@@ -48,6 +49,7 @@ namespace Institute_system
                         if (username == instructor.inst_username)
                         {
                             success = instructor.inst_pw == password ? true : false;
+                            appManager.currentInstructor = instructor;
                         }
                     }
                 }
@@ -55,9 +57,15 @@ namespace Institute_system
                 if (success)
                 {
                     if (loginTypeComboBox.SelectedIndex == 0)
+                    {
+                        appManager.studentForm = new studentF();
                         appManager.studentForm.Show();
+                    }
                     else
+                    {
+                        appManager.instructorForm = new instructorF();
                         appManager.instructorForm.Show();
+                    }
                     //hide the login form
                     appManager.loginForm.Hide();
                 }
@@ -67,12 +75,6 @@ namespace Institute_system
                 }
             }
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            appManager.entities.students_update(-1, "signin", "sign", null, "admin", "123");
-        }
-
         private void passwordTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
@@ -80,6 +82,14 @@ namespace Institute_system
                 logInBtn_Click(null, null);
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            appManager.entities.students_update(-1, "signin", "sign", null, "admin", "123");
+            //var std = appManager.entities.students_select(1);
+            //std.First().
+        }
+
     }
 }
 
