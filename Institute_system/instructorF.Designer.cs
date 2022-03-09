@@ -29,6 +29,7 @@ namespace Institute_system
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.Label dept_nameLabel;
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.deleteStdBtn = new System.Windows.Forms.Button();
@@ -89,6 +90,7 @@ namespace Institute_system
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dept_nameComboBox = new System.Windows.Forms.ComboBox();
             this.label32 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
@@ -99,6 +101,7 @@ namespace Institute_system
             this.examsIDsListBox = new System.Windows.Forms.ListBox();
             this.correctExamBtn = new System.Windows.Forms.Button();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.label33 = new System.Windows.Forms.Label();
             this.coursesComboBox3 = new System.Windows.Forms.ComboBox();
             this.deleteQBtn = new System.Windows.Forms.Button();
             this.updateQBtn = new System.Windows.Forms.Button();
@@ -118,7 +121,7 @@ namespace Institute_system
             this.choice2_textBox = new System.Windows.Forms.TextBox();
             this.choice1_textBox = new System.Windows.Forms.TextBox();
             this.choiceTypeComboBox = new System.Windows.Forms.ComboBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.questionDescTextBox = new System.Windows.Forms.TextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -133,6 +136,7 @@ namespace Institute_system
             this.label29 = new System.Windows.Forms.Label();
             this.textBox19 = new System.Windows.Forms.TextBox();
             this.button11 = new System.Windows.Forms.Button();
+            dept_nameLabel = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -149,6 +153,15 @@ namespace Institute_system
             this.tabPage4.SuspendLayout();
             this.tabPage8.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // dept_nameLabel
+            // 
+            dept_nameLabel.AutoSize = true;
+            dept_nameLabel.Location = new System.Drawing.Point(45, 28);
+            dept_nameLabel.Name = "dept_nameLabel";
+            dept_nameLabel.Size = new System.Drawing.Size(67, 13);
+            dept_nameLabel.TabIndex = 11;
+            dept_nameLabel.Text = "department:";
             // 
             // tabControl1
             // 
@@ -734,6 +747,8 @@ namespace Institute_system
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.dept_nameComboBox);
+            this.groupBox2.Controls.Add(dept_nameLabel);
             this.groupBox2.Controls.Add(this.label32);
             this.groupBox2.Controls.Add(this.label31);
             this.groupBox2.Controls.Add(this.label30);
@@ -745,15 +760,26 @@ namespace Institute_system
             this.groupBox2.Controls.Add(this.correctExamBtn);
             this.groupBox2.Location = new System.Drawing.Point(29, 30);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(584, 178);
+            this.groupBox2.Size = new System.Drawing.Size(599, 240);
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "students grades";
             // 
+            // dept_nameComboBox
+            // 
+            this.dept_nameComboBox.DisplayMember = "dept_ID";
+            this.dept_nameComboBox.FormattingEnabled = true;
+            this.dept_nameComboBox.Location = new System.Drawing.Point(48, 42);
+            this.dept_nameComboBox.Name = "dept_nameComboBox";
+            this.dept_nameComboBox.Size = new System.Drawing.Size(121, 21);
+            this.dept_nameComboBox.TabIndex = 12;
+            this.dept_nameComboBox.ValueMember = "dept_ID";
+            this.dept_nameComboBox.SelectedIndexChanged += new System.EventHandler(this.deptNameComboBox_SelectedIndexChanged);
+            // 
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(464, 67);
+            this.label32.Location = new System.Drawing.Point(460, 117);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(39, 13);
             this.label32.TabIndex = 11;
@@ -762,7 +788,7 @@ namespace Institute_system
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(340, 67);
+            this.label31.Location = new System.Drawing.Point(336, 117);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(51, 13);
             this.label31.TabIndex = 10;
@@ -771,7 +797,7 @@ namespace Institute_system
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(340, 19);
+            this.label30.Location = new System.Drawing.Point(336, 69);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(77, 13);
             this.label30.TabIndex = 9;
@@ -779,21 +805,21 @@ namespace Institute_system
             // 
             // gradeTextBox
             // 
-            this.gradeTextBox.Location = new System.Drawing.Point(504, 64);
+            this.gradeTextBox.Location = new System.Drawing.Point(500, 114);
             this.gradeTextBox.Name = "gradeTextBox";
             this.gradeTextBox.Size = new System.Drawing.Size(54, 20);
             this.gradeTextBox.TabIndex = 8;
             // 
             // examIDTextBox
             // 
-            this.examIDTextBox.Location = new System.Drawing.Point(391, 64);
+            this.examIDTextBox.Location = new System.Drawing.Point(387, 114);
             this.examIDTextBox.Name = "examIDTextBox";
             this.examIDTextBox.Size = new System.Drawing.Size(54, 20);
             this.examIDTextBox.TabIndex = 7;
             // 
             // stdNameTextBox
             // 
-            this.stdNameTextBox.Location = new System.Drawing.Point(343, 38);
+            this.stdNameTextBox.Location = new System.Drawing.Point(339, 88);
             this.stdNameTextBox.Name = "stdNameTextBox";
             this.stdNameTextBox.Size = new System.Drawing.Size(215, 20);
             this.stdNameTextBox.TabIndex = 6;
@@ -801,7 +827,7 @@ namespace Institute_system
             // studentsListBox
             // 
             this.studentsListBox.FormattingEnabled = true;
-            this.studentsListBox.Location = new System.Drawing.Point(52, 19);
+            this.studentsListBox.Location = new System.Drawing.Point(48, 69);
             this.studentsListBox.Name = "studentsListBox";
             this.studentsListBox.Size = new System.Drawing.Size(120, 95);
             this.studentsListBox.TabIndex = 1;
@@ -810,7 +836,7 @@ namespace Institute_system
             // examsIDsListBox
             // 
             this.examsIDsListBox.FormattingEnabled = true;
-            this.examsIDsListBox.Location = new System.Drawing.Point(194, 19);
+            this.examsIDsListBox.Location = new System.Drawing.Point(190, 69);
             this.examsIDsListBox.Name = "examsIDsListBox";
             this.examsIDsListBox.Size = new System.Drawing.Size(120, 95);
             this.examsIDsListBox.TabIndex = 0;
@@ -819,7 +845,7 @@ namespace Institute_system
             // correctExamBtn
             // 
             this.correctExamBtn.Enabled = false;
-            this.correctExamBtn.Location = new System.Drawing.Point(371, 107);
+            this.correctExamBtn.Location = new System.Drawing.Point(367, 157);
             this.correctExamBtn.Name = "correctExamBtn";
             this.correctExamBtn.Size = new System.Drawing.Size(158, 25);
             this.correctExamBtn.TabIndex = 5;
@@ -829,6 +855,7 @@ namespace Institute_system
             // 
             // tabPage6
             // 
+            this.tabPage6.Controls.Add(this.label33);
             this.tabPage6.Controls.Add(this.coursesComboBox3);
             this.tabPage6.Controls.Add(this.deleteQBtn);
             this.tabPage6.Controls.Add(this.updateQBtn);
@@ -848,7 +875,7 @@ namespace Institute_system
             this.tabPage6.Controls.Add(this.choice2_textBox);
             this.tabPage6.Controls.Add(this.choice1_textBox);
             this.tabPage6.Controls.Add(this.choiceTypeComboBox);
-            this.tabPage6.Controls.Add(this.textBox13);
+            this.tabPage6.Controls.Add(this.questionDescTextBox);
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
@@ -856,6 +883,15 @@ namespace Institute_system
             this.tabPage6.TabIndex = 1;
             this.tabPage6.Text = "editing exam db";
             this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(21, 219);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(99, 13);
+            this.label33.TabIndex = 22;
+            this.label33.Text = "course\'s questions:";
             // 
             // coursesComboBox3
             // 
@@ -866,6 +902,7 @@ namespace Institute_system
             this.coursesComboBox3.Size = new System.Drawing.Size(65, 21);
             this.coursesComboBox3.TabIndex = 21;
             this.coursesComboBox3.ValueMember = "c_ID";
+            this.coursesComboBox3.SelectedIndexChanged += new System.EventHandler(this.coursesComboBox3_SelectedIndexChanged);
             // 
             // deleteQBtn
             // 
@@ -875,6 +912,7 @@ namespace Institute_system
             this.deleteQBtn.TabIndex = 19;
             this.deleteQBtn.Text = "delete";
             this.deleteQBtn.UseVisualStyleBackColor = true;
+            this.deleteQBtn.Click += new System.EventHandler(this.deleteQBtn_Click);
             // 
             // updateQBtn
             // 
@@ -884,6 +922,7 @@ namespace Institute_system
             this.updateQBtn.TabIndex = 18;
             this.updateQBtn.Text = "update";
             this.updateQBtn.UseVisualStyleBackColor = true;
+            this.updateQBtn.Click += new System.EventHandler(this.updateQBtn_Click);
             // 
             // insertQBtn
             // 
@@ -893,6 +932,7 @@ namespace Institute_system
             this.insertQBtn.TabIndex = 17;
             this.insertQBtn.Text = "insert";
             this.insertQBtn.UseVisualStyleBackColor = true;
+            this.insertQBtn.Click += new System.EventHandler(this.insertQBtn_Click);
             // 
             // questionsListBox
             // 
@@ -901,6 +941,7 @@ namespace Institute_system
             this.questionsListBox.Name = "questionsListBox";
             this.questionsListBox.Size = new System.Drawing.Size(406, 95);
             this.questionsListBox.TabIndex = 16;
+            this.questionsListBox.SelectedIndexChanged += new System.EventHandler(this.questionsListBox_SelectedIndexChanged);
             // 
             // label23
             // 
@@ -1030,18 +1071,19 @@ namespace Institute_system
             this.choiceTypeComboBox.FormattingEnabled = true;
             this.choiceTypeComboBox.Items.AddRange(new object[] {
             "MCQ",
-            "T or F"});
+            "TorF"});
             this.choiceTypeComboBox.Location = new System.Drawing.Point(80, 124);
             this.choiceTypeComboBox.Name = "choiceTypeComboBox";
             this.choiceTypeComboBox.Size = new System.Drawing.Size(65, 21);
             this.choiceTypeComboBox.TabIndex = 2;
+            this.choiceTypeComboBox.SelectedIndexChanged += new System.EventHandler(this.choiceTypeComboBox_SelectedIndexChanged);
             // 
-            // textBox13
+            // questionDescTextBox
             // 
-            this.textBox13.Location = new System.Drawing.Point(154, 65);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(431, 20);
-            this.textBox13.TabIndex = 1;
+            this.questionDescTextBox.Location = new System.Drawing.Point(154, 65);
+            this.questionDescTextBox.Name = "questionDescTextBox";
+            this.questionDescTextBox.Size = new System.Drawing.Size(431, 20);
+            this.questionDescTextBox.TabIndex = 1;
             // 
             // tabPage4
             // 
@@ -1187,6 +1229,7 @@ namespace Institute_system
             this.Controls.Add(this.tabControl1);
             this.Name = "instructorF";
             this.Text = "Staff";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.instructorF_FormClosing);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -1281,7 +1324,7 @@ namespace Institute_system
         private System.Windows.Forms.ListBox examsIDsListBox;
         private System.Windows.Forms.Button correctExamBtn;
         private System.Windows.Forms.ComboBox choiceTypeComboBox;
-        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox questionDescTextBox;
         private System.Windows.Forms.Button deleteQBtn;
         private System.Windows.Forms.Button updateQBtn;
         private System.Windows.Forms.Button insertQBtn;
@@ -1319,5 +1362,7 @@ namespace Institute_system
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.ComboBox coursesComboBox3;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.ComboBox dept_nameComboBox;
     }
 }

@@ -12,9 +12,13 @@ namespace Institute_system
 {
     public partial class login : Form
     {
+        //to delete it after signout
+        public TextBox pwTextBox;
+
         public login()
         {
             InitializeComponent();
+            pwTextBox = passwordTextBox;
         }
 
 
