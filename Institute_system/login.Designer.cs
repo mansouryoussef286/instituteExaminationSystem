@@ -45,7 +45,7 @@ namespace Institute_system
             this.logInBtn.Location = new System.Drawing.Point(95, 163);
             this.logInBtn.Name = "logInBtn";
             this.logInBtn.Size = new System.Drawing.Size(75, 23);
-            this.logInBtn.TabIndex = 0;
+            this.logInBtn.TabIndex = 3;
             this.logInBtn.Text = "Log In";
             this.logInBtn.UseVisualStyleBackColor = true;
             this.logInBtn.Click += new System.EventHandler(this.logInBtn_Click);
@@ -73,14 +73,14 @@ namespace Institute_system
             this.userNameTextBox.Location = new System.Drawing.Point(99, 41);
             this.userNameTextBox.Name = "userNameTextBox";
             this.userNameTextBox.Size = new System.Drawing.Size(100, 20);
-            this.userNameTextBox.TabIndex = 3;
+            this.userNameTextBox.TabIndex = 0;
             // 
             // passwordTextBox
             // 
             this.passwordTextBox.Location = new System.Drawing.Point(99, 84);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(100, 20);
-            this.passwordTextBox.TabIndex = 4;
+            this.passwordTextBox.TabIndex = 1;
             // 
             // loginTypeComboBox
             // 
@@ -91,7 +91,7 @@ namespace Institute_system
             this.loginTypeComboBox.Location = new System.Drawing.Point(79, 136);
             this.loginTypeComboBox.Name = "loginTypeComboBox";
             this.loginTypeComboBox.Size = new System.Drawing.Size(108, 21);
-            this.loginTypeComboBox.TabIndex = 5;
+            this.loginTypeComboBox.TabIndex = 2;
             // 
             // button1
             // 
@@ -108,7 +108,7 @@ namespace Institute_system
             // 
             this.Logo.Image = global::Institute_system.Properties.Resources.iti_logo;
             this.Logo.Location = new System.Drawing.Point(226, 10);
-            this.Logo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Logo.Margin = new System.Windows.Forms.Padding(2);
             this.Logo.Name = "Logo";
             this.Logo.Size = new System.Drawing.Size(79, 118);
             this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

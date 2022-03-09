@@ -12,8 +12,8 @@ namespace Institute_system
         public static instructorF instructorForm;
         public static studentF studentForm;
         public static sqlProjectEntities entities;
-        public static string currentUserName;
         public static student currentUser;
+        public static instructor currentInstructor;
 
         static appManager()
         {
@@ -21,8 +21,6 @@ namespace Institute_system
             //to show and close them anywhere in the app and easily access them
             entities = new sqlProjectEntities();
             loginForm = new login();
-            instructorForm = new instructorF();
-            studentForm = new studentF();
         }
     }
 }
