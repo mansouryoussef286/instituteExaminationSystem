@@ -20,7 +20,7 @@ namespace Institute_system
 
         private void logInBtn_Click(object sender, EventArgs e)
         {
-            //appManager.studentForm.Show();
+            //if no type was selected !
             if (loginTypeComboBox.SelectedIndex == -1)
             {
                 MessageBox.Show("select a type");
@@ -30,23 +30,36 @@ namespace Institute_system
                 string username = userNameTextBox.Text;
                 string password = passwordTextBox.Text;
                 bool success = false;
-                foreach (var student in appManager.entities.students)
+                //check if the login user is student or staff
+                if (loginTypeComboBox.SelectedIndex == 0)   //student
                 {
-                    if (username == student.stud_Username)
+                    foreach (var student in appManager.entities.students)
                     {
-                        success = student.stud_pw == password ? true : false;
-                        if (success)
+                        if (username == student.stud_Username)
                         {
-                            appManager.currentUser = student;
+                            success = student.stud_pw == password ? true : false;
                         }
-                      
                     }
                 }
+                else   //staff
+                {
+                    foreach (var instructor in appManager.entities.instructors)
+                    {
+                        if (username == instructor.inst_username)
+                        {
+                            success = instructor.inst_pw == password ? true : false;
+                        }
+                    }
+                }
+                //chech if the user credintials are correct
                 if (success)
                 {
-                    MessageBox.Show("logged in");
-                    appManager.instructorForm.Show();
-
+                    if (loginTypeComboBox.SelectedIndex == 0)
+                        appManager.studentForm.Show();
+                    else
+                        appManager.instructorForm.Show();
+                    //hide the login form
+                    appManager.loginForm.Hide();
                 }
                 else
                 {
@@ -59,5 +72,14 @@ namespace Institute_system
         {
             appManager.entities.students_update(-1, "signin", "sign", null, "admin", "123");
         }
+
+        private void passwordTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                logInBtn_Click(null, null);
+            }
+        }
     }
 }
+
