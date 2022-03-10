@@ -21,6 +21,8 @@ namespace Institute_system
             //to show and close them anywhere in the app and easily access them
             entities = new sqlProjectEntities();
             loginForm = new login();
+            
+
         }
     }
 }

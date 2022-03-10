@@ -68,5 +68,36 @@ namespace Institute_system
         {
             appManager.loginForm.Show();
         }
+
+        private void StudentF_Load(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt.Clear();
+            dt.Columns.Add("Course Name");
+            dt.Columns.Add("Exam ID");
+            dt.Columns.Add("Grades");
+           
+
+            var studentgrades = from grd in appManager.entities.Exam_Student
+                                join cour in appManager.entities.exams on grd.Exam_ID equals cour.exam_ID
+                                join courName in appManager.entities.courses on cour.course_ID equals courName.c_ID
+                                where grd.St_ID == appManager.currentUser.stud_ID
+                                select new { courName.c_name,grd.Exam_ID,grd.st_grade } ;
+
+            foreach (var item in studentgrades)
+            {
+                DataRow row = dt.NewRow();
+                row["Course Name"] = item.c_name;
+                row["Exam ID"] = item.Exam_ID; 
+                row["Grades"] = item.st_grade;
+
+                dt.Rows.Add(row);
+            }
+            dataGridView1.DataSource = dt;
+
+
+
+
+        }
     }
 }
