@@ -38,13 +38,13 @@ namespace Institute_system
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
             this.deptDropDown = new System.Windows.Forms.ComboBox();
-            this.text_password = new System.Windows.Forms.TextBox();
-            this.text_userName = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.text_dep = new System.Windows.Forms.TextBox();
-            this.text_id = new System.Windows.Forms.TextBox();
-            this.text_name = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -184,13 +184,13 @@ namespace Institute_system
             this.tabPage1.Controls.Add(this.dataGridView1);
             this.tabPage1.Controls.Add(this.label6);
             this.tabPage1.Controls.Add(this.deptDropDown);
-            this.tabPage1.Controls.Add(this.text_password);
-            this.tabPage1.Controls.Add(this.text_userName);
+            this.tabPage1.Controls.Add(this.textBox4);
+            this.tabPage1.Controls.Add(this.textBox5);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Controls.Add(this.text_dep);
-            this.tabPage1.Controls.Add(this.text_id);
-            this.tabPage1.Controls.Add(this.text_name);
+            this.tabPage1.Controls.Add(this.textBox3);
+            this.tabPage1.Controls.Add(this.textBox2);
+            this.tabPage1.Controls.Add(this.textBox1);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label1);
@@ -210,7 +210,6 @@ namespace Institute_system
             this.deleteStdBtn.TabIndex = 14;
             this.deleteStdBtn.Text = "delete";
             this.deleteStdBtn.UseVisualStyleBackColor = true;
-            this.deleteStdBtn.Click += new System.EventHandler(this.deleteStdBtn_Click);
             // 
             // updateStdBtn
             // 
@@ -220,7 +219,7 @@ namespace Institute_system
             this.updateStdBtn.TabIndex = 13;
             this.updateStdBtn.Text = "update";
             this.updateStdBtn.UseVisualStyleBackColor = true;
-            this.updateStdBtn.Click += new System.EventHandler(this.updateStdBtn_Click);            // 
+            // 
             // insertStdBtn
             // 
             this.insertStdBtn.Location = new System.Drawing.Point(49, 290);
@@ -229,7 +228,6 @@ namespace Institute_system
             this.insertStdBtn.TabIndex = 1;
             this.insertStdBtn.Text = "insert";
             this.insertStdBtn.UseVisualStyleBackColor = true;
-            this.insertStdBtn.Click += new System.EventHandler(this.insertStdBtn_Click);
             // 
             // dataGridView1
             // 
@@ -239,7 +237,6 @@ namespace Institute_system
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(283, 207);
             this.dataGridView1.TabIndex = 12;
-            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // label6
             // 
@@ -258,36 +255,20 @@ namespace Institute_system
             this.deptDropDown.Name = "deptDropDown";
             this.deptDropDown.Size = new System.Drawing.Size(121, 21);
             this.deptDropDown.TabIndex = 10;
-            this.deptDropDown.SelectedIndexChanged += new System.EventHandler(this.deptDropDown_SelectedIndexChanged);
-            this.deptDropDown.Enter += new System.EventHandler(this.deptDropDown_Enter);
             // 
-            // text_password
+            // textBox4
             // 
-<<<<<<< HEAD
-            this.text_password.Location = new System.Drawing.Point(155, 251);
-            this.text_password.Name = "text_password";
-            this.text_password.Size = new System.Drawing.Size(147, 20);
-            this.text_password.TabIndex = 9;
-=======
             this.textBox4.Location = new System.Drawing.Point(155, 251);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(147, 20);
             this.textBox4.TabIndex = 9;
->>>>>>> fe67778d292da61ab1bc19907e3190a865e918f3
             // 
-            // text_userName
+            // textBox5
             // 
-<<<<<<< HEAD
-            this.text_userName.Location = new System.Drawing.Point(155, 194);
-            this.text_userName.Name = "text_userName";
-            this.text_userName.Size = new System.Drawing.Size(147, 20);
-            this.text_userName.TabIndex = 8;
-=======
             this.textBox5.Location = new System.Drawing.Point(155, 194);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(147, 20);
             this.textBox5.TabIndex = 8;
->>>>>>> fe67778d292da61ab1bc19907e3190a865e918f3
             // 
             // label4
             // 
@@ -309,47 +290,26 @@ namespace Institute_system
             this.label5.TabIndex = 6;
             this.label5.Text = "username";
             // 
-            // text_dep
+            // textBox3
             // 
-<<<<<<< HEAD
-            this.text_dep.Location = new System.Drawing.Point(155, 142);
-            this.text_dep.Name = "text_dep";
-            this.text_dep.Size = new System.Drawing.Size(147, 20);
-            this.text_dep.TabIndex = 5;
-=======
             this.textBox3.Location = new System.Drawing.Point(155, 142);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(147, 20);
             this.textBox3.TabIndex = 5;
->>>>>>> fe67778d292da61ab1bc19907e3190a865e918f3
             // 
-            // text_id
+            // textBox2
             // 
-<<<<<<< HEAD
-            this.text_id.Location = new System.Drawing.Point(155, 85);
-            this.text_id.Name = "text_id";
-            this.text_id.Size = new System.Drawing.Size(147, 20);
-            this.text_id.TabIndex = 4;
-=======
             this.textBox2.Location = new System.Drawing.Point(155, 85);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(147, 20);
             this.textBox2.TabIndex = 4;
->>>>>>> fe67778d292da61ab1bc19907e3190a865e918f3
             // 
-            // text_name
+            // textBox1
             // 
-<<<<<<< HEAD
-            this.text_name.Location = new System.Drawing.Point(155, 32);
-            this.text_name.Name = "text_name";
-            this.text_name.Size = new System.Drawing.Size(147, 20);
-            this.text_name.TabIndex = 3;
-=======
             this.textBox1.Location = new System.Drawing.Point(155, 32);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(147, 20);
             this.textBox1.TabIndex = 3;
->>>>>>> fe67778d292da61ab1bc19907e3190a865e918f3
             // 
             // label3
             // 
@@ -377,13 +337,9 @@ namespace Institute_system
             this.label1.Font = new System.Drawing.Font("Tahoma", 12F);
             this.label1.Location = new System.Drawing.Point(45, 30);
             this.label1.Name = "label1";
-<<<<<<< HEAD
-            this.label1.Size = new System.Drawing.Size(80, 19);
-=======
             this.label1.Size = new System.Drawing.Size(50, 19);
->>>>>>> fe67778d292da61ab1bc19907e3190a865e918f3
             this.label1.TabIndex = 0;
-            this.label1.Text = "Full Name";
+            this.label1.Text = "Name";
             // 
             // tabPage2
             // 
@@ -585,11 +541,7 @@ namespace Institute_system
             // 
             // tabPage3
             // 
-<<<<<<< HEAD
-            this.tabPage3.Controls.Add(this.tabControl2);
-=======
             this.tabPage3.Controls.Add(this.students_grades_tab);
->>>>>>> fe67778d292da61ab1bc19907e3190a865e918f3
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -600,16 +552,6 @@ namespace Institute_system
             // 
             // students_grades_tab
             // 
-<<<<<<< HEAD
-            this.tabControl2.Controls.Add(this.tabPage5);
-            this.tabControl2.Controls.Add(this.tabPage7);
-            this.tabControl2.Controls.Add(this.tabPage6);
-            this.tabControl2.Location = new System.Drawing.Point(6, 6);
-            this.tabControl2.Name = "tabControl2";
-            this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(682, 380);
-            this.tabControl2.TabIndex = 0;
-=======
             this.students_grades_tab.Controls.Add(this.tabPage5);
             this.students_grades_tab.Controls.Add(this.tabPage7);
             this.students_grades_tab.Controls.Add(this.tabPage6);
@@ -618,7 +560,6 @@ namespace Institute_system
             this.students_grades_tab.SelectedIndex = 0;
             this.students_grades_tab.Size = new System.Drawing.Size(682, 380);
             this.students_grades_tab.TabIndex = 0;
->>>>>>> fe67778d292da61ab1bc19907e3190a865e918f3
             // 
             // tabPage5
             // 
@@ -677,11 +618,7 @@ namespace Institute_system
             this.label25.AutoSize = true;
             this.label25.Location = new System.Drawing.Point(34, 64);
             this.label25.Name = "label25";
-<<<<<<< HEAD
-            this.label25.Size = new System.Drawing.Size(51, 13);
-=======
             this.label25.Size = new System.Drawing.Size(52, 13);
->>>>>>> fe67778d292da61ab1bc19907e3190a865e918f3
             this.label25.TabIndex = 10;
             this.label25.Text = "exams ID";
             // 
@@ -725,11 +662,7 @@ namespace Institute_system
             this.label27.AutoSize = true;
             this.label27.Location = new System.Drawing.Point(475, 36);
             this.label27.Name = "label27";
-<<<<<<< HEAD
-            this.label27.Size = new System.Drawing.Size(94, 13);
-=======
             this.label27.Size = new System.Drawing.Size(97, 13);
->>>>>>> fe67778d292da61ab1bc19907e3190a865e918f3
             this.label27.TabIndex = 12;
             this.label27.Text = "generated exam id";
             // 
@@ -772,11 +705,7 @@ namespace Institute_system
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(72, 64);
             this.label15.Name = "label15";
-<<<<<<< HEAD
-            this.label15.Size = new System.Drawing.Size(27, 13);
-=======
             this.label15.Size = new System.Drawing.Size(26, 13);
->>>>>>> fe67778d292da61ab1bc19907e3190a865e918f3
             this.label15.TabIndex = 10;
             this.label15.Text = "mcq";
             // 
@@ -831,11 +760,7 @@ namespace Institute_system
             this.groupBox2.Controls.Add(this.correctExamBtn);
             this.groupBox2.Location = new System.Drawing.Point(29, 30);
             this.groupBox2.Name = "groupBox2";
-<<<<<<< HEAD
-            this.groupBox2.Size = new System.Drawing.Size(584, 178);
-=======
             this.groupBox2.Size = new System.Drawing.Size(599, 240);
->>>>>>> fe67778d292da61ab1bc19907e3190a865e918f3
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "students grades";
@@ -862,80 +787,38 @@ namespace Institute_system
             // 
             // label31
             // 
-<<<<<<< HEAD
-            this.textBox12.Location = new System.Drawing.Point(361, 83);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(100, 20);
-            this.textBox12.TabIndex = 8;
-=======
             this.label31.AutoSize = true;
             this.label31.Location = new System.Drawing.Point(336, 117);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(51, 13);
             this.label31.TabIndex = 10;
             this.label31.Text = "Exam ID:";
->>>>>>> fe67778d292da61ab1bc19907e3190a865e918f3
             // 
             // label30
             // 
-<<<<<<< HEAD
-            this.textBox11.Location = new System.Drawing.Point(361, 57);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(100, 20);
-            this.textBox11.TabIndex = 7;
-=======
             this.label30.AutoSize = true;
             this.label30.Location = new System.Drawing.Point(336, 69);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(77, 13);
             this.label30.TabIndex = 9;
             this.label30.Text = "student name:";
->>>>>>> fe67778d292da61ab1bc19907e3190a865e918f3
             // 
             // gradeTextBox
             // 
-<<<<<<< HEAD
-            this.textBox8.Location = new System.Drawing.Point(361, 31);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 20);
-            this.textBox8.TabIndex = 6;
-=======
             this.gradeTextBox.Location = new System.Drawing.Point(500, 114);
             this.gradeTextBox.Name = "gradeTextBox";
             this.gradeTextBox.Size = new System.Drawing.Size(54, 20);
             this.gradeTextBox.TabIndex = 8;
->>>>>>> fe67778d292da61ab1bc19907e3190a865e918f3
             // 
             // examIDTextBox
             // 
-<<<<<<< HEAD
-            this.students.FormattingEnabled = true;
-            this.students.Location = new System.Drawing.Point(52, 19);
-            this.students.Name = "students";
-            this.students.Size = new System.Drawing.Size(120, 95);
-            this.students.TabIndex = 1;
-=======
             this.examIDTextBox.Location = new System.Drawing.Point(387, 114);
             this.examIDTextBox.Name = "examIDTextBox";
             this.examIDTextBox.Size = new System.Drawing.Size(54, 20);
             this.examIDTextBox.TabIndex = 7;
->>>>>>> fe67778d292da61ab1bc19907e3190a865e918f3
             // 
             // stdNameTextBox
             // 
-<<<<<<< HEAD
-            this.examsIDs.FormattingEnabled = true;
-            this.examsIDs.Location = new System.Drawing.Point(194, 19);
-            this.examsIDs.Name = "examsIDs";
-            this.examsIDs.Size = new System.Drawing.Size(120, 95);
-            this.examsIDs.TabIndex = 0;
-            // 
-            // correctExamBtn
-            // 
-            this.correctExamBtn.Location = new System.Drawing.Point(541, 149);
-            this.correctExamBtn.Name = "correctExamBtn";
-            this.correctExamBtn.Size = new System.Drawing.Size(37, 23);
-=======
             this.stdNameTextBox.Location = new System.Drawing.Point(339, 88);
             this.stdNameTextBox.Name = "stdNameTextBox";
             this.stdNameTextBox.Size = new System.Drawing.Size(215, 20);
@@ -965,7 +848,6 @@ namespace Institute_system
             this.correctExamBtn.Location = new System.Drawing.Point(367, 157);
             this.correctExamBtn.Name = "correctExamBtn";
             this.correctExamBtn.Size = new System.Drawing.Size(158, 25);
->>>>>>> fe67778d292da61ab1bc19907e3190a865e918f3
             this.correctExamBtn.TabIndex = 5;
             this.correctExamBtn.Text = "Correct Exam";
             this.correctExamBtn.UseVisualStyleBackColor = true;
@@ -989,20 +871,11 @@ namespace Institute_system
             this.tabPage6.Controls.Add(this.label19);
             this.tabPage6.Controls.Add(this.label18);
             this.tabPage6.Controls.Add(this.label17);
-<<<<<<< HEAD
-            this.tabPage6.Controls.Add(this.textBox16);
-            this.tabPage6.Controls.Add(this.textBox15);
-            this.tabPage6.Controls.Add(this.textBox14);
-            this.tabPage6.Controls.Add(this.comboBox5);
-            this.tabPage6.Controls.Add(this.textBox13);
-            this.tabPage6.Controls.Add(this.comboBox4);
-=======
             this.tabPage6.Controls.Add(this.choice3_textBox);
             this.tabPage6.Controls.Add(this.choice2_textBox);
             this.tabPage6.Controls.Add(this.choice1_textBox);
             this.tabPage6.Controls.Add(this.choiceTypeComboBox);
             this.tabPage6.Controls.Add(this.questionDescTextBox);
->>>>>>> fe67778d292da61ab1bc19907e3190a865e918f3
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
@@ -1011,42 +884,6 @@ namespace Institute_system
             this.tabPage6.Text = "editing exam db";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
-<<<<<<< HEAD
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(494, 308);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 23);
-            this.button9.TabIndex = 19;
-            this.button9.Text = "delete";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(494, 270);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
-            this.button8.TabIndex = 18;
-            this.button8.Text = "update";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(494, 235);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 17;
-            this.button7.Text = "insert";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(24, 235);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(406, 95);
-            this.listBox1.TabIndex = 16;
-=======
             // label33
             // 
             this.label33.AutoSize = true;
@@ -1105,34 +942,23 @@ namespace Institute_system
             this.questionsListBox.Size = new System.Drawing.Size(406, 95);
             this.questionsListBox.TabIndex = 16;
             this.questionsListBox.SelectedIndexChanged += new System.EventHandler(this.questionsListBox_SelectedIndexChanged);
->>>>>>> fe67778d292da61ab1bc19907e3190a865e918f3
             // 
             // label23
             // 
             this.label23.AutoSize = true;
             this.label23.Location = new System.Drawing.Point(371, 107);
             this.label23.Name = "label23";
-<<<<<<< HEAD
-            this.label23.Size = new System.Drawing.Size(77, 13);
-=======
             this.label23.Size = new System.Drawing.Size(79, 13);
->>>>>>> fe67778d292da61ab1bc19907e3190a865e918f3
             this.label23.TabIndex = 15;
             this.label23.Text = "correct answer";
             // 
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-<<<<<<< HEAD
-            this.radioButton3.Location = new System.Drawing.Point(370, 198);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(85, 17);
-=======
             this.radioButton3.Enabled = false;
             this.radioButton3.Location = new System.Drawing.Point(370, 198);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(69, 17);
->>>>>>> fe67778d292da61ab1bc19907e3190a865e918f3
             this.radioButton3.TabIndex = 14;
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "answer 3";
@@ -1141,16 +967,10 @@ namespace Institute_system
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-<<<<<<< HEAD
-            this.radioButton2.Location = new System.Drawing.Point(370, 161);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(85, 17);
-=======
             this.radioButton2.Enabled = false;
             this.radioButton2.Location = new System.Drawing.Point(370, 161);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(69, 17);
->>>>>>> fe67778d292da61ab1bc19907e3190a865e918f3
             this.radioButton2.TabIndex = 13;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "answer 2";
@@ -1159,16 +979,10 @@ namespace Institute_system
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-<<<<<<< HEAD
-            this.radioButton1.Location = new System.Drawing.Point(370, 125);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(85, 17);
-=======
             this.radioButton1.Enabled = false;
             this.radioButton1.Location = new System.Drawing.Point(370, 125);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(69, 17);
->>>>>>> fe67778d292da61ab1bc19907e3190a865e918f3
             this.radioButton1.TabIndex = 12;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "answer 1";
@@ -1179,11 +993,7 @@ namespace Institute_system
             this.label22.AutoSize = true;
             this.label22.Location = new System.Drawing.Point(77, 107);
             this.label22.Name = "label22";
-<<<<<<< HEAD
-            this.label22.Size = new System.Drawing.Size(27, 13);
-=======
             this.label22.Size = new System.Drawing.Size(29, 13);
->>>>>>> fe67778d292da61ab1bc19907e3190a865e918f3
             this.label22.TabIndex = 11;
             this.label22.Text = "type";
             // 
@@ -1192,11 +1002,7 @@ namespace Institute_system
             this.label21.AutoSize = true;
             this.label21.Location = new System.Drawing.Point(151, 48);
             this.label21.Name = "label21";
-<<<<<<< HEAD
-            this.label21.Size = new System.Drawing.Size(47, 13);
-=======
             this.label21.Size = new System.Drawing.Size(48, 13);
->>>>>>> fe67778d292da61ab1bc19907e3190a865e918f3
             this.label21.TabIndex = 10;
             this.label21.Text = "question";
             // 
@@ -1212,57 +1018,24 @@ namespace Institute_system
             // label19
             // 
             this.label19.AutoSize = true;
-<<<<<<< HEAD
-            this.label19.Location = new System.Drawing.Point(172, 205);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(63, 13);
-=======
             this.label19.Location = new System.Drawing.Point(172, 201);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(62, 13);
->>>>>>> fe67778d292da61ab1bc19907e3190a865e918f3
             this.label19.TabIndex = 8;
             this.label19.Text = "choice no.3";
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-<<<<<<< HEAD
-            this.label18.Location = new System.Drawing.Point(172, 168);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(63, 13);
-=======
             this.label18.Location = new System.Drawing.Point(172, 164);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(62, 13);
->>>>>>> fe67778d292da61ab1bc19907e3190a865e918f3
             this.label18.TabIndex = 7;
             this.label18.Text = "choice no.2";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-<<<<<<< HEAD
-            this.label17.Location = new System.Drawing.Point(172, 126);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(63, 13);
-            this.label17.TabIndex = 6;
-            this.label17.Text = "choice no.1";
-            // 
-            // textBox16
-            // 
-            this.textBox16.Location = new System.Drawing.Point(240, 198);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(100, 20);
-            this.textBox16.TabIndex = 5;
-            // 
-            // textBox15
-            // 
-            this.textBox15.Location = new System.Drawing.Point(240, 160);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(100, 20);
-            this.textBox15.TabIndex = 4;
-=======
             this.label17.Location = new System.Drawing.Point(172, 127);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(62, 13);
@@ -1276,47 +1049,25 @@ namespace Institute_system
             this.choice3_textBox.Name = "choice3_textBox";
             this.choice3_textBox.Size = new System.Drawing.Size(100, 20);
             this.choice3_textBox.TabIndex = 5;
->>>>>>> fe67778d292da61ab1bc19907e3190a865e918f3
             // 
             // choice2_textBox
             // 
-<<<<<<< HEAD
-            this.textBox14.Location = new System.Drawing.Point(240, 123);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(100, 20);
-            this.textBox14.TabIndex = 3;
-=======
             this.choice2_textBox.Enabled = false;
             this.choice2_textBox.Location = new System.Drawing.Point(240, 160);
             this.choice2_textBox.Name = "choice2_textBox";
             this.choice2_textBox.Size = new System.Drawing.Size(100, 20);
             this.choice2_textBox.TabIndex = 4;
->>>>>>> fe67778d292da61ab1bc19907e3190a865e918f3
             // 
             // choice1_textBox
             // 
-<<<<<<< HEAD
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(80, 124);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(65, 21);
-            this.comboBox5.TabIndex = 2;
-=======
             this.choice1_textBox.Enabled = false;
             this.choice1_textBox.Location = new System.Drawing.Point(240, 123);
             this.choice1_textBox.Name = "choice1_textBox";
             this.choice1_textBox.Size = new System.Drawing.Size(100, 20);
             this.choice1_textBox.TabIndex = 3;
->>>>>>> fe67778d292da61ab1bc19907e3190a865e918f3
             // 
             // choiceTypeComboBox
             // 
-<<<<<<< HEAD
-            this.textBox13.Location = new System.Drawing.Point(154, 65);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(431, 20);
-            this.textBox13.TabIndex = 1;
-=======
             this.choiceTypeComboBox.FormattingEnabled = true;
             this.choiceTypeComboBox.Items.AddRange(new object[] {
             "MCQ",
@@ -1326,22 +1077,13 @@ namespace Institute_system
             this.choiceTypeComboBox.Size = new System.Drawing.Size(65, 21);
             this.choiceTypeComboBox.TabIndex = 2;
             this.choiceTypeComboBox.SelectedIndexChanged += new System.EventHandler(this.choiceTypeComboBox_SelectedIndexChanged);
->>>>>>> fe67778d292da61ab1bc19907e3190a865e918f3
             // 
             // questionDescTextBox
             // 
-<<<<<<< HEAD
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(80, 64);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(53, 21);
-            this.comboBox4.TabIndex = 0;
-=======
             this.questionDescTextBox.Location = new System.Drawing.Point(154, 65);
             this.questionDescTextBox.Name = "questionDescTextBox";
             this.questionDescTextBox.Size = new System.Drawing.Size(431, 20);
             this.questionDescTextBox.TabIndex = 1;
->>>>>>> fe67778d292da61ab1bc19907e3190a865e918f3
             // 
             // tabPage4
             // 
@@ -1434,11 +1176,7 @@ namespace Institute_system
             this.label24.AutoSize = true;
             this.label24.Location = new System.Drawing.Point(90, 126);
             this.label24.Name = "label24";
-<<<<<<< HEAD
-            this.label24.Size = new System.Drawing.Size(52, 13);
-=======
             this.label24.Size = new System.Drawing.Size(53, 13);
->>>>>>> fe67778d292da61ab1bc19907e3190a865e918f3
             this.label24.TabIndex = 11;
             this.label24.Text = "password";
             // 
@@ -1447,11 +1185,7 @@ namespace Institute_system
             this.label28.AutoSize = true;
             this.label28.Location = new System.Drawing.Point(90, 87);
             this.label28.Name = "label28";
-<<<<<<< HEAD
-            this.label28.Size = new System.Drawing.Size(53, 13);
-=======
             this.label28.Size = new System.Drawing.Size(54, 13);
->>>>>>> fe67778d292da61ab1bc19907e3190a865e918f3
             this.label28.TabIndex = 10;
             this.label28.Text = "username";
             // 
@@ -1467,11 +1201,7 @@ namespace Institute_system
             this.label29.AutoSize = true;
             this.label29.Location = new System.Drawing.Point(107, 46);
             this.label29.Name = "label29";
-<<<<<<< HEAD
-            this.label29.Size = new System.Drawing.Size(85, 13);
-=======
             this.label29.Size = new System.Drawing.Size(87, 13);
->>>>>>> fe67778d292da61ab1bc19907e3190a865e918f3
             this.label29.TabIndex = 8;
             this.label29.Text = "update login info";
             // 
@@ -1535,13 +1265,13 @@ namespace Institute_system
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox text_password;
-        private System.Windows.Forms.TextBox text_userName;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox text_dep;
-        private System.Windows.Forms.TextBox text_id;
-        private System.Windows.Forms.TextBox text_name;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox deptDropDown;
