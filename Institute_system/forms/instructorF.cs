@@ -14,6 +14,7 @@ namespace Institute_system
     {
         int questionNo = 10;
         instructor instructor;
+        int select_dep_id;
         public instructorF()
         {
             InitializeComponent();
@@ -656,5 +657,214 @@ namespace Institute_system
         }
 
         #endregion
+
+        //student
+
+        //refreshh datagriddd
+        public void RefreshDatagrid()
+        {
+            this.dataGridView1.DataSource = null;
+            dataGridView1.Rows.Clear();
+            var std = from c in appManager.entities.students
+                      where c.dept_ID == select_dep_id
+                      select c;
+
+            dataGridView1.DataSource = std.ToList();
+        }
+        //insert
+        private void insertStdBtn_Click_1(object sender, EventArgs e)
+        {
+            if (textBox1.Text == String.Empty || textBox2.Text == String.Empty || textBox3.Text == String.Empty || textBox5.Text == String.Empty)
+            {
+                MessageBox.Show("pleasee Enter all data");
+            }
+            else
+            {
+                int St_id = int.Parse(textBox2.Text);
+
+                string St_name = textBox1.Text;
+                string[] words = St_name.Split(' ');//split name to first and last name 
+                string st_Fname = words[0];
+                string st_Lname = words[1];
+
+                // MessageBox.Show(st_Fname + " " + st_Lname);
+
+                int dept_id = int.Parse(textBox3.Text);
+                string St_userName = textBox5.Text;
+                string st_password = textBox4.Text;
+
+                ///checkk for id duplicates and username duplicates
+
+                //for the id
+                var stud_id = (from s in appManager.entities.students
+                               where s.stud_ID == St_id
+                               select s).Count();
+                //for the username
+                var stud_username = (from s in appManager.entities.students
+                                     where s.stud_Username == St_userName
+                                     select s).Count();
+
+                if (stud_id == 0 && stud_username == 0)
+                {
+                    appManager.entities.students_insert(St_id, st_Fname, st_Lname, dept_id, St_userName, st_password);
+                    MessageBox.Show("Student inserted");
+                    textBox1.Text = textBox2.Text = textBox3.Text = textBox5.Text = textBox4.Text = String.Empty;
+                    appManager.entities.SaveChanges();
+
+                    RefreshDatagrid();
+                }
+                else
+                {
+                    if (stud_id > 0)
+                        MessageBox.Show("This id is already used");
+                    else if (stud_username > 0)
+                        MessageBox.Show("This username is already used");
+                }
+
+
+
+
+
+            }
+        }
+        //show dropdown list items
+        private void deptDropDown_Enter_1(object sender, EventArgs e)
+        {
+            deptDropDown.Items.Clear();
+            var department = from c in appManager.entities.departments
+                             select c;
+            foreach (var dep in department)
+            {
+                deptDropDown.Items.Add(dep.dept_ID);
+            }
+
+        }
+
+        //show student inselected department
+        private void deptDropDown_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            //fill datagrid
+
+            select_dep_id = int.Parse(deptDropDown.SelectedItem.ToString());
+
+            var std = from c in appManager.entities.students
+                      where c.dept_ID == select_dep_id
+                      select c;
+
+            dataGridView1.DataSource = std.ToList();
+        }
+
+        //selecting from datagrid view
+        private void dataGridView1_SelectionChanged_1(object sender, EventArgs e)
+
+        {
+            if (dataGridView1.SelectedCells.Count > 1)
+            {
+                //get the id of cell choosen
+                int selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
+                string cellValue = Convert.ToString(selectedRow.Cells["stud_ID"].Value);
+                //fill the textbox with data
+
+                textBox2.Text = selectedRow.Cells["stud_ID"].Value.ToString();
+                textBox1.Text = selectedRow.Cells["stud_Fname"].Value + " " + selectedRow.Cells["stud_Lname"].Value.ToString();
+                textBox3.Text = selectedRow.Cells["dept_ID"].Value.ToString();
+                textBox5.Text = selectedRow.Cells["stud_Username"].Value.ToString();
+                textBox4.Text = selectedRow.Cells["stud_pw"].Value.ToString();
+
+            }
+
+        }
+
+
+        //update
+        private void updateStdBtn_Click_1(object sender, EventArgs e)
+        {
+            if (textBox1.Text == String.Empty || textBox2.Text == String.Empty || textBox3.Text == String.Empty || textBox5.Text == String.Empty)
+            {
+                MessageBox.Show("pleasee Enter all data");
+            }
+            else
+            {
+                int St_id = int.Parse(textBox2.Text);
+
+                string St_name = textBox1.Text;
+                string[] words = St_name.Split(' ');//split name to first and last name 
+                string st_Fname = words[0];
+                string st_Lname = words[1];
+
+                int dept_id = int.Parse(textBox3.Text);
+                string St_userName = textBox5.Text;
+                string st_password = textBox4.Text;
+
+                //for the id
+                var stud_id = (from s in appManager.entities.students
+                               where s.stud_ID == St_id
+                               select s).Count();
+                if (stud_id > 0)
+                {
+
+                    var student_update = (from s in appManager.entities.students
+                                          where s.stud_ID == St_id
+                                          select s).First();
+                    if (student_update != null)
+                    {
+                        student_update.stud_ID = St_id;
+                        student_update.stud_Lname = st_Lname;
+                        student_update.stud_Fname = st_Fname;
+                        student_update.dept_ID = dept_id;
+                        student_update.stud_Username = St_userName;
+                        student_update.stud_pw = st_password;
+
+                        appManager.entities.SaveChanges();
+                        MessageBox.Show("Name is Changed");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No data found");
+                }
+                //stored proc fehaa moskelaaa
+                //appManager.entities.students_update(St_id, st_Fname, st_Lname, dept_id, St_userName, st_password);
+                //appManager.entities.SaveChanges();
+                //MessageBox.Show("Student updated");
+                textBox1.Text = textBox2.Text = textBox3.Text = textBox5.Text = textBox4.Text = String.Empty;
+
+                RefreshDatagrid();
+
+
+            }
+        }
+
+        //delete
+        private void deleteStdBtn_Click_1(object sender, EventArgs e)
+        {
+            if (textBox2.Text == String.Empty)
+            {
+                MessageBox.Show("pleasee Enter Id field");
+            }
+            else
+            {
+                int St_id = int.Parse(textBox2.Text);
+
+                var stud_id = (from s in appManager.entities.students
+                               where s.stud_ID == St_id
+                               select s).Count();
+                if (stud_id > 0)
+                {
+                    appManager.entities.students_delete(St_id);
+                    MessageBox.Show("Student deleted");
+                    appManager.entities.SaveChanges();
+                    RefreshDatagrid();
+                }
+                else
+                {
+                    MessageBox.Show("No student with that id");
+                }
+            }
+
+        }
+
+      
     }
 }
