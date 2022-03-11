@@ -61,3 +61,20 @@ C:\Users\Gnrl-30\source\repos\instituteExaminationSystem\Institute_system\obj\De
 C:\Users\Gnrl-30\source\repos\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.csproj.CopyComplete
 C:\Users\Gnrl-30\source\repos\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.exe
 C:\Users\Gnrl-30\source\repos\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.pdb
+H:\ITI\subjects\Advanced SQL\project\VS\Institute_system\bin\Debug\Institute_system.exe.config
+H:\ITI\subjects\Advanced SQL\project\VS\Institute_system\bin\Debug\Institute_system.exe
+H:\ITI\subjects\Advanced SQL\project\VS\Institute_system\bin\Debug\Institute_system.pdb
+H:\ITI\subjects\Advanced SQL\project\VS\Institute_system\bin\Debug\EntityFramework.dll
+H:\ITI\subjects\Advanced SQL\project\VS\Institute_system\bin\Debug\EntityFramework.SqlServer.dll
+H:\ITI\subjects\Advanced SQL\project\VS\Institute_system\bin\Debug\EntityFramework.xml
+H:\ITI\subjects\Advanced SQL\project\VS\Institute_system\bin\Debug\EntityFramework.SqlServer.xml
+H:\ITI\subjects\Advanced SQL\project\VS\Institute_system\obj\Debug\Institute_system.csproj.AssemblyReference.cache
+H:\ITI\subjects\Advanced SQL\project\VS\Institute_system\obj\Debug\Institute_system.instructorF.resources
+H:\ITI\subjects\Advanced SQL\project\VS\Institute_system\obj\Debug\Institute_system.login.resources
+H:\ITI\subjects\Advanced SQL\project\VS\Institute_system\obj\Debug\Institute_system.Properties.Resources.resources
+H:\ITI\subjects\Advanced SQL\project\VS\Institute_system\obj\Debug\Institute_system.studentF.resources
+H:\ITI\subjects\Advanced SQL\project\VS\Institute_system\obj\Debug\Institute_system.csproj.GenerateResource.cache
+H:\ITI\subjects\Advanced SQL\project\VS\Institute_system\obj\Debug\Institute_system.csproj.CoreCompileInputs.cache
+H:\ITI\subjects\Advanced SQL\project\VS\Institute_system\obj\Debug\Institute_system.csproj.CopyComplete
+H:\ITI\subjects\Advanced SQL\project\VS\Institute_system\obj\Debug\Institute_system.exe
+H:\ITI\subjects\Advanced SQL\project\VS\Institute_system\obj\Debug\Institute_system.pdb
