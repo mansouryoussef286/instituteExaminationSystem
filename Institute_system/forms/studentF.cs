@@ -17,21 +17,15 @@ namespace Institute_system
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
-            appManager.loginForm.Hide();
+            appManager.examForm.Show();
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-        }
 
-        private void Button2_Click(object sender, EventArgs e)
+        private void updateInfoBtn_Click(object sender, EventArgs e)
         {
            string user = textBox1.Text == "" ? appManager.currentUser.stud_Username : textBox1.Text;
            string pass = textBox2.Text == "" ? appManager.currentUser.stud_pw : textBox2.Text;

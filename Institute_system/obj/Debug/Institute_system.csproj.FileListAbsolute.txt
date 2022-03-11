@@ -61,3 +61,6 @@ C:\Users\Gnrl-30\source\repos\instituteExaminationSystem\Institute_system\obj\De
 C:\Users\Gnrl-30\source\repos\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.csproj.CopyComplete
 C:\Users\Gnrl-30\source\repos\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.exe
 C:\Users\Gnrl-30\source\repos\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.pdb
+C:\Users\Blu-Ray\OneDrive\Desktop\iti\Sql server Advanced\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.forms.controls.mcqQuestion.resources
+C:\Users\Blu-Ray\OneDrive\Desktop\iti\Sql server Advanced\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.forms.controls.TorFQuestion.resources
+C:\Users\Blu-Ray\OneDrive\Desktop\iti\Sql server Advanced\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.examF.resources

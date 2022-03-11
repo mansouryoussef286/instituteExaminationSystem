@@ -11,6 +11,9 @@ namespace Institute_system
         public static login loginForm;
         public static instructorF instructorForm;
         public static studentF studentForm;
+        public static examF examForm;
+        
+
         public static sqlProjectEntities entities;
         public static student currentUser;
         public static instructor currentInstructor;
