@@ -12,25 +12,12 @@ namespace Institute_system
 {
     public partial class instructorF : Form
     {
+        int questionNo = 10;
+        instructor instructor;
         public instructorF()
         {
             InitializeComponent();
-
-            //Exams Tab
-            //Generate Exam Tab
-
-            examCourses.Items.Clear();
-            var courses = from c in appManager.entities.courses
-                          select c;
-            foreach (var course in courses)
-            {
-                examCourses.Items.Add(course.c_ID);
-            }
-            fillStudentsGradesTab();
-            fillEditingExamTab();
         }
-
-        
 
         #region instructor form -> exams tab -> students grade tab
         //a function to fill the students grades tab on form load
@@ -297,7 +284,7 @@ namespace Institute_system
         public void FillCoursesDropDown()
         {
             appManager.entities = new sqlProjectEntities();
-            var instructor = (from i in appManager.entities.instructors
+            instructor = (from i in appManager.entities.instructors
                               where i.inst_ID == CurrentInst_ID
                               select i).First();
             coursesDropDown.Items.Clear();
@@ -313,6 +300,9 @@ namespace Institute_system
             CourseID.Text = courseName.Text = string.Empty;
             TopicID.Text = TopicName.Text = string.Empty;
         }
+
+        /*******************************************Events********************************************/
+
         /******************************Select course from combobox handler****************************/
         private void coursesDropDown_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -341,6 +331,8 @@ namespace Institute_system
                 Course.c_name = courseName.Text;
                 appManager.entities.SaveChanges();
                 FillCoursesDropDown();
+                fillExamCourses(coursesComboBox1);
+                fillExamCourses(coursesComboBox2);
                 MessageBox.Show("Course Name is Updated");
             }
         }
@@ -357,6 +349,8 @@ namespace Institute_system
             //appManager.entities.ins_courseInsert(CurrentInst_ID, CID); //Exception?????????????
 
             FillCoursesDropDown();
+            fillExamCourses(coursesComboBox1);
+            fillExamCourses(coursesComboBox2);
             MessageBox.Show("Course is inserted");
 
         }
@@ -364,8 +358,9 @@ namespace Institute_system
         private void deleteCourseBtn_Click(object sender, EventArgs e)
         {
             appManager.entities.ins_courseDelete(CurrentInst_ID, int.Parse(CourseID.Text));
-            appManager.entities.courses_delete(int.Parse(CourseID.Text));
             FillCoursesDropDown();
+            fillExamCourses(coursesComboBox1);
+            fillExamCourses(coursesComboBox2);
             MessageBox.Show("Course is Deleted");
         }
 
@@ -400,13 +395,258 @@ namespace Institute_system
         }
         #endregion
 
+        #region instructor form -> exams tab -> generating exam tab
 
 
+        /*******************************Fill Exam Courses ComboBox******************************/
+        private void fillExamCourses(ComboBox coursesComboBox)
+        {
+            appManager.entities = new sqlProjectEntities();
+            //courses_select no arguments and selects c.ID or all
+            coursesComboBox.Items.Clear();
+            var courses = from c in instructor.courses
+                          select c;
+            foreach (var course in courses)
+            {
+                coursesComboBox.Items.Add(course.c_name);
+            }
+
+        }
+
+        /*******************************Fill MCQ ComboBox*****************************/
+
+        private void fillMcq(int qNo)
+        {
+            examMcqComboBox.Items.Clear();
+            for (int i = 0; i <= qNo; i++)
+            {
+                examMcqComboBox.Items.Add(i);
+            }
+
+        }
+
+        /*******************************Fill TF ComboBox******************************/
+
+        private void fillTF(int qNo)
+        {
+            examTFComboBox.Items.Clear();
+            for (int i = 0; i <= qNo; i++)
+            {
+                examTFComboBox.Items.Add(i);
+            }
+        }
+
+        /******************************Fill Exam ID TextBox*****************************/
+
+        private void fillExamIDTextBox()
+        {
+            //SP for exams_questions to select last generated exam
+            var examID = (from ex in appManager.entities.exams_questions
+                          select ex.exam_ID).OrderByDescending(ex => ex).First();
+
+            examIDTextBox1.Text = examID.ToString();
+
+        }
+
+        /******************************Fill Exam ID ComboBox*****************************/
+
+        private void fillExamIDComboBox()
+        {
+            examsIDComboBox1.Items.Clear();
+            var courseID = (from cID in appManager.entities.courses
+                            where cID.c_name == coursesComboBox2.Text
+                            select cID.c_ID).First();
+
+            var examID = from eID in appManager.entities.exams
+                         where eID.course_ID == courseID
+                         select eID.exam_ID;
+
+            foreach (var exID in examID)
+            {
+                examsIDComboBox1.Items.Add(exID);
+            }
+
+
+        }
+
+        /*******************************Fill Students Grid******************************/
+
+        private void fillStudentsGridView()
+        {
+            studentsExamGridView.Rows.Clear();
+
+            int id = (from cs in appManager.entities.courses
+                      where cs.c_name == coursesComboBox2.Text
+                      select cs.c_ID).First();
+
+            var course = appManager.entities.courses.Find(id);
+
+
+            foreach (student std in course.students)
+            {
+                studentsExamGridView.Rows.Add(false, std.stud_ID, std.stud_Fname + " " + std.stud_Lname);
+            }
+
+            if (studentsExamGridView.CurrentCell != null)
+            {
+                studentsExamGridView.CurrentCell.Selected = false;
+            }
+
+        }
+
+        /**************************Check If Student Assigned*************************/
+
+        private bool isStudentAssigned(int Studentid, int examID)
+        {
+            var stID = from std in appManager.entities.exams_questions
+                       select std;
+
+            foreach (var st in stID)
+            {
+                if (st.St_ID == Studentid && examID == st.exam_ID)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        /*****************************Remove Assigned Students*****************************/
+
+        private void removeAssignedStudents()
+        {
+            for (int i = 0; i < studentsExamGridView.RowCount; i++)
+            {
+                int stdID = int.Parse(studentsExamGridView.Rows[i].Cells[1].Value.ToString());
+                int examsID = int.Parse(examsIDComboBox1.Text);
+
+                if (isStudentAssigned(stdID, examsID))
+                {
+                    studentsExamGridView.Rows.RemoveAt(i);
+                    i -= 1;
+                }
+            }
+        }
+
+        /********************************Events*****************************************/
+
+        /*****************************Exams MCQ Index Change****************************/
+
+        private void ExamMcq_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            int McqNo = int.Parse(examMcqComboBox.Text);
+            int remQuestions = questionNo - McqNo;
+            fillTF(remQuestions);
+            examTFComboBox.Text = remQuestions.ToString();
+            examTFComboBox.Enabled = false;
+
+        }
+
+        /*****************************Exam TF Index Change****************************/
+
+        private void ExamTF_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            int TFNo = int.Parse(examTFComboBox.Text);
+            int remQuestions = questionNo - TFNo;
+            //fillMcq(remQuestions);
+            examMcqComboBox.Text = remQuestions.ToString();
+
+        }
+
+        /**************************Exams ID ComboBox Index Change*************************/
+        private void CoursesComboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            fillStudentsGridView();
+            fillExamIDComboBox();
+        }
+
+        /**************************Exams ID ComboBox Index Change*************************/
+
+        private void ExamsIDComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            fillStudentsGridView();
+            removeAssignedStudents();
+        }
+
+        /*******************************Generate Exam Btn******************************/
+
+        private void GenerateExamBtn_Click(object sender, EventArgs e)
+        {
+            string course = coursesComboBox1.Text;
+            int McqNo = int.Parse(examMcqComboBox.Text);
+            int TFNo = int.Parse(examTFComboBox.Text);
+            appManager.entities.generateExam(course, TFNo, McqNo);
+            MessageBox.Show("Exam Generated Successfully");
+
+            fillExamIDTextBox();
+        }
+
+
+        /*******************************Assign Students Btn*******************************/
+
+        private void assignStudentBtn_Click(object sender, EventArgs e)
+        {
+            int stdCount = 0;
+            List<string> checkedStds = new List<string>();
+            for (int i = 0; i < studentsExamGridView.RowCount; i++)
+            {
+
+                if (Convert.ToBoolean(studentsExamGridView.Rows[i].Cells[0].Value))
+                {
+                    checkedStds.Add(studentsExamGridView.Rows[i].Cells[1].Value.ToString());
+                }
+
+            }
+
+            foreach (string checkedStd in checkedStds)
+            {
+                stdCount++;
+                int examID = int.Parse(examsIDComboBox1.Text);
+
+                appManager.entities.AssignExamStudent(examID, int.Parse(checkedStd));
+
+                if (stdCount == checkedStds.Count)
+                {
+                    MessageBox.Show("Student assigned to exam successfully");
+                }
+
+            }
+            checkedStds.Clear();
+            removeAssignedStudents();
+
+        }
+
+        #endregion
+
+        #region Load and Close
 
         /*********************************Load Event************************************/
         private void instructorF_Load(object sender, EventArgs e)
         {
+
+            //Exams Tab
+            //Generate Exam Tab
+
+            coursesComboBox1.Items.Clear();
+            var courses = from c in appManager.entities.courses
+                          select c;
+            foreach (var course in courses)
+            {
+                coursesComboBox1.Items.Add(course.c_ID);
+            }
+            fillStudentsGradesTab();
+            fillEditingExamTab();
+            //Courses Tab
             FillCoursesDropDown();
+            //Exam Generation Tab
+            //Exam Generation
+            fillExamCourses(coursesComboBox1);
+            fillMcq(questionNo);
+            fillTF(questionNo);
+            //Students Assignment
+            fillExamCourses(coursesComboBox2);
         }
         /****************************on form closing (signout)**************************/
         private void instructorF_FormClosing(object sender, FormClosingEventArgs e)
@@ -415,7 +655,6 @@ namespace Institute_system
             appManager.loginForm.pwTextBox.Text = "";
         }
 
-
-
+        #endregion
     }
 }

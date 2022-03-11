@@ -123,7 +123,6 @@ namespace Institute_system
             this.label1.TabIndex = 3;
             this.label1.Text = "exams";
             this.label1.Visible = false;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // comboBox1
             // 
