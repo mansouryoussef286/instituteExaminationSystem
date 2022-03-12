@@ -703,15 +703,28 @@ namespace Institute_system
                 var stud_username = (from s in appManager.entities.students
                                      where s.stud_Username == St_userName
                                      select s).Count();
+                //check for dep_id
+                var depp_id = (from s in appManager.entities.departments
+                               where s.dept_ID == dept_id
+                               select s).Count();
+
 
                 if (stud_id == 0 && stud_username == 0)
                 {
-                    appManager.entities.students_insert(St_id, st_Fname, st_Lname, dept_id, St_userName, st_password);
-                    MessageBox.Show("Student inserted");
-                    textBox1.Text = textBox2.Text = textBox3.Text = textBox5.Text = textBox4.Text = String.Empty;
-                    appManager.entities.SaveChanges();
+                    if(depp_id!=0)
+                    {
+                        appManager.entities.students_insert(St_id, st_Fname, st_Lname, dept_id, St_userName, st_password);
+                        MessageBox.Show("Student inserted");
+                        textBox1.Text = textBox2.Text = textBox3.Text = textBox5.Text = textBox4.Text = String.Empty;
+                        appManager.entities.SaveChanges();
 
-                    RefreshDatagrid();
+                        RefreshDatagrid();
+                    }
+                    else
+                    {
+                        MessageBox.Show("department not available");
+                    }
+                   
                 }
                 else
                 {
@@ -807,17 +820,30 @@ namespace Institute_system
                     var student_update = (from s in appManager.entities.students
                                           where s.stud_ID == St_id
                                           select s).First();
+                    //check for dep_id
+                    var depp_id = (from s in appManager.entities.departments
+                                   where s.dept_ID == dept_id
+                                   select s).Count();
+
                     if (student_update != null)
                     {
-                        student_update.stud_ID = St_id;
-                        student_update.stud_Lname = st_Lname;
-                        student_update.stud_Fname = st_Fname;
-                        student_update.dept_ID = dept_id;
-                        student_update.stud_Username = St_userName;
-                        student_update.stud_pw = st_password;
+                        if (depp_id != 0)
+                        {
+                            student_update.stud_ID = St_id;
+                            student_update.stud_Lname = st_Lname;
+                            student_update.stud_Fname = st_Fname;
+                            student_update.dept_ID = dept_id;
+                            student_update.stud_Username = St_userName;
+                            student_update.stud_pw = st_password;
 
-                        appManager.entities.SaveChanges();
-                        MessageBox.Show("Name is Changed");
+                            appManager.entities.SaveChanges();
+                            MessageBox.Show("Name is Changed");
+                        }
+                        else
+                        {
+                            MessageBox.Show("department not available");
+                        }
+                        
                     }
                 }
                 else
