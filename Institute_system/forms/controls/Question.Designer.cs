@@ -1,7 +1,7 @@
 ﻿
 namespace Institute_system.forms.controls
 {
-    partial class mcqQuestion
+    partial class Question
     {
         /// <summary> 
         /// Required designer variable.
@@ -36,6 +36,7 @@ namespace Institute_system.forms.controls
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.qNum = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // qDescLabel
@@ -95,7 +96,7 @@ namespace Institute_system.forms.controls
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(42, 151);
+            this.radioButton2.Location = new System.Drawing.Point(42, 111);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(14, 13);
             this.radioButton2.TabIndex = 5;
@@ -105,17 +106,29 @@ namespace Institute_system.forms.controls
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(42, 111);
+            this.radioButton3.Location = new System.Drawing.Point(42, 151);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(14, 13);
             this.radioButton3.TabIndex = 6;
             this.radioButton3.TabStop = true;
             this.radioButton3.UseVisualStyleBackColor = true;
             // 
+            // qNum
+            // 
+            this.qNum.AutoSize = true;
+            this.qNum.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.qNum.Location = new System.Drawing.Point(11, 20);
+            this.qNum.Name = "qNum";
+            this.qNum.Size = new System.Drawing.Size(33, 19);
+            this.qNum.TabIndex = 7;
+            this.qNum.Text = "10)";
+            this.qNum.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // mcqQuestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.qNum);
             this.Controls.Add(this.radioButton3);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
@@ -124,7 +137,7 @@ namespace Institute_system.forms.controls
             this.Controls.Add(this.label1);
             this.Controls.Add(this.qDescLabel);
             this.Name = "mcqQuestion";
-            this.Size = new System.Drawing.Size(700, 198);
+            this.Size = new System.Drawing.Size(650, 200);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -136,8 +149,9 @@ namespace Institute_system.forms.controls
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
+        public System.Windows.Forms.RadioButton radioButton1;
+        public System.Windows.Forms.RadioButton radioButton2;
+        public System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.Label qNum;
     }
 }

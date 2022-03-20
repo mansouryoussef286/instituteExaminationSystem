@@ -77,17 +77,18 @@
     <Compile Include="exam.cs">
       <DependentUpon>itiDBmodel.tt</DependentUpon>
     </Compile>
-    <Compile Include="forms\controls\mcqQuestion.cs">
+    <Compile Include="ExamClass.cs" />
+    <Compile Include="forms\ConfirmDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\ConfirmDialog.Designer.cs">
+      <DependentUpon>ConfirmDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\controls\Question.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="forms\controls\mcqQuestion.Designer.cs">
-      <DependentUpon>mcqQuestion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="forms\controls\TorFQuestion.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="forms\controls\TorFQuestion.Designer.cs">
-      <DependentUpon>TorFQuestion.cs</DependentUpon>
+    <Compile Include="forms\controls\Question.Designer.cs">
+      <DependentUpon>Question.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\examF.cs">
       <SubType>Form</SubType>
@@ -196,11 +197,11 @@
     <Compile Include="topic_select_Result.cs">
       <DependentUpon>itiDBmodel.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="forms\controls\mcqQuestion.resx">
-      <DependentUpon>mcqQuestion.cs</DependentUpon>
+    <EmbeddedResource Include="forms\ConfirmDialog.resx">
+      <DependentUpon>ConfirmDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\controls\TorFQuestion.resx">
-      <DependentUpon>TorFQuestion.cs</DependentUpon>
+    <EmbeddedResource Include="forms\controls\Question.resx">
+      <DependentUpon>Question.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\examF.resx">
       <DependentUpon>examF.cs</DependentUpon>

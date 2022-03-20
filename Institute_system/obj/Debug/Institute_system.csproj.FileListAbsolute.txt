@@ -78,3 +78,6 @@ H:\ITI\subjects\Advanced SQL\project\VS\Institute_system\obj\Debug\Institute_sys
 H:\ITI\subjects\Advanced SQL\project\VS\Institute_system\obj\Debug\Institute_system.csproj.CopyComplete
 H:\ITI\subjects\Advanced SQL\project\VS\Institute_system\obj\Debug\Institute_system.exe
 H:\ITI\subjects\Advanced SQL\project\VS\Institute_system\obj\Debug\Institute_system.pdb
+C:\Users\Blu-Ray\OneDrive\Desktop\iti\Sql server Advanced\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.examF.resources
+C:\Users\Blu-Ray\OneDrive\Desktop\iti\Sql server Advanced\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.forms.ConfirmDialog.resources
+C:\Users\Blu-Ray\OneDrive\Desktop\iti\Sql server Advanced\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.forms.controls.Question.resources

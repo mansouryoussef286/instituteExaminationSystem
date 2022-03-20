@@ -18,22 +18,20 @@ namespace Institute_system
         }
 
 
-        private void button1_Click(object sender, EventArgs e)
+        private void startExamBtn_Click(object sender, EventArgs e)
         {
-            appManager.loginForm.Hide();
+            appManager.examForm = new examF();
+            appManager.examForm.Show();
+
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-        }
 
-        private void Button2_Click(object sender, EventArgs e)
+        private void updateInfoBtn_Click(object sender, EventArgs e)
         {
            string user = textBox1.Text == "" ? appManager.currentUser.stud_Username : textBox1.Text;
            string pass = textBox2.Text == "" ? appManager.currentUser.stud_pw : textBox2.Text;
-            if (user == textBox1.Text & pass ==textBox2.Text)
+            if (user == appManager.currentUser.stud_Username && pass == appManager.currentUser.stud_pw)
             {
-
                 MessageBox.Show("You didn't enter new password or user name");
             }
             else
@@ -43,20 +41,14 @@ namespace Institute_system
                     appManager.entities.students_update(
                         appManager.currentUser.stud_ID, appManager.currentUser.stud_Fname,
                         appManager.currentUser.stud_Lname, appManager.currentUser.dept_ID,
-                        user, pass
-
-                        );
-                 
+                        user, pass);
                     MessageBox.Show("you update your credintials successfully");
                 }
                 catch (Exception)
                 {
-
                     MessageBox.Show("could not update credintials");
                 }
             }
-
-          
         }
 
         //on form closing (sigout)
@@ -90,10 +82,23 @@ namespace Institute_system
                 dt.Rows.Add(row);
             }
             dataGridView1.DataSource = dt;
+        }
+    
+        public void fillExamsTab()
+        {
+            //needs modificATION
+            int id = appManager.currentUser.stud_ID;
+            var stud = (from d in appManager.entities.students
+                        where d.stud_ID == id
+                        select d.courses);
 
-
-
-
+            if (stud != null)
+            {
+                foreach (var course in stud)
+                {
+                    studCoursesComboBox.Items.Add(course);
+                }
+            }
         }
     }
 }
