@@ -14,153 +14,11 @@ namespace Institute_system
     {
         int questionNo = 10;
         instructor instructor;
+        int select_dep_id;
         public instructorF()
         {
             InitializeComponent();
         }
-
-
-        #region instructor form -> courses tab 
-
-        int CurrentInst_ID = appManager.currentInstructor.inst_ID; //ID of current instructor
-        KeyValuePair<int, string> SelectedCourse; //Selected course in courses tab
-
-        /*******************fill topics of specific course in grid view************************/
-        public void FillTopicsGrid()
-        {
-            appManager.entities = new sqlProjectEntities();
-            cours C = appManager.entities.courses.Find(SelectedCourse.Key);
-            topicsdatagrid.Rows.Clear();
-            foreach (topic Topic in C.topics)
-            {
-                topicsdatagrid.Rows.Add(Topic.topic_ID.ToString(), Topic.topic_name);
-            }
-            if (topicsdatagrid.CurrentCell != null)
-            {
-                topicsdatagrid.CurrentCell.Selected = false;
-            }
-            TopicID.Text = TopicName.Text = string.Empty;
-        }
-        /*******************fill textboxes with selected course info**********************/
-        public void FillCourseInfo(string Cour_name, int Cour_ID)
-        {
-            courseName.Text = Cour_name;
-            CourseID.Text = Cour_ID.ToString();
-        }
-        /*******************fill combobox with courses names**********************/
-        public void FillCoursesDropDown()
-        {
-            appManager.entities = new sqlProjectEntities();
-            instructor = (from i in appManager.entities.instructors
-                          where i.inst_ID == CurrentInst_ID
-                          select i).First();
-            coursesDropDown.Items.Clear();
-            foreach (var course in instructor.courses)
-            {
-                coursesDropDown.Items.Add(new KeyValuePair<int, string>(course.c_ID, course.c_name));
-            }
-            coursesDropDown.ValueMember = "Key";
-            coursesDropDown.DisplayMember = "Value";
-
-            coursesDropDown.Text = string.Empty;
-            topicsdatagrid.Rows.Clear();
-            CourseID.Text = courseName.Text = string.Empty;
-            TopicID.Text = TopicName.Text = string.Empty;
-        }
-
-        /*******************************************Events********************************************/
-
-        /******************************Select course from combobox handler****************************/
-        private void coursesDropDown_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            SelectedCourse = (KeyValuePair<int, string>)coursesDropDown.SelectedItem;
-            FillTopicsGrid();
-            FillCourseInfo(coursesDropDown.Text, SelectedCourse.Key);
-        }
-        /******************************Select specific row from gridview handler****************************/
-        private void topicsdatagrid_SelectionChanged(object sender, EventArgs e)
-        {
-            foreach (DataGridViewRow row in topicsdatagrid.SelectedRows)
-            {
-                TopicID.Text = row.Cells[0].Value.ToString();
-                TopicName.Text = row.Cells[1].Value.ToString();
-            }
-        }
-        /******************************Update Course name by course ID****************************/
-        private void updateCourseBtn_Click(object sender, EventArgs e)
-        {
-            int CID = int.Parse(CourseID.Text);
-            var Course = (from c in appManager.entities.courses  //edit on stored procedure courses_select
-                          where c.c_ID == CID
-                          select c).First();
-            if (Course != null)
-            {
-                Course.c_name = courseName.Text;
-                appManager.entities.SaveChanges();
-                FillCoursesDropDown();
-                fillExamCourses(coursesComboBox1);
-                fillExamCourses(coursesComboBox2);
-                MessageBox.Show("Course Name is Updated");
-            }
-        }
-        /******************************Insert Course****************************/
-        private void insertCourseBtn_Click(object sender, EventArgs e)
-        {
-            int CID = int.Parse(CourseID.Text);
-            string CName = courseName.Text.ToString();
-            if (appManager.entities.courses_insert(CID, CName) == 1)
-            {
-                appManager.entities = new sqlProjectEntities();
-                appManager.entities.ins_courseInsert(CurrentInst_ID, CID); //>>>>stored procedure de feha mo4kla
-            }
-            //appManager.entities.ins_courseInsert(CurrentInst_ID, CID); //Exception?????????????
-
-            FillCoursesDropDown();
-            fillExamCourses(coursesComboBox1);
-            fillExamCourses(coursesComboBox2);
-            MessageBox.Show("Course is inserted");
-
-        }
-        /******************************Delete course****************************/
-        private void deleteCourseBtn_Click(object sender, EventArgs e)
-        {
-            appManager.entities.ins_courseDelete(CurrentInst_ID, int.Parse(CourseID.Text));
-            FillCoursesDropDown();
-            fillExamCourses(coursesComboBox1);
-            fillExamCourses(coursesComboBox2);
-            MessageBox.Show("Course is Deleted");
-        }
-
-        /******************************Update Topic name by course ID***************************/
-        private void updateTopicBtn_Click(object sender, EventArgs e)
-        {
-            int TID = int.Parse(TopicID.Text);
-            var Topic = (from t in appManager.entities.topics //edit topic_select procedure
-                         where t.topic_ID == TID
-                         select t).First();
-            if (Topic != null)
-            {
-                Topic.topic_name = TopicName.Text;
-                appManager.entities.SaveChanges();
-                FillTopicsGrid();
-                MessageBox.Show("Topic Name is Updated");
-            }
-        }
-        /******************************Insert Topic****************************/
-        private void insertTopicBtn_Click(object sender, EventArgs e)
-        {
-            appManager.entities.topic_insert(int.Parse(TopicID.Text), TopicName.Text.ToString(), SelectedCourse.Key);
-            FillTopicsGrid();
-            MessageBox.Show("Topic is inserted");
-        }
-        /******************************Delete Topic****************************/
-        private void deleteTopicBtn_Click(object sender, EventArgs e)
-        {
-            appManager.entities.topic_delete(int.Parse(TopicID.Text));
-            FillTopicsGrid();
-            MessageBox.Show("Course is Deleted");
-        }
-        #endregion
 
         #region instructor form -> exams tab -> students grade tab
         //a function to fill the students grades tab on form load
@@ -396,6 +254,148 @@ namespace Institute_system
         }
         #endregion
 
+        #region instructor form -> courses tab 
+
+        int CurrentInst_ID = appManager.currentInstructor.inst_ID; //ID of current instructor
+        KeyValuePair<int, string> SelectedCourse; //Selected course in courses tab
+
+        /*******************fill topics of specific course in grid view************************/
+        public void FillTopicsGrid()
+        {
+            appManager.entities = new sqlProjectEntities();
+            cours C = appManager.entities.courses.Find(SelectedCourse.Key);
+            topicsdatagrid.Rows.Clear();
+            foreach (topic Topic in C.topics)
+            {
+                topicsdatagrid.Rows.Add(Topic.topic_ID.ToString(), Topic.topic_name);
+            }
+            if (topicsdatagrid.CurrentCell != null)
+            {
+                topicsdatagrid.CurrentCell.Selected = false;
+            }
+            TopicID.Text = TopicName.Text = string.Empty;
+        }
+        /*******************fill textboxes with selected course info**********************/
+        public void FillCourseInfo(string Cour_name, int Cour_ID)
+        {
+            courseName.Text = Cour_name;
+            CourseID.Text = Cour_ID.ToString();
+        }
+        /*******************fill combobox with courses names**********************/
+        public void FillCoursesDropDown()
+        {
+            appManager.entities = new sqlProjectEntities();
+            instructor = (from i in appManager.entities.instructors
+                              where i.inst_ID == CurrentInst_ID
+                              select i).First();
+            coursesDropDown.Items.Clear();
+            foreach (var course in instructor.courses)
+            {
+                coursesDropDown.Items.Add(new KeyValuePair<int, string>(course.c_ID, course.c_name));
+            }
+            coursesDropDown.ValueMember = "Key";
+            coursesDropDown.DisplayMember = "Value";
+
+            coursesDropDown.Text = string.Empty;
+            topicsdatagrid.Rows.Clear();
+            CourseID.Text = courseName.Text = string.Empty;
+            TopicID.Text = TopicName.Text = string.Empty;
+        }
+
+        /*******************************************Events********************************************/
+
+        /******************************Select course from combobox handler****************************/
+        private void coursesDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SelectedCourse = (KeyValuePair<int, string>)coursesDropDown.SelectedItem;
+            FillTopicsGrid();
+            FillCourseInfo(coursesDropDown.Text, SelectedCourse.Key);
+        }
+        /******************************Select specific row from gridview handler****************************/
+        private void topicsdatagrid_SelectionChanged(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in topicsdatagrid.SelectedRows)
+            {
+                TopicID.Text = row.Cells[0].Value.ToString();
+                TopicName.Text = row.Cells[1].Value.ToString();
+            }
+        }
+        /******************************Update Course name by course ID****************************/
+        private void updateCourseBtn_Click(object sender, EventArgs e)
+        {
+            int CID = int.Parse(CourseID.Text);
+            var Course = (from c in appManager.entities.courses  //edit on stored procedure courses_select
+                          where c.c_ID == CID
+                          select c).First();
+            if (Course != null)
+            {
+                Course.c_name = courseName.Text;
+                appManager.entities.SaveChanges();
+                FillCoursesDropDown();
+                fillExamCourses(coursesComboBox1);
+                fillExamCourses(coursesComboBox2);
+                MessageBox.Show("Course Name is Updated");
+            }
+        }
+        /******************************Insert Course****************************/
+        private void insertCourseBtn_Click(object sender, EventArgs e)
+        {
+            int CID = int.Parse(CourseID.Text);
+            string CName = courseName.Text.ToString();
+            if (appManager.entities.courses_insert(CID, CName) == 1)
+            {
+                appManager.entities = new sqlProjectEntities();
+                appManager.entities.ins_courseInsert(CurrentInst_ID, CID); //>>>>stored procedure de feha mo4kla
+            }
+            //appManager.entities.ins_courseInsert(CurrentInst_ID, CID); //Exception?????????????
+
+            FillCoursesDropDown();
+            fillExamCourses(coursesComboBox1);
+            fillExamCourses(coursesComboBox2);
+            MessageBox.Show("Course is inserted");
+
+        }
+        /******************************Delete course****************************/
+        private void deleteCourseBtn_Click(object sender, EventArgs e)
+        {
+            appManager.entities.ins_courseDelete(CurrentInst_ID, int.Parse(CourseID.Text));
+            FillCoursesDropDown();
+            fillExamCourses(coursesComboBox1);
+            fillExamCourses(coursesComboBox2);
+            MessageBox.Show("Course is Deleted");
+        }
+
+        /******************************Update Topic name by course ID***************************/
+        private void updateTopicBtn_Click(object sender, EventArgs e)
+        {
+            int TID = int.Parse(TopicID.Text);
+            var Topic = (from t in appManager.entities.topics //edit topic_select procedure
+                         where t.topic_ID == TID
+                         select t).First();
+            if (Topic != null)
+            {
+                Topic.topic_name = TopicName.Text;
+                appManager.entities.SaveChanges();
+                FillTopicsGrid();
+                MessageBox.Show("Topic Name is Updated");
+            }
+        }
+        /******************************Insert Topic****************************/
+        private void insertTopicBtn_Click(object sender, EventArgs e)
+        {
+            appManager.entities.topic_insert(int.Parse(TopicID.Text), TopicName.Text.ToString(), SelectedCourse.Key);
+            FillTopicsGrid();
+            MessageBox.Show("Topic is inserted");
+        }
+        /******************************Delete Topic****************************/
+        private void deleteTopicBtn_Click(object sender, EventArgs e)
+        {
+            appManager.entities.topic_delete(int.Parse(TopicID.Text));
+            FillTopicsGrid();
+            MessageBox.Show("Course is Deleted");
+        }
+        #endregion
+
         #region instructor form -> exams tab -> generating exam tab
 
 
@@ -621,25 +621,6 @@ namespace Institute_system
 
         #endregion
 
-        #region form -> update info tab
-        private void button11_Click(object sender, EventArgs e)
-        {
-            int ID = appManager.currentInstructor.inst_ID;
-            var inst = (from i in appManager.entities.instructors
-                        where i.inst_ID == ID
-                        select i).First();
-
-            if (inst != null)
-            {
-                inst.inst_name = userNameTextBox.Text;
-                inst.inst_ID = int.Parse(pwTextBox.Text);
-                appManager.entities.SaveChanges();
-                userNameTextBox.Text = pwTextBox.Text = string.Empty;
-                MessageBox.Show("Your login Information has been updated successfully");
-            }
-        }
-        #endregion
-        
         #region Load and Close
 
         /*********************************Load Event************************************/
@@ -677,6 +658,239 @@ namespace Institute_system
 
         #endregion
 
-        
+        //student
+
+        //refreshh datagriddd
+        public void RefreshDatagrid()
+        {
+            this.dataGridView1.DataSource = null;
+            dataGridView1.Rows.Clear();
+            var std = from c in appManager.entities.students
+                      where c.dept_ID == select_dep_id
+                      select c;
+
+            dataGridView1.DataSource = std.ToList();
+        }
+        //insert
+        private void insertStdBtn_Click_1(object sender, EventArgs e)
+        {
+            if (textBox1.Text == String.Empty || textBox2.Text == String.Empty || textBox3.Text == String.Empty || textBox5.Text == String.Empty)
+            {
+                MessageBox.Show("pleasee Enter all data");
+            }
+            else
+            {
+                int St_id = int.Parse(textBox2.Text);
+
+                string St_name = textBox1.Text;
+                string[] words = St_name.Split(' ');//split name to first and last name 
+                string st_Fname = words[0];
+                string st_Lname = words[1];
+
+                // MessageBox.Show(st_Fname + " " + st_Lname);
+
+                int dept_id = int.Parse(textBox3.Text);
+                string St_userName = textBox5.Text;
+                string st_password = textBox4.Text;
+
+                ///checkk for id duplicates and username duplicates
+
+                //for the id
+                var stud_id = (from s in appManager.entities.students
+                               where s.stud_ID == St_id
+                               select s).Count();
+                //for the username
+                var stud_username = (from s in appManager.entities.students
+                                     where s.stud_Username == St_userName
+                                     select s).Count();
+                //check for dep_id
+                var depp_id = (from s in appManager.entities.departments
+                               where s.dept_ID == dept_id
+                               select s).Count();
+
+
+                if (stud_id == 0 && stud_username == 0)
+                {
+                    if(depp_id!=0)
+                    {
+                        appManager.entities.students_insert(St_id, st_Fname, st_Lname, dept_id, St_userName, st_password);
+                        MessageBox.Show("Student inserted");
+                        textBox1.Text = textBox2.Text = textBox3.Text = textBox5.Text = textBox4.Text = String.Empty;
+                        appManager.entities.SaveChanges();
+
+                        RefreshDatagrid();
+                    }
+                    else
+                    {
+                        MessageBox.Show("department not available");
+                    }
+                   
+                }
+                else
+                {
+                    if (stud_id > 0)
+                        MessageBox.Show("This id is already used");
+                    else if (stud_username > 0)
+                        MessageBox.Show("This username is already used");
+                }
+
+
+
+
+
+            }
+        }
+        //show dropdown list items
+        private void deptDropDown_Enter_1(object sender, EventArgs e)
+        {
+            deptDropDown.Items.Clear();
+            var department = from c in appManager.entities.departments
+                             select c;
+            foreach (var dep in department)
+            {
+                deptDropDown.Items.Add(dep.dept_ID);
+            }
+
+        }
+
+        //show student inselected department
+        private void deptDropDown_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            //fill datagrid
+
+            select_dep_id = int.Parse(deptDropDown.SelectedItem.ToString());
+
+            var std = from c in appManager.entities.students
+                      where c.dept_ID == select_dep_id
+                      select c;
+
+            dataGridView1.DataSource = std.ToList();
+        }
+
+        //selecting from datagrid view
+        private void dataGridView1_SelectionChanged_1(object sender, EventArgs e)
+
+        {
+            if (dataGridView1.SelectedCells.Count > 1)
+            {
+                //get the id of cell choosen
+                int selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
+                string cellValue = Convert.ToString(selectedRow.Cells["stud_ID"].Value);
+                //fill the textbox with data
+
+                textBox2.Text = selectedRow.Cells["stud_ID"].Value.ToString();
+                textBox1.Text = selectedRow.Cells["stud_Fname"].Value + " " + selectedRow.Cells["stud_Lname"].Value.ToString();
+                textBox3.Text = selectedRow.Cells["dept_ID"].Value.ToString();
+                textBox5.Text = selectedRow.Cells["stud_Username"].Value.ToString();
+                textBox4.Text = selectedRow.Cells["stud_pw"].Value.ToString();
+
+            }
+
+        }
+
+
+        //update
+        private void updateStdBtn_Click_1(object sender, EventArgs e)
+        {
+            if (textBox1.Text == String.Empty || textBox2.Text == String.Empty || textBox3.Text == String.Empty || textBox5.Text == String.Empty)
+            {
+                MessageBox.Show("pleasee Enter all data");
+            }
+            else
+            {
+                int St_id = int.Parse(textBox2.Text);
+
+                string St_name = textBox1.Text;
+                string[] words = St_name.Split(' ');//split name to first and last name 
+                string st_Fname = words[0];
+                string st_Lname = words[1];
+
+                int dept_id = int.Parse(textBox3.Text);
+                string St_userName = textBox5.Text;
+                string st_password = textBox4.Text;
+
+                //for the id
+                var stud_id = (from s in appManager.entities.students
+                               where s.stud_ID == St_id
+                               select s).Count();
+                if (stud_id > 0)
+                {
+
+                    var student_update = (from s in appManager.entities.students
+                                          where s.stud_ID == St_id
+                                          select s).First();
+                    //check for dep_id
+                    var depp_id = (from s in appManager.entities.departments
+                                   where s.dept_ID == dept_id
+                                   select s).Count();
+
+                    if (student_update != null)
+                    {
+                        if (depp_id != 0)
+                        {
+                            student_update.stud_ID = St_id;
+                            student_update.stud_Lname = st_Lname;
+                            student_update.stud_Fname = st_Fname;
+                            student_update.dept_ID = dept_id;
+                            student_update.stud_Username = St_userName;
+                            student_update.stud_pw = st_password;
+
+                            appManager.entities.SaveChanges();
+                            MessageBox.Show("Name is Changed");
+                        }
+                        else
+                        {
+                            MessageBox.Show("department not available");
+                        }
+                        
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No data found");
+                }
+                //stored proc fehaa moskelaaa
+                //appManager.entities.students_update(St_id, st_Fname, st_Lname, dept_id, St_userName, st_password);
+                //appManager.entities.SaveChanges();
+                //MessageBox.Show("Student updated");
+                textBox1.Text = textBox2.Text = textBox3.Text = textBox5.Text = textBox4.Text = String.Empty;
+
+                RefreshDatagrid();
+
+
+            }
+        }
+
+        //delete
+        private void deleteStdBtn_Click_1(object sender, EventArgs e)
+        {
+            if (textBox2.Text == String.Empty)
+            {
+                MessageBox.Show("pleasee Enter Id field");
+            }
+            else
+            {
+                int St_id = int.Parse(textBox2.Text);
+
+                var stud_id = (from s in appManager.entities.students
+                               where s.stud_ID == St_id
+                               select s).Count();
+                if (stud_id > 0)
+                {
+                    appManager.entities.students_delete(St_id);
+                    MessageBox.Show("Student deleted");
+                    appManager.entities.SaveChanges();
+                    RefreshDatagrid();
+                }
+                else
+                {
+                    MessageBox.Show("No student with that id");
+                }
+            }
+
+        }
+
+      
     }
 }
