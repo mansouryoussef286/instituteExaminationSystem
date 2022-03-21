@@ -889,5 +889,18 @@ namespace Institute_system
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<report_examQandA_Result>("report_examQandA", examIDParameter);
         }
+    
+        public virtual ObjectResult<Nullable<int>> ExamCoursesStudents(Nullable<int> cID, Nullable<int> sID)
+        {
+            var cIDParameter = cID.HasValue ?
+                new ObjectParameter("CID", cID) :
+                new ObjectParameter("CID", typeof(int));
+    
+            var sIDParameter = sID.HasValue ?
+                new ObjectParameter("SID", sID) :
+                new ObjectParameter("SID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("ExamCoursesStudents", cIDParameter, sIDParameter);
+        }
     }
 }

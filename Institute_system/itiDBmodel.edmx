@@ -342,6 +342,10 @@
           <Parameter Name="Old_Value" Type="nvarchar" Mode="In" />
           <Parameter Name="New_Value" Type="nvarchar" Mode="In" />
         </Function>
+        <Function Name="ExamCoursesStudents" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CID" Type="int" Mode="In" />
+          <Parameter Name="SID" Type="int" Mode="In" />
+        </Function>
         <Function Name="exams_delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="exID" Type="int" Mode="In" />
         </Function>
@@ -1210,7 +1214,11 @@
           <Parameter Name="EID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="report_examQandA" ReturnType="Collection(sqlProjectModel.report_examQandA_Result)">
-            <Parameter Name="examID" Mode="In" Type="Int32" />
+          <Parameter Name="examID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="ExamCoursesStudents" ReturnType="Collection(Int32)">
+            <Parameter Name="CID" Mode="In" Type="Int32" />
+            <Parameter Name="SID" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="choices_select_Result">
@@ -1681,6 +1689,7 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ExamCoursesStudents" FunctionName="sqlProjectModel.Store.ExamCoursesStudents" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -337,6 +337,10 @@
     <Parameter Name="Old_Value" Type="nvarchar" Mode="In" />
     <Parameter Name="New_Value" Type="nvarchar" Mode="In" />
   </Function>
+  <Function Name="ExamCoursesStudents" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CID" Type="int" Mode="In" />
+    <Parameter Name="SID" Type="int" Mode="In" />
+  </Function>
   <Function Name="exams_delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="exID" Type="int" Mode="In" />
   </Function>

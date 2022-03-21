@@ -356,5 +356,6 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ExamCoursesStudents" FunctionName="sqlProjectModel.Store.ExamCoursesStudents" />
   </EntityContainerMapping>
 </Mapping>

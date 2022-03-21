@@ -796,8 +796,6 @@ namespace Institute_system
             FillExamIDsComboBox(ExamNocomboBox1);
             //Report6 tab
             FillExamIDsComboBox(ExamcomboBox1);
-
-            
         }
         /****************************on form closing (signout)**************************/
         private void instructorF_FormClosing(object sender, FormClosingEventArgs e)
