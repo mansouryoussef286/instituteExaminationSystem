@@ -317,9 +317,7 @@
     <Parameter Name="cID" Type="int" Mode="In" />
     <Parameter Name="cName" Type="varchar" Mode="In" />
   </Function>
-  <Function Name="courses_select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="cID" Type="int" Mode="In" />
-  </Function>
+  <Function Name="courses_select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="courses_update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="cID" Type="int" Mode="In" />
     <Parameter Name="cName" Type="varchar" Mode="In" />
@@ -370,6 +368,9 @@
   <Function Name="exams_update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="exID" Type="int" Mode="In" />
     <Parameter Name="courseId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ExamStudents" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EID" Type="int" Mode="In" />
   </Function>
   <Function Name="finalResult" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="std_id" Type="int" Mode="In" />
@@ -542,6 +543,9 @@
   <Function Name="report_StudentExMA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="reports">
     <Parameter Name="ExamID" Type="int" Mode="In" />
     <Parameter Name="StudID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="report_studentInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="reports">
+    <Parameter Name="depID" Type="int" Mode="In" />
   </Function>
   <EntityContainer Name="sqlProjectModelStoreContainer">
     <EntitySet Name="choices" EntityType="Self.choices" Schema="dbo" store:Type="Tables" />

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="sqlProjectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="sqlProjectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="choices">
           <Key>
             <PropertyRef Name="choice_ID" />
@@ -322,9 +322,7 @@
           <Parameter Name="cID" Type="int" Mode="In" />
           <Parameter Name="cName" Type="varchar" Mode="In" />
         </Function>
-        <Function Name="courses_select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="cID" Type="int" Mode="In" />
-        </Function>
+        <Function Name="courses_select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="courses_update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="cID" Type="int" Mode="In" />
           <Parameter Name="cName" Type="varchar" Mode="In" />
@@ -375,6 +373,9 @@
         <Function Name="exams_update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="exID" Type="int" Mode="In" />
           <Parameter Name="courseId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ExamStudents" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="EID" Type="int" Mode="In" />
         </Function>
         <Function Name="finalResult" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="std_id" Type="int" Mode="In" />
@@ -548,6 +549,9 @@
           <Parameter Name="ExamID" Type="int" Mode="In" />
           <Parameter Name="StudID" Type="int" Mode="In" />
         </Function>
+        <Function Name="report_studentInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="reports">
+          <Parameter Name="depID" Type="int" Mode="In" />
+        </Function>
         <EntityContainer Name="sqlProjectModelStoreContainer">
           <EntitySet Name="choices" EntityType="Self.choices" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="courses" EntityType="Self.courses" Schema="dbo" store:Type="Tables" />
@@ -623,8 +627,7 @@
             <End Role="topics" EntitySet="topics" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="sqlProjectModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -957,7 +960,7 @@
             <End Role="students" EntitySet="students" />
           </AssociationSet>
           <FunctionImport Name="choices_delete">
-            <Parameter Name="ch_id" Mode="In" Type="Int32" />
+          <Parameter Name="ch_id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="choices_insert">
             <Parameter Name="chID" Mode="In" Type="Int32" />
@@ -973,14 +976,13 @@
             <Parameter Name="q_id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="courses_delete">
-            <Parameter Name="cID" Mode="In" Type="Int32" />
+          <Parameter Name="cID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="courses_insert">
             <Parameter Name="cID" Mode="In" Type="Int32" />
             <Parameter Name="cName" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="courses_select" ReturnType="Collection(sqlProjectModel.courses_select_Result)">
-            <Parameter Name="cID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="courses_update">
             <Parameter Name="cID" Mode="In" Type="Int32" />
@@ -1002,14 +1004,14 @@
             <Parameter Name="New_Value" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="exams_delete">
-            <Parameter Name="exID" Mode="In" Type="Int32" />
+          <Parameter Name="exID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="exams_insert">
             <Parameter Name="exID" Mode="In" Type="Int32" />
             <Parameter Name="courseId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="exams_qu_delete">
-            <Parameter Name="exID" Mode="In" Type="Int32" />
+          <Parameter Name="exID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="exams_qu_insert">
             <Parameter Name="exID" Mode="In" Type="Int32" />
@@ -1018,7 +1020,7 @@
             <Parameter Name="stdID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="exams_qu_select" ReturnType="Collection(sqlProjectModel.exams_qu_select_Result)">
-            <Parameter Name="exID" Mode="In" Type="Int32" />
+          <Parameter Name="exID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="exams_qu_update">
             <Parameter Name="exID" Mode="In" Type="Int32" />
@@ -1027,14 +1029,14 @@
             <Parameter Name="stdID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="exams_select" ReturnType="Collection(sqlProjectModel.exams_select_Result)">
-            <Parameter Name="exID" Mode="In" Type="Int32" />
+          <Parameter Name="exID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="exams_update">
             <Parameter Name="exID" Mode="In" Type="Int32" />
             <Parameter Name="courseId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="finalResult" ReturnType="Collection(sqlProjectModel.finalResult_Result)">
-            <Parameter Name="std_id" Mode="In" Type="Int32" />
+          <Parameter Name="std_id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="ins_courseDelete">
             <Parameter Name="s_id" Mode="In" Type="Int32" />
@@ -1053,7 +1055,7 @@
             <Parameter Name="c_id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="instructor_delete">
-            <Parameter Name="id" Mode="In" Type="Int32" />
+          <Parameter Name="id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="instructor_insert">
             <Parameter Name="id" Mode="In" Type="Int32" />
@@ -1069,7 +1071,7 @@
             <Parameter Name="password" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Questions_Delete">
-            <Parameter Name="QID" Mode="In" Type="Int32" />
+          <Parameter Name="QID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Questions_Insert">
             <Parameter Name="Ques_ID" Mode="In" Type="Int32" />
@@ -1114,7 +1116,7 @@
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
           <FunctionImport Name="studCourse_delete">
-            <Parameter Name="st_id" Mode="In" Type="Int32" />
+          <Parameter Name="st_id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="studCourse_insert">
             <Parameter Name="st_id" Mode="In" Type="Int32" />
@@ -1126,7 +1128,7 @@
             <Parameter Name="course_id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="students_delete">
-            <Parameter Name="stdID" Mode="In" Type="Int32" />
+          <Parameter Name="stdID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="students_insert">
             <Parameter Name="stdID" Mode="In" Type="Int32" />
@@ -1137,7 +1139,7 @@
             <Parameter Name="pw" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="students_select" ReturnType="Collection(sqlProjectModel.students_select_Result)">
-            <Parameter Name="stdID" Mode="In" Type="Int32" />
+          <Parameter Name="stdID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="students_update">
             <Parameter Name="stdID" Mode="In" Type="Int32" />
@@ -1148,7 +1150,7 @@
             <Parameter Name="pw" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="topic_delete">
-            <Parameter Name="topic_id" Mode="In" Type="Int32" />
+          <Parameter Name="topic_id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="topic_insert">
             <Parameter Name="topic_id" Mode="In" Type="Int32" />
@@ -1189,20 +1191,26 @@
             <Parameter Name="mcqNum" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="finalResults" ReturnType="Collection(sqlProjectModel.finalResults_Result)">
-            <Parameter Name="std_id" Mode="In" Type="Int32" />
+          <Parameter Name="std_id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Report_3" ReturnType="Collection(sqlProjectModel.Report_3_Result)">
-            <Parameter Name="inst_Id" Mode="In" Type="Int32" />
+          <Parameter Name="inst_Id" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="report_courseTopics" ReturnType="Collection(String)">
-            <Parameter Name="cID" Mode="In" Type="Int32" />
+          <FunctionImport Name="report_studentInfo" ReturnType="Collection(sqlProjectModel.report_studentInfo_Result)">
+          <Parameter Name="depID" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="report_examQandA" ReturnType="Collection(sqlProjectModel.report_examQandA_Result)">
-            <Parameter Name="examID" Mode="In" Type="Int32" />
+          <FunctionImport Name="report_courseTopics" ReturnType="Collection(sqlProjectModel.report_courseTopics_Result)">
+          <Parameter Name="cID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="report_StudentExMA" ReturnType="Collection(sqlProjectModel.report_StudentExMA_Result)">
             <Parameter Name="ExamID" Mode="In" Type="Int32" />
             <Parameter Name="StudID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="ExamStudents" ReturnType="Collection(sqlProjectModel.ExamStudents_Result)">
+          <Parameter Name="EID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="report_examQandA" ReturnType="Collection(sqlProjectModel.report_examQandA_Result)">
+            <Parameter Name="examID" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="choices_select_Result">
@@ -1287,17 +1295,30 @@
           <Property Type="String" Name="c_name" Nullable="false" MaxLength="50" />
           <Property Type="Int32" Name="studentNo" Nullable="true" />
         </ComplexType>
+        <ComplexType Name="report_studentInfo_Result">
+          <Property Type="String" Name="FullName" Nullable="false" MaxLength="101" />
+          <Property Type="Int32" Name="stud_ID" Nullable="false" />
+          <Property Type="String" Name="c_name" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="report_courseTopics_Result">
+          <Property Type="String" Name="topic_name" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="topic_ID" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="report_StudentExMA_Result">
+          <Property Type="String" Name="Question" Nullable="true" />
+          <Property Type="String" Name="Student_Answer" Nullable="true" />
+          <Property Type="String" Name="Model_Answer" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="ExamStudents_Result">
+          <Property Type="Int32" Name="stud_ID" Nullable="false" />
+          <Property Type="String" Name="FullName" Nullable="false" MaxLength="101" />
+        </ComplexType>
         <ComplexType Name="report_examQandA_Result">
           <Property Type="Int32" Name="q_ID" Nullable="false" />
           <Property Type="String" Name="q_type" Nullable="false" MaxLength="10" />
           <Property Type="String" Name="q_desc" Nullable="false" />
           <Property Type="Int32" Name="choice_ID" Nullable="false" />
           <Property Type="String" Name="choice_desc" Nullable="false" />
-        </ComplexType>
-        <ComplexType Name="report_StudentExMA_Result">
-          <Property Type="String" Name="Question" Nullable="true" />
-          <Property Type="String" Name="Student_Answer" Nullable="true" />
-          <Property Type="String" Name="Model_Answer" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1615,15 +1636,20 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="report_courseTopics" FunctionName="sqlProjectModel.Store.report_courseTopics" />
-          <FunctionImportMapping FunctionImportName="report_examQandA" FunctionName="sqlProjectModel.Store.report_examQandA">
+          <FunctionImportMapping FunctionImportName="report_studentInfo" FunctionName="sqlProjectModel.Store.report_studentInfo">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="sqlProjectModel.report_examQandA_Result">
-                <ScalarProperty Name="q_ID" ColumnName="q_ID" />
-                <ScalarProperty Name="q_type" ColumnName="q_type" />
-                <ScalarProperty Name="q_desc" ColumnName="q_desc" />
-                <ScalarProperty Name="choice_ID" ColumnName="choice_ID" />
-                <ScalarProperty Name="choice_desc" ColumnName="choice_desc" />
+              <ComplexTypeMapping TypeName="sqlProjectModel.report_studentInfo_Result">
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="stud_ID" ColumnName="stud_ID" />
+                <ScalarProperty Name="c_name" ColumnName="c_name" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="report_courseTopics" FunctionName="sqlProjectModel.Store.report_courseTopics">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="sqlProjectModel.report_courseTopics_Result">
+                <ScalarProperty Name="topic_name" ColumnName="topic_name" />
+                <ScalarProperty Name="topic_ID" ColumnName="topic_ID" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
@@ -1633,6 +1659,25 @@
                 <ScalarProperty Name="Question" ColumnName="Question" />
                 <ScalarProperty Name="Student_Answer" ColumnName="Student Answer" />
                 <ScalarProperty Name="Model_Answer" ColumnName="Model Answer" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ExamStudents" FunctionName="sqlProjectModel.Store.ExamStudents">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="sqlProjectModel.ExamStudents_Result">
+                <ScalarProperty Name="stud_ID" ColumnName="stud_ID" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="report_examQandA" FunctionName="sqlProjectModel.Store.report_examQandA">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="sqlProjectModel.report_examQandA_Result">
+                <ScalarProperty Name="q_ID" ColumnName="q_ID" />
+                <ScalarProperty Name="q_type" ColumnName="q_type" />
+                <ScalarProperty Name="q_desc" ColumnName="q_desc" />
+                <ScalarProperty Name="choice_ID" ColumnName="choice_ID" />
+                <ScalarProperty Name="choice_desc" ColumnName="choice_desc" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
