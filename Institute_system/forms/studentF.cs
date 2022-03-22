@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Core.Objects;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,12 +13,28 @@ namespace Institute_system
 {
     public partial class studentF : Form
     {
+        KeyValuePair<int, string> SelectedCourse;
         public studentF()
         {
             InitializeComponent();
         }
 
+        private void studCoursesComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SelectedCourse = (KeyValuePair<int, string>)studCoursesComboBox.SelectedItem;
+       
+            var ex = from es in appManager.entities.Exam_Student
+                     join ee in appManager.entities.exams on es.Exam_ID equals ee.exam_ID
+                     where ee.course_ID == SelectedCourse.Key
+                     where es.St_ID == appManager.currentUser.stud_ID
+                     where es.st_grade == null
+                     select es;
 
+            foreach (var EX in ex)
+            {
+                ExamscomboBox1.Items.Add(EX.Exam_ID);
+            }
+        }
         private void startExamBtn_Click(object sender, EventArgs e)
         {
             appManager.examForm = new examF();
@@ -82,6 +99,14 @@ namespace Institute_system
                 dt.Rows.Add(row);
             }
             dataGridView1.DataSource = dt;
+
+            //Student_Exam Tab
+            foreach(var c in appManager.currentUser.courses)
+            {
+                studCoursesComboBox.Items.Add(new KeyValuePair<int,string>(c.c_ID,c.c_name));
+            }
+            studCoursesComboBox.DisplayMember = "Value";
+            studCoursesComboBox.ValueMember = "Key";
         }
     
         public void fillExamsTab()
@@ -100,5 +125,7 @@ namespace Institute_system
                 }
             }
         }
+
+        
     }
 }

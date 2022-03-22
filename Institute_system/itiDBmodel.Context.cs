@@ -117,13 +117,9 @@ namespace Institute_system
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("courses_insert", cIDParameter, cNameParameter);
         }
     
-        public virtual ObjectResult<courses_select_Result> courses_select(Nullable<int> cID)
+        public virtual ObjectResult<courses_select_Result> courses_select()
         {
-            var cIDParameter = cID.HasValue ?
-                new ObjectParameter("cID", cID) :
-                new ObjectParameter("cID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<courses_select_Result>("courses_select", cIDParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<courses_select_Result>("courses_select");
         }
     
         public virtual int courses_update(Nullable<int> cID, string cName)
@@ -845,22 +841,22 @@ namespace Institute_system
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Report_3_Result>("Report_3", inst_IdParameter);
         }
     
-        public virtual ObjectResult<string> report_courseTopics(Nullable<int> cID)
+        public virtual ObjectResult<report_studentInfo_Result> report_studentInfo(Nullable<int> depID)
+        {
+            var depIDParameter = depID.HasValue ?
+                new ObjectParameter("depID", depID) :
+                new ObjectParameter("depID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<report_studentInfo_Result>("report_studentInfo", depIDParameter);
+        }
+    
+        public virtual ObjectResult<report_courseTopics_Result> report_courseTopics(Nullable<int> cID)
         {
             var cIDParameter = cID.HasValue ?
                 new ObjectParameter("cID", cID) :
                 new ObjectParameter("cID", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("report_courseTopics", cIDParameter);
-        }
-    
-        public virtual ObjectResult<report_examQandA_Result> report_examQandA(Nullable<int> examID)
-        {
-            var examIDParameter = examID.HasValue ?
-                new ObjectParameter("examID", examID) :
-                new ObjectParameter("examID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<report_examQandA_Result>("report_examQandA", examIDParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<report_courseTopics_Result>("report_courseTopics", cIDParameter);
         }
     
         public virtual ObjectResult<report_StudentExMA_Result> report_StudentExMA(Nullable<int> examID, Nullable<int> studID)
@@ -874,6 +870,37 @@ namespace Institute_system
                 new ObjectParameter("StudID", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<report_StudentExMA_Result>("report_StudentExMA", examIDParameter, studIDParameter);
+        }
+    
+        public virtual ObjectResult<ExamStudents_Result> ExamStudents(Nullable<int> eID)
+        {
+            var eIDParameter = eID.HasValue ?
+                new ObjectParameter("EID", eID) :
+                new ObjectParameter("EID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ExamStudents_Result>("ExamStudents", eIDParameter);
+        }
+    
+        public virtual ObjectResult<report_examQandA_Result> report_examQandA(Nullable<int> examID)
+        {
+            var examIDParameter = examID.HasValue ?
+                new ObjectParameter("examID", examID) :
+                new ObjectParameter("examID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<report_examQandA_Result>("report_examQandA", examIDParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> ExamCoursesStudents(Nullable<int> cID, Nullable<int> sID)
+        {
+            var cIDParameter = cID.HasValue ?
+                new ObjectParameter("CID", cID) :
+                new ObjectParameter("CID", typeof(int));
+    
+            var sIDParameter = sID.HasValue ?
+                new ObjectParameter("SID", sID) :
+                new ObjectParameter("SID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("ExamCoursesStudents", cIDParameter, sIDParameter);
         }
     }
 }

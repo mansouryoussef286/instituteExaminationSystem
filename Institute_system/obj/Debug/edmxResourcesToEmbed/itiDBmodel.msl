@@ -311,15 +311,20 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="report_courseTopics" FunctionName="sqlProjectModel.Store.report_courseTopics" />
-    <FunctionImportMapping FunctionImportName="report_examQandA" FunctionName="sqlProjectModel.Store.report_examQandA">
+    <FunctionImportMapping FunctionImportName="report_studentInfo" FunctionName="sqlProjectModel.Store.report_studentInfo">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="sqlProjectModel.report_examQandA_Result">
-          <ScalarProperty Name="q_ID" ColumnName="q_ID" />
-          <ScalarProperty Name="q_type" ColumnName="q_type" />
-          <ScalarProperty Name="q_desc" ColumnName="q_desc" />
-          <ScalarProperty Name="choice_ID" ColumnName="choice_ID" />
-          <ScalarProperty Name="choice_desc" ColumnName="choice_desc" />
+        <ComplexTypeMapping TypeName="sqlProjectModel.report_studentInfo_Result">
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="stud_ID" ColumnName="stud_ID" />
+          <ScalarProperty Name="c_name" ColumnName="c_name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="report_courseTopics" FunctionName="sqlProjectModel.Store.report_courseTopics">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sqlProjectModel.report_courseTopics_Result">
+          <ScalarProperty Name="topic_name" ColumnName="topic_name" />
+          <ScalarProperty Name="topic_ID" ColumnName="topic_ID" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
@@ -332,5 +337,25 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ExamStudents" FunctionName="sqlProjectModel.Store.ExamStudents">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sqlProjectModel.ExamStudents_Result">
+          <ScalarProperty Name="stud_ID" ColumnName="stud_ID" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="report_examQandA" FunctionName="sqlProjectModel.Store.report_examQandA">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sqlProjectModel.report_examQandA_Result">
+          <ScalarProperty Name="q_ID" ColumnName="q_ID" />
+          <ScalarProperty Name="q_type" ColumnName="q_type" />
+          <ScalarProperty Name="q_desc" ColumnName="q_desc" />
+          <ScalarProperty Name="choice_ID" ColumnName="choice_ID" />
+          <ScalarProperty Name="choice_desc" ColumnName="choice_desc" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ExamCoursesStudents" FunctionName="sqlProjectModel.Store.ExamCoursesStudents" />
   </EntityContainerMapping>
 </Mapping>
