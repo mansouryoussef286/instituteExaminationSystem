@@ -14,6 +14,8 @@ namespace Institute_system
     public partial class studentF : Form
     {
         KeyValuePair<int, string> SelectedCourse;
+        public static int SelectedExamID;
+
         public studentF()
         {
             InitializeComponent();
@@ -37,6 +39,7 @@ namespace Institute_system
         }
         private void startExamBtn_Click(object sender, EventArgs e)
         {
+            SelectedExamID = int.Parse(ExamscomboBox1.Text);
             appManager.examForm = new examF();
             appManager.examForm.Show();
 

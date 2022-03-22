@@ -28,7 +28,7 @@ namespace Institute_system
         {
             exam = new ExamClass();
             //get the 10 questions of that exam and student
-            var examQuestions = appManager.entities.exams_questions.Where(eq => eq.St_ID == appManager.currentUser.stud_ID)
+            var examQuestions = appManager.entities.exams_questions.Where(eq => eq.St_ID == 0 && eq.exam_ID== studentF.SelectedExamID )
                 .Select(eq => eq);
             Question ques;
             int i = 0;
