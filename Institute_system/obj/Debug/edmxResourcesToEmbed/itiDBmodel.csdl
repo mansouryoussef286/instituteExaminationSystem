@@ -351,9 +351,7 @@
       <Parameter Name="cID" Mode="In" Type="Int32" />
       <Parameter Name="cName" Mode="In" Type="String" />
     </FunctionImport>
-    <FunctionImport Name="courses_select" ReturnType="Collection(sqlProjectModel.courses_select_Result)">
-      <Parameter Name="cID" Mode="In" Type="Int32" />
-    </FunctionImport>
+    <FunctionImport Name="courses_select" ReturnType="Collection(sqlProjectModel.courses_select_Result)" />
     <FunctionImport Name="courses_update">
       <Parameter Name="cID" Mode="In" Type="Int32" />
       <Parameter Name="cName" Mode="In" Type="String" />
@@ -566,15 +564,25 @@
     <FunctionImport Name="Report_3" ReturnType="Collection(sqlProjectModel.Report_3_Result)">
       <Parameter Name="inst_Id" Mode="In" Type="Int32" />
     </FunctionImport>
-    <FunctionImport Name="report_courseTopics" ReturnType="Collection(String)">
-      <Parameter Name="cID" Mode="In" Type="Int32" />
+    <FunctionImport Name="report_studentInfo" ReturnType="Collection(sqlProjectModel.report_studentInfo_Result)">
+      <Parameter Name="depID" Mode="In" Type="Int32" />
     </FunctionImport>
-    <FunctionImport Name="report_examQandA" ReturnType="Collection(sqlProjectModel.report_examQandA_Result)">
-      <Parameter Name="examID" Mode="In" Type="Int32" />
+    <FunctionImport Name="report_courseTopics" ReturnType="Collection(sqlProjectModel.report_courseTopics_Result)">
+      <Parameter Name="cID" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="report_StudentExMA" ReturnType="Collection(sqlProjectModel.report_StudentExMA_Result)">
       <Parameter Name="ExamID" Mode="In" Type="Int32" />
       <Parameter Name="StudID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ExamStudents" ReturnType="Collection(sqlProjectModel.ExamStudents_Result)">
+      <Parameter Name="EID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="report_examQandA" ReturnType="Collection(sqlProjectModel.report_examQandA_Result)">
+      <Parameter Name="examID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ExamCoursesStudents" ReturnType="Collection(Int32)">
+      <Parameter Name="CID" Mode="In" Type="Int32" />
+      <Parameter Name="SID" Mode="In" Type="Int32" />
     </FunctionImport>
   </EntityContainer>
   <ComplexType Name="choices_select_Result">
@@ -659,16 +667,29 @@
     <Property Type="String" Name="c_name" Nullable="false" MaxLength="50" />
     <Property Type="Int32" Name="studentNo" Nullable="true" />
   </ComplexType>
+  <ComplexType Name="report_studentInfo_Result">
+    <Property Type="String" Name="FullName" Nullable="false" MaxLength="101" />
+    <Property Type="Int32" Name="stud_ID" Nullable="false" />
+    <Property Type="String" Name="c_name" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="report_courseTopics_Result">
+    <Property Type="String" Name="topic_name" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="topic_ID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="report_StudentExMA_Result">
+    <Property Type="String" Name="Question" Nullable="true" />
+    <Property Type="String" Name="Student_Answer" Nullable="true" />
+    <Property Type="String" Name="Model_Answer" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="ExamStudents_Result">
+    <Property Type="Int32" Name="stud_ID" Nullable="false" />
+    <Property Type="String" Name="FullName" Nullable="false" MaxLength="101" />
+  </ComplexType>
   <ComplexType Name="report_examQandA_Result">
     <Property Type="Int32" Name="q_ID" Nullable="false" />
     <Property Type="String" Name="q_type" Nullable="false" MaxLength="10" />
     <Property Type="String" Name="q_desc" Nullable="false" />
     <Property Type="Int32" Name="choice_ID" Nullable="false" />
     <Property Type="String" Name="choice_desc" Nullable="false" />
-  </ComplexType>
-  <ComplexType Name="report_StudentExMA_Result">
-    <Property Type="String" Name="Question" Nullable="true" />
-    <Property Type="String" Name="Student_Answer" Nullable="true" />
-    <Property Type="String" Name="Model_Answer" Nullable="true" />
   </ComplexType>
 </Schema>

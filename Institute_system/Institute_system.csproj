@@ -39,6 +39,24 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -77,17 +95,21 @@
     <Compile Include="exam.cs">
       <DependentUpon>itiDBmodel.tt</DependentUpon>
     </Compile>
-    <Compile Include="forms\controls\mcqQuestion.cs">
+    <Compile Include="ExamClass.cs" />
+    <Compile Include="ExamStudents_Result.cs">
+      <DependentUpon>itiDBmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="forms\ConfirmDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\ConfirmDialog.Designer.cs">
+      <DependentUpon>ConfirmDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\controls\Question.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="forms\controls\mcqQuestion.Designer.cs">
-      <DependentUpon>mcqQuestion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="forms\controls\TorFQuestion.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="forms\controls\TorFQuestion.Designer.cs">
-      <DependentUpon>TorFQuestion.cs</DependentUpon>
+    <Compile Include="forms\controls\Question.Designer.cs">
+      <DependentUpon>Question.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\examF.cs">
       <SubType>Form</SubType>
@@ -160,10 +182,16 @@
     <Compile Include="Report_3_Result.cs">
       <DependentUpon>itiDBmodel.tt</DependentUpon>
     </Compile>
+    <Compile Include="report_courseTopics_Result.cs">
+      <DependentUpon>itiDBmodel.tt</DependentUpon>
+    </Compile>
     <Compile Include="report_examQandA_Result.cs">
       <DependentUpon>itiDBmodel.tt</DependentUpon>
     </Compile>
     <Compile Include="report_StudentExMA_Result.cs">
+      <DependentUpon>itiDBmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="report_studentInfo_Result.cs">
       <DependentUpon>itiDBmodel.tt</DependentUpon>
     </Compile>
     <Compile Include="sp_helpdiagramdefinition_Result.cs">
@@ -172,6 +200,7 @@
     <Compile Include="sp_helpdiagrams_Result.cs">
       <DependentUpon>itiDBmodel.tt</DependentUpon>
     </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="studCourse_select_Result.cs">
       <DependentUpon>itiDBmodel.tt</DependentUpon>
     </Compile>
@@ -196,11 +225,11 @@
     <Compile Include="topic_select_Result.cs">
       <DependentUpon>itiDBmodel.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="forms\controls\mcqQuestion.resx">
-      <DependentUpon>mcqQuestion.cs</DependentUpon>
+    <EmbeddedResource Include="forms\ConfirmDialog.resx">
+      <DependentUpon>ConfirmDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\controls\TorFQuestion.resx">
-      <DependentUpon>TorFQuestion.cs</DependentUpon>
+    <EmbeddedResource Include="forms\controls\Question.resx">
+      <DependentUpon>Question.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\examF.resx">
       <DependentUpon>examF.cs</DependentUpon>
@@ -224,6 +253,12 @@
     <EmbeddedResource Include="forms\studentF.resx">
       <DependentUpon>studentF.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="Report3.rdlc" />
+    <EmbeddedResource Include="Report4.rdlc" />
+    <EmbeddedResource Include="Report5.rdlc" />
+    <EmbeddedResource Include="Report6.rdlc" />
     <EntityDeploy Include="itiDBmodel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>itiDBmodel.Designer.cs</LastGenOutput>
@@ -232,6 +267,12 @@
       <DependentUpon>itiDBmodel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\finalResults_Result.datasource" />
+    <None Include="Properties\DataSources\Report_3_Result.datasource" />
+    <None Include="Properties\DataSources\report_courseTopics_Result.datasource" />
+    <None Include="Properties\DataSources\report_examQandA_Result.datasource" />
+    <None Include="Properties\DataSources\report_StudentExMA_Result.datasource" />
+    <None Include="Properties\DataSources\report_studentInfo_Result.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -256,11 +297,26 @@
       <DependentUpon>itiDBmodel.edmx</DependentUpon>
       <LastGenOutput>itiDBmodel.cs</LastGenOutput>
     </Content>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Resources\iti-logo.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Reports\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

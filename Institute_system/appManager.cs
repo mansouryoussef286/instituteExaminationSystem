@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Institute_system.forms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,6 +19,7 @@ namespace Institute_system
         public static student currentUser;
         public static instructor currentInstructor;
 
+        public static ConfirmDialog confirmDlg;
         static appManager()
         {
             //initialize the three main forms to use them during the app

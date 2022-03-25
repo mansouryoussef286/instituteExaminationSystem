@@ -29,7 +29,20 @@ namespace Institute_system
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label dept_nameLabel;
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource7 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource8 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource9 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource10 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource11 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource12 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.report_studentInfo_ResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.finalResults_ResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Report_3_ResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.report_courseTopics_ResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.report_StudentExMA_ResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.report_examQandA_ResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.deleteStdBtn = new System.Windows.Forms.Button();
@@ -128,12 +141,38 @@ namespace Institute_system
             this.choiceTypeComboBox = new System.Windows.Forms.ComboBox();
             this.questionDescTextBox = new System.Windows.Forms.TextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.Report1 = new System.Windows.Forms.TabPage();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.showbutton = new System.Windows.Forms.Button();
+            this.DepartmentcomboBox = new System.Windows.Forms.ComboBox();
+            this.Report2 = new System.Windows.Forms.TabPage();
+            this.reportViewer2 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.Show2button = new System.Windows.Forms.Button();
+            this.StudentcomboBox1 = new System.Windows.Forms.ComboBox();
+            this.Report3 = new System.Windows.Forms.TabPage();
+            this.reportViewer3 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.Show3button1 = new System.Windows.Forms.Button();
+            this.InstructorcomboBox1 = new System.Windows.Forms.ComboBox();
+            this.Report4 = new System.Windows.Forms.TabPage();
+            this.reportViewer4 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.Show3button = new System.Windows.Forms.Button();
+            this.CoursecomboBox = new System.Windows.Forms.ComboBox();
+            this.Report5 = new System.Windows.Forms.TabPage();
+            this.reportViewer5 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.Show5button1 = new System.Windows.Forms.Button();
+            this.ExamNocomboBox1 = new System.Windows.Forms.ComboBox();
+            this.Report6 = new System.Windows.Forms.TabPage();
+            this.reportViewer6 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.StudentscomboBox1 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.ExamcomboBox1 = new System.Windows.Forms.ComboBox();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.label24 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
@@ -142,6 +181,12 @@ namespace Institute_system
             this.textBox19 = new System.Windows.Forms.TextBox();
             this.button11 = new System.Windows.Forms.Button();
             dept_nameLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.report_studentInfo_ResultBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.finalResults_ResultBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Report_3_ResultBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.report_courseTopics_ResultBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.report_StudentExMA_ResultBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.report_examQandA_ResultBindingSource)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -157,17 +202,55 @@ namespace Institute_system
             this.groupBox2.SuspendLayout();
             this.tabPage6.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            this.tabControl2.SuspendLayout();
+            this.Report1.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.Report2.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.Report3.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.Report4.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.Report5.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            this.Report6.SuspendLayout();
+            this.groupBox9.SuspendLayout();
             this.tabPage8.SuspendLayout();
             this.SuspendLayout();
             // 
             // dept_nameLabel
             // 
             dept_nameLabel.AutoSize = true;
-            dept_nameLabel.Location = new System.Drawing.Point(45, 27);
+            dept_nameLabel.Location = new System.Drawing.Point(60, 33);
+            dept_nameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             dept_nameLabel.Name = "dept_nameLabel";
-            dept_nameLabel.Size = new System.Drawing.Size(63, 13);
+            dept_nameLabel.Size = new System.Drawing.Size(84, 17);
             dept_nameLabel.TabIndex = 11;
             dept_nameLabel.Text = "department:";
+            // 
+            // report_studentInfo_ResultBindingSource
+            // 
+            this.report_studentInfo_ResultBindingSource.DataSource = typeof(Institute_system.report_studentInfo_Result);
+            // 
+            // finalResults_ResultBindingSource
+            // 
+            this.finalResults_ResultBindingSource.DataSource = typeof(Institute_system.finalResults_Result);
+            // 
+            // Report_3_ResultBindingSource
+            // 
+            this.Report_3_ResultBindingSource.DataSource = typeof(Institute_system.Report_3_Result);
+            // 
+            // report_courseTopics_ResultBindingSource
+            // 
+            this.report_courseTopics_ResultBindingSource.DataSource = typeof(Institute_system.report_courseTopics_Result);
+            // 
+            // report_StudentExMA_ResultBindingSource
+            // 
+            this.report_StudentExMA_ResultBindingSource.DataSource = typeof(Institute_system.report_StudentExMA_Result);
+            // 
+            // report_examQandA_ResultBindingSource
+            // 
+            this.report_examQandA_ResultBindingSource.DataSource = typeof(Institute_system.report_examQandA_Result);
             // 
             // tabControl1
             // 
@@ -177,9 +260,10 @@ namespace Institute_system
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage8);
             this.tabControl1.Location = new System.Drawing.Point(-1, 0);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(702, 417);
+            this.tabControl1.Size = new System.Drawing.Size(936, 513);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -200,19 +284,21 @@ namespace Institute_system
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage1.Size = new System.Drawing.Size(694, 391);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage1.Size = new System.Drawing.Size(928, 484);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "students";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // deleteStdBtn
             // 
-            this.deleteStdBtn.Location = new System.Drawing.Point(234, 290);
+            this.deleteStdBtn.Location = new System.Drawing.Point(312, 364);
+            this.deleteStdBtn.Margin = new System.Windows.Forms.Padding(4);
             this.deleteStdBtn.Name = "deleteStdBtn";
-            this.deleteStdBtn.Size = new System.Drawing.Size(75, 23);
+            this.deleteStdBtn.Size = new System.Drawing.Size(100, 28);
             this.deleteStdBtn.TabIndex = 14;
             this.deleteStdBtn.Text = "delete";
             this.deleteStdBtn.UseVisualStyleBackColor = true;
@@ -220,9 +306,10 @@ namespace Institute_system
             // 
             // updateStdBtn
             // 
-            this.updateStdBtn.Location = new System.Drawing.Point(137, 290);
+            this.updateStdBtn.Location = new System.Drawing.Point(183, 364);
+            this.updateStdBtn.Margin = new System.Windows.Forms.Padding(4);
             this.updateStdBtn.Name = "updateStdBtn";
-            this.updateStdBtn.Size = new System.Drawing.Size(75, 23);
+            this.updateStdBtn.Size = new System.Drawing.Size(100, 28);
             this.updateStdBtn.TabIndex = 13;
             this.updateStdBtn.Text = "update";
             this.updateStdBtn.UseVisualStyleBackColor = true;
@@ -230,9 +317,10 @@ namespace Institute_system
             // 
             // insertStdBtn
             // 
-            this.insertStdBtn.Location = new System.Drawing.Point(49, 290);
+            this.insertStdBtn.Location = new System.Drawing.Point(65, 364);
+            this.insertStdBtn.Margin = new System.Windows.Forms.Padding(4);
             this.insertStdBtn.Name = "insertStdBtn";
-            this.insertStdBtn.Size = new System.Drawing.Size(75, 23);
+            this.insertStdBtn.Size = new System.Drawing.Size(100, 28);
             this.insertStdBtn.TabIndex = 1;
             this.insertStdBtn.Text = "insert";
             this.insertStdBtn.UseVisualStyleBackColor = true;
@@ -241,10 +329,11 @@ namespace Institute_system
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(365, 94);
+            this.dataGridView1.Location = new System.Drawing.Point(487, 116);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(283, 207);
+            this.dataGridView1.Size = new System.Drawing.Size(377, 255);
             this.dataGridView1.TabIndex = 12;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged_1);
             // 
@@ -252,43 +341,48 @@ namespace Institute_system
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label6.Location = new System.Drawing.Point(376, 58);
+            this.label6.Location = new System.Drawing.Point(501, 71);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(97, 19);
+            this.label6.Size = new System.Drawing.Size(123, 24);
             this.label6.TabIndex = 11;
             this.label6.Text = "departments";
             // 
             // deptDropDown
             // 
             this.deptDropDown.FormattingEnabled = true;
-            this.deptDropDown.Location = new System.Drawing.Point(488, 60);
+            this.deptDropDown.Location = new System.Drawing.Point(651, 74);
+            this.deptDropDown.Margin = new System.Windows.Forms.Padding(4);
             this.deptDropDown.Name = "deptDropDown";
-            this.deptDropDown.Size = new System.Drawing.Size(121, 21);
+            this.deptDropDown.Size = new System.Drawing.Size(160, 24);
             this.deptDropDown.TabIndex = 10;
             this.deptDropDown.SelectedIndexChanged += new System.EventHandler(this.deptDropDown_SelectedIndexChanged_1);
             this.deptDropDown.Enter += new System.EventHandler(this.deptDropDown_Enter_1);
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(155, 251);
+            this.textBox4.Location = new System.Drawing.Point(207, 309);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(147, 20);
+            this.textBox4.Size = new System.Drawing.Size(195, 22);
             this.textBox4.TabIndex = 9;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(155, 194);
+            this.textBox5.Location = new System.Drawing.Point(207, 239);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(147, 20);
+            this.textBox5.Size = new System.Drawing.Size(195, 22);
             this.textBox5.TabIndex = 8;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label4.Location = new System.Drawing.Point(45, 247);
+            this.label4.Location = new System.Drawing.Point(60, 304);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(76, 19);
+            this.label4.Size = new System.Drawing.Size(94, 24);
             this.label4.TabIndex = 7;
             this.label4.Text = "password";
             // 
@@ -296,40 +390,45 @@ namespace Institute_system
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label5.Location = new System.Drawing.Point(45, 190);
+            this.label5.Location = new System.Drawing.Point(60, 234);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 19);
+            this.label5.Size = new System.Drawing.Size(98, 24);
             this.label5.TabIndex = 6;
             this.label5.Text = "username";
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(155, 142);
+            this.textBox3.Location = new System.Drawing.Point(207, 175);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(147, 20);
+            this.textBox3.Size = new System.Drawing.Size(195, 22);
             this.textBox3.TabIndex = 5;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(155, 85);
+            this.textBox2.Location = new System.Drawing.Point(207, 105);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(147, 20);
+            this.textBox2.Size = new System.Drawing.Size(195, 22);
             this.textBox2.TabIndex = 4;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(155, 32);
+            this.textBox1.Location = new System.Drawing.Point(207, 39);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(147, 20);
+            this.textBox1.Size = new System.Drawing.Size(195, 22);
             this.textBox1.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label3.Location = new System.Drawing.Point(45, 138);
+            this.label3.Location = new System.Drawing.Point(60, 170);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 19);
+            this.label3.Size = new System.Drawing.Size(117, 24);
             this.label3.TabIndex = 2;
             this.label3.Text = "Department";
             // 
@@ -337,9 +436,10 @@ namespace Institute_system
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label2.Location = new System.Drawing.Point(45, 81);
+            this.label2.Location = new System.Drawing.Point(60, 100);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(26, 19);
+            this.label2.Size = new System.Drawing.Size(31, 24);
             this.label2.TabIndex = 1;
             this.label2.Text = "ID";
             // 
@@ -347,9 +447,10 @@ namespace Institute_system
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label1.Location = new System.Drawing.Point(45, 30);
+            this.label1.Location = new System.Drawing.Point(60, 37);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 19);
+            this.label1.Size = new System.Drawing.Size(62, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Name";
             // 
@@ -374,19 +475,21 @@ namespace Institute_system
             this.tabPage2.Controls.Add(this.courseName);
             this.tabPage2.Controls.Add(this.CID);
             this.tabPage2.Controls.Add(this.cname);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage2.Size = new System.Drawing.Size(694, 391);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage2.Size = new System.Drawing.Size(928, 484);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Courses";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // deleteTopicBtn
             // 
-            this.deleteTopicBtn.Location = new System.Drawing.Point(210, 300);
+            this.deleteTopicBtn.Location = new System.Drawing.Point(280, 406);
+            this.deleteTopicBtn.Margin = new System.Windows.Forms.Padding(4);
             this.deleteTopicBtn.Name = "deleteTopicBtn";
-            this.deleteTopicBtn.Size = new System.Drawing.Size(75, 23);
+            this.deleteTopicBtn.Size = new System.Drawing.Size(100, 28);
             this.deleteTopicBtn.TabIndex = 37;
             this.deleteTopicBtn.Text = "delete";
             this.deleteTopicBtn.UseVisualStyleBackColor = true;
@@ -394,9 +497,10 @@ namespace Institute_system
             // 
             // updateTopicBtn
             // 
-            this.updateTopicBtn.Location = new System.Drawing.Point(113, 300);
+            this.updateTopicBtn.Location = new System.Drawing.Point(151, 406);
+            this.updateTopicBtn.Margin = new System.Windows.Forms.Padding(4);
             this.updateTopicBtn.Name = "updateTopicBtn";
-            this.updateTopicBtn.Size = new System.Drawing.Size(75, 23);
+            this.updateTopicBtn.Size = new System.Drawing.Size(100, 28);
             this.updateTopicBtn.TabIndex = 36;
             this.updateTopicBtn.Text = "update";
             this.updateTopicBtn.UseVisualStyleBackColor = true;
@@ -404,9 +508,10 @@ namespace Institute_system
             // 
             // insertTopicBtn
             // 
-            this.insertTopicBtn.Location = new System.Drawing.Point(25, 300);
+            this.insertTopicBtn.Location = new System.Drawing.Point(33, 406);
+            this.insertTopicBtn.Margin = new System.Windows.Forms.Padding(4);
             this.insertTopicBtn.Name = "insertTopicBtn";
-            this.insertTopicBtn.Size = new System.Drawing.Size(75, 23);
+            this.insertTopicBtn.Size = new System.Drawing.Size(100, 28);
             this.insertTopicBtn.TabIndex = 35;
             this.insertTopicBtn.Text = "insert";
             this.insertTopicBtn.UseVisualStyleBackColor = true;
@@ -414,9 +519,10 @@ namespace Institute_system
             // 
             // deleteCourseBtn
             // 
-            this.deleteCourseBtn.Location = new System.Drawing.Point(210, 137);
+            this.deleteCourseBtn.Location = new System.Drawing.Point(280, 184);
+            this.deleteCourseBtn.Margin = new System.Windows.Forms.Padding(4);
             this.deleteCourseBtn.Name = "deleteCourseBtn";
-            this.deleteCourseBtn.Size = new System.Drawing.Size(75, 23);
+            this.deleteCourseBtn.Size = new System.Drawing.Size(100, 28);
             this.deleteCourseBtn.TabIndex = 34;
             this.deleteCourseBtn.Text = "delete";
             this.deleteCourseBtn.UseVisualStyleBackColor = true;
@@ -424,9 +530,10 @@ namespace Institute_system
             // 
             // updateCourseBtn
             // 
-            this.updateCourseBtn.Location = new System.Drawing.Point(113, 137);
+            this.updateCourseBtn.Location = new System.Drawing.Point(151, 184);
+            this.updateCourseBtn.Margin = new System.Windows.Forms.Padding(4);
             this.updateCourseBtn.Name = "updateCourseBtn";
-            this.updateCourseBtn.Size = new System.Drawing.Size(75, 23);
+            this.updateCourseBtn.Size = new System.Drawing.Size(100, 28);
             this.updateCourseBtn.TabIndex = 33;
             this.updateCourseBtn.Text = "update";
             this.updateCourseBtn.UseVisualStyleBackColor = true;
@@ -434,9 +541,10 @@ namespace Institute_system
             // 
             // insertCourseBtn
             // 
-            this.insertCourseBtn.Location = new System.Drawing.Point(25, 137);
+            this.insertCourseBtn.Location = new System.Drawing.Point(33, 184);
+            this.insertCourseBtn.Margin = new System.Windows.Forms.Padding(4);
             this.insertCourseBtn.Name = "insertCourseBtn";
-            this.insertCourseBtn.Size = new System.Drawing.Size(75, 23);
+            this.insertCourseBtn.Size = new System.Drawing.Size(100, 28);
             this.insertCourseBtn.TabIndex = 32;
             this.insertCourseBtn.Text = "insert";
             this.insertCourseBtn.UseVisualStyleBackColor = true;
@@ -446,9 +554,10 @@ namespace Institute_system
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label13.Location = new System.Drawing.Point(9, 174);
+            this.label13.Location = new System.Drawing.Point(12, 251);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(50, 19);
+            this.label13.Size = new System.Drawing.Size(62, 24);
             this.label13.TabIndex = 31;
             this.label13.Text = "topics";
             // 
@@ -456,33 +565,37 @@ namespace Institute_system
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label10.Location = new System.Drawing.Point(9, 13);
+            this.label10.Location = new System.Drawing.Point(12, 16);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(62, 19);
+            this.label10.Size = new System.Drawing.Size(77, 24);
             this.label10.TabIndex = 30;
             this.label10.Text = "courses";
             // 
             // TopicID
             // 
-            this.TopicID.Location = new System.Drawing.Point(160, 261);
+            this.TopicID.Location = new System.Drawing.Point(213, 358);
+            this.TopicID.Margin = new System.Windows.Forms.Padding(4);
             this.TopicID.Name = "TopicID";
-            this.TopicID.Size = new System.Drawing.Size(147, 20);
+            this.TopicID.Size = new System.Drawing.Size(195, 22);
             this.TopicID.TabIndex = 29;
             // 
             // TopicName
             // 
-            this.TopicName.Location = new System.Drawing.Point(160, 209);
+            this.TopicName.Location = new System.Drawing.Point(213, 294);
+            this.TopicName.Margin = new System.Windows.Forms.Padding(4);
             this.TopicName.Name = "TopicName";
-            this.TopicName.Size = new System.Drawing.Size(147, 20);
+            this.TopicName.Size = new System.Drawing.Size(195, 22);
             this.TopicName.TabIndex = 28;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label8.Location = new System.Drawing.Point(50, 259);
+            this.label8.Location = new System.Drawing.Point(67, 356);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(26, 19);
+            this.label8.Size = new System.Drawing.Size(31, 24);
             this.label8.TabIndex = 27;
             this.label8.Text = "ID";
             // 
@@ -490,9 +603,10 @@ namespace Institute_system
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label9.Location = new System.Drawing.Point(50, 207);
+            this.label9.Location = new System.Drawing.Point(67, 292);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(50, 19);
+            this.label9.Size = new System.Drawing.Size(62, 24);
             this.label9.TabIndex = 26;
             this.label9.Text = "Name";
             // 
@@ -503,10 +617,11 @@ namespace Institute_system
             this.topicsdatagrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Topic_ID,
             this.Topic_Name});
-            this.topicsdatagrid.Location = new System.Drawing.Point(362, 79);
+            this.topicsdatagrid.Location = new System.Drawing.Point(483, 97);
+            this.topicsdatagrid.Margin = new System.Windows.Forms.Padding(4);
             this.topicsdatagrid.Name = "topicsdatagrid";
             this.topicsdatagrid.RowHeadersWidth = 51;
-            this.topicsdatagrid.Size = new System.Drawing.Size(283, 207);
+            this.topicsdatagrid.Size = new System.Drawing.Size(377, 255);
             this.topicsdatagrid.TabIndex = 25;
             this.topicsdatagrid.SelectionChanged += new System.EventHandler(this.topicsdatagrid_SelectionChanged);
             // 
@@ -516,7 +631,7 @@ namespace Institute_system
             this.Topic_ID.HeaderText = "ID";
             this.Topic_ID.MinimumWidth = 6;
             this.Topic_ID.Name = "Topic_ID";
-            this.Topic_ID.Width = 43;
+            this.Topic_ID.Width = 50;
             // 
             // Topic_Name
             // 
@@ -529,42 +644,47 @@ namespace Institute_system
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label7.Location = new System.Drawing.Point(373, 43);
+            this.label7.Location = new System.Drawing.Point(497, 53);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(62, 19);
+            this.label7.Size = new System.Drawing.Size(77, 24);
             this.label7.TabIndex = 24;
             this.label7.Text = "courses";
             // 
             // coursesDropDown
             // 
             this.coursesDropDown.FormattingEnabled = true;
-            this.coursesDropDown.Location = new System.Drawing.Point(485, 45);
+            this.coursesDropDown.Location = new System.Drawing.Point(647, 55);
+            this.coursesDropDown.Margin = new System.Windows.Forms.Padding(4);
             this.coursesDropDown.Name = "coursesDropDown";
-            this.coursesDropDown.Size = new System.Drawing.Size(121, 21);
+            this.coursesDropDown.Size = new System.Drawing.Size(160, 24);
             this.coursesDropDown.TabIndex = 23;
             this.coursesDropDown.SelectedIndexChanged += new System.EventHandler(this.coursesDropDown_SelectedIndexChanged);
             // 
             // CourseID
             // 
-            this.CourseID.Location = new System.Drawing.Point(160, 100);
+            this.CourseID.Location = new System.Drawing.Point(213, 123);
+            this.CourseID.Margin = new System.Windows.Forms.Padding(4);
             this.CourseID.Name = "CourseID";
-            this.CourseID.Size = new System.Drawing.Size(147, 20);
+            this.CourseID.Size = new System.Drawing.Size(195, 22);
             this.CourseID.TabIndex = 17;
             // 
             // courseName
             // 
-            this.courseName.Location = new System.Drawing.Point(160, 47);
+            this.courseName.Location = new System.Drawing.Point(213, 58);
+            this.courseName.Margin = new System.Windows.Forms.Padding(4);
             this.courseName.Name = "courseName";
-            this.courseName.Size = new System.Drawing.Size(147, 20);
+            this.courseName.Size = new System.Drawing.Size(195, 22);
             this.courseName.TabIndex = 16;
             // 
             // CID
             // 
             this.CID.AutoSize = true;
             this.CID.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.CID.Location = new System.Drawing.Point(50, 96);
+            this.CID.Location = new System.Drawing.Point(67, 118);
+            this.CID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CID.Name = "CID";
-            this.CID.Size = new System.Drawing.Size(26, 19);
+            this.CID.Size = new System.Drawing.Size(31, 24);
             this.CID.TabIndex = 14;
             this.CID.Text = "ID";
             // 
@@ -572,19 +692,21 @@ namespace Institute_system
             // 
             this.cname.AutoSize = true;
             this.cname.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.cname.Location = new System.Drawing.Point(50, 45);
+            this.cname.Location = new System.Drawing.Point(67, 55);
+            this.cname.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cname.Name = "cname";
-            this.cname.Size = new System.Drawing.Size(50, 19);
+            this.cname.Size = new System.Drawing.Size(62, 24);
             this.cname.TabIndex = 13;
             this.cname.Text = "Name";
             // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.students_grades_tab);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage3.Size = new System.Drawing.Size(694, 391);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage3.Size = new System.Drawing.Size(928, 484);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Exams";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -594,20 +716,22 @@ namespace Institute_system
             this.students_grades_tab.Controls.Add(this.tabPage5);
             this.students_grades_tab.Controls.Add(this.tabPage7);
             this.students_grades_tab.Controls.Add(this.tabPage6);
-            this.students_grades_tab.Location = new System.Drawing.Point(6, 6);
+            this.students_grades_tab.Location = new System.Drawing.Point(8, 7);
+            this.students_grades_tab.Margin = new System.Windows.Forms.Padding(4);
             this.students_grades_tab.Name = "students_grades_tab";
             this.students_grades_tab.SelectedIndex = 0;
-            this.students_grades_tab.Size = new System.Drawing.Size(682, 380);
+            this.students_grades_tab.Size = new System.Drawing.Size(909, 468);
             this.students_grades_tab.TabIndex = 0;
             // 
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.groupBox3);
             this.tabPage5.Controls.Add(this.groupBox1);
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Location = new System.Drawing.Point(4, 25);
+            this.tabPage5.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage5.Size = new System.Drawing.Size(674, 354);
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage5.Size = new System.Drawing.Size(901, 439);
             this.tabPage5.TabIndex = 0;
             this.tabPage5.Text = "generate exam";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -620,9 +744,11 @@ namespace Institute_system
             this.groupBox3.Controls.Add(this.label25);
             this.groupBox3.Controls.Add(this.examsIDComboBox1);
             this.groupBox3.Controls.Add(this.label26);
-            this.groupBox3.Location = new System.Drawing.Point(18, 182);
+            this.groupBox3.Location = new System.Drawing.Point(24, 224);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(584, 147);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox3.Size = new System.Drawing.Size(779, 181);
             this.groupBox3.TabIndex = 13;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "assign students";
@@ -635,12 +761,12 @@ namespace Institute_system
             this.Column1,
             this.Column2,
             this.Column3});
-            this.studentsExamGridView.Location = new System.Drawing.Point(308, 11);
-            this.studentsExamGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.studentsExamGridView.Location = new System.Drawing.Point(411, 14);
+            this.studentsExamGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.studentsExamGridView.Name = "studentsExamGridView";
             this.studentsExamGridView.RowHeadersWidth = 66;
             this.studentsExamGridView.RowTemplate.Height = 29;
-            this.studentsExamGridView.Size = new System.Drawing.Size(276, 131);
+            this.studentsExamGridView.Size = new System.Drawing.Size(368, 161);
             this.studentsExamGridView.TabIndex = 14;
             // 
             // Column1
@@ -669,17 +795,19 @@ namespace Institute_system
             // coursesComboBox2
             // 
             this.coursesComboBox2.FormattingEnabled = true;
-            this.coursesComboBox2.Location = new System.Drawing.Point(117, 19);
+            this.coursesComboBox2.Location = new System.Drawing.Point(156, 23);
+            this.coursesComboBox2.Margin = new System.Windows.Forms.Padding(4);
             this.coursesComboBox2.Name = "coursesComboBox2";
-            this.coursesComboBox2.Size = new System.Drawing.Size(121, 21);
+            this.coursesComboBox2.Size = new System.Drawing.Size(160, 24);
             this.coursesComboBox2.TabIndex = 6;
             this.coursesComboBox2.SelectedIndexChanged += new System.EventHandler(this.CoursesComboBox2_SelectedIndexChanged);
             // 
             // assignStudentBtn
             // 
-            this.assignStudentBtn.Location = new System.Drawing.Point(37, 99);
+            this.assignStudentBtn.Location = new System.Drawing.Point(49, 122);
+            this.assignStudentBtn.Margin = new System.Windows.Forms.Padding(4);
             this.assignStudentBtn.Name = "assignStudentBtn";
-            this.assignStudentBtn.Size = new System.Drawing.Size(129, 23);
+            this.assignStudentBtn.Size = new System.Drawing.Size(172, 28);
             this.assignStudentBtn.TabIndex = 3;
             this.assignStudentBtn.Text = "Assign Student";
             this.assignStudentBtn.UseVisualStyleBackColor = true;
@@ -688,27 +816,30 @@ namespace Institute_system
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(34, 64);
+            this.label25.Location = new System.Drawing.Point(45, 79);
+            this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(51, 13);
+            this.label25.Size = new System.Drawing.Size(65, 17);
             this.label25.TabIndex = 10;
             this.label25.Text = "exams ID";
             // 
             // examsIDComboBox1
             // 
             this.examsIDComboBox1.FormattingEnabled = true;
-            this.examsIDComboBox1.Location = new System.Drawing.Point(117, 59);
+            this.examsIDComboBox1.Location = new System.Drawing.Point(156, 73);
+            this.examsIDComboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.examsIDComboBox1.Name = "examsIDComboBox1";
-            this.examsIDComboBox1.Size = new System.Drawing.Size(121, 21);
+            this.examsIDComboBox1.Size = new System.Drawing.Size(160, 24);
             this.examsIDComboBox1.TabIndex = 7;
             this.examsIDComboBox1.SelectedIndexChanged += new System.EventHandler(this.ExamsIDComboBox1_SelectedIndexChanged);
             // 
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(34, 27);
+            this.label26.Location = new System.Drawing.Point(45, 33);
+            this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(39, 13);
+            this.label26.Size = new System.Drawing.Size(51, 17);
             this.label26.TabIndex = 9;
             this.label26.Text = "course";
             // 
@@ -723,9 +854,11 @@ namespace Institute_system
             this.groupBox1.Controls.Add(this.examMcqComboBox);
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.examTFComboBox);
-            this.groupBox1.Location = new System.Drawing.Point(18, 16);
+            this.groupBox1.Location = new System.Drawing.Point(24, 20);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(584, 147);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(779, 181);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "exam generation";
@@ -733,43 +866,48 @@ namespace Institute_system
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(475, 36);
+            this.label27.Location = new System.Drawing.Point(633, 44);
+            this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(94, 13);
+            this.label27.Size = new System.Drawing.Size(125, 17);
             this.label27.TabIndex = 12;
             this.label27.Text = "generated exam id";
             // 
             // examIDTextBox1
             // 
             this.examIDTextBox1.Enabled = false;
-            this.examIDTextBox1.Location = new System.Drawing.Point(475, 55);
+            this.examIDTextBox1.Location = new System.Drawing.Point(633, 68);
+            this.examIDTextBox1.Margin = new System.Windows.Forms.Padding(4);
             this.examIDTextBox1.Name = "examIDTextBox1";
             this.examIDTextBox1.ReadOnly = true;
-            this.examIDTextBox1.Size = new System.Drawing.Size(100, 20);
+            this.examIDTextBox1.Size = new System.Drawing.Size(132, 22);
             this.examIDTextBox1.TabIndex = 0;
             // 
             // coursesComboBox1
             // 
             this.coursesComboBox1.FormattingEnabled = true;
-            this.coursesComboBox1.Location = new System.Drawing.Point(117, 19);
+            this.coursesComboBox1.Location = new System.Drawing.Point(156, 23);
+            this.coursesComboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.coursesComboBox1.Name = "coursesComboBox1";
-            this.coursesComboBox1.Size = new System.Drawing.Size(121, 21);
+            this.coursesComboBox1.Size = new System.Drawing.Size(160, 24);
             this.coursesComboBox1.TabIndex = 6;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(72, 94);
+            this.label16.Location = new System.Drawing.Point(96, 116);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(35, 13);
+            this.label16.Size = new System.Drawing.Size(46, 17);
             this.label16.TabIndex = 11;
             this.label16.Text = "T or F";
             // 
             // generateExamBtn
             // 
-            this.generateExamBtn.Location = new System.Drawing.Point(288, 53);
+            this.generateExamBtn.Location = new System.Drawing.Point(384, 65);
+            this.generateExamBtn.Margin = new System.Windows.Forms.Padding(4);
             this.generateExamBtn.Name = "generateExamBtn";
-            this.generateExamBtn.Size = new System.Drawing.Size(129, 23);
+            this.generateExamBtn.Size = new System.Drawing.Size(172, 28);
             this.generateExamBtn.TabIndex = 3;
             this.generateExamBtn.Text = "Generate Exam";
             this.generateExamBtn.UseVisualStyleBackColor = true;
@@ -778,46 +916,51 @@ namespace Institute_system
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(72, 64);
+            this.label15.Location = new System.Drawing.Point(96, 79);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(27, 13);
+            this.label15.Size = new System.Drawing.Size(34, 17);
             this.label15.TabIndex = 10;
             this.label15.Text = "mcq";
             // 
             // examMcqComboBox
             // 
             this.examMcqComboBox.FormattingEnabled = true;
-            this.examMcqComboBox.Location = new System.Drawing.Point(117, 55);
+            this.examMcqComboBox.Location = new System.Drawing.Point(156, 68);
+            this.examMcqComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.examMcqComboBox.Name = "examMcqComboBox";
-            this.examMcqComboBox.Size = new System.Drawing.Size(121, 21);
+            this.examMcqComboBox.Size = new System.Drawing.Size(160, 24);
             this.examMcqComboBox.TabIndex = 7;
             this.examMcqComboBox.SelectedIndexChanged += new System.EventHandler(this.ExamMcq_SelectedIndexChanged);
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(72, 27);
+            this.label14.Location = new System.Drawing.Point(96, 33);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(39, 13);
+            this.label14.Size = new System.Drawing.Size(51, 17);
             this.label14.TabIndex = 9;
             this.label14.Text = "course";
             // 
             // examTFComboBox
             // 
             this.examTFComboBox.FormattingEnabled = true;
-            this.examTFComboBox.Location = new System.Drawing.Point(117, 92);
+            this.examTFComboBox.Location = new System.Drawing.Point(156, 113);
+            this.examTFComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.examTFComboBox.Name = "examTFComboBox";
-            this.examTFComboBox.Size = new System.Drawing.Size(121, 21);
+            this.examTFComboBox.Size = new System.Drawing.Size(160, 24);
             this.examTFComboBox.TabIndex = 8;
             this.examTFComboBox.SelectedIndexChanged += new System.EventHandler(this.ExamTF_SelectedIndexChanged);
             // 
             // tabPage7
             // 
             this.tabPage7.Controls.Add(this.groupBox2);
-            this.tabPage7.Location = new System.Drawing.Point(4, 22);
+            this.tabPage7.Location = new System.Drawing.Point(4, 25);
+            this.tabPage7.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage7.Size = new System.Drawing.Size(674, 354);
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage7.Size = new System.Drawing.Size(901, 439);
             this.tabPage7.TabIndex = 2;
             this.tabPage7.Text = "student grades";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -835,9 +978,11 @@ namespace Institute_system
             this.groupBox2.Controls.Add(this.studentsListBox);
             this.groupBox2.Controls.Add(this.examsIDsListBox);
             this.groupBox2.Controls.Add(this.correctExamBtn);
-            this.groupBox2.Location = new System.Drawing.Point(29, 30);
+            this.groupBox2.Location = new System.Drawing.Point(39, 37);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(599, 240);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Size = new System.Drawing.Size(799, 295);
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "students grades";
@@ -846,9 +991,10 @@ namespace Institute_system
             // 
             this.dept_nameComboBox.DisplayMember = "dept_ID";
             this.dept_nameComboBox.FormattingEnabled = true;
-            this.dept_nameComboBox.Location = new System.Drawing.Point(48, 42);
+            this.dept_nameComboBox.Location = new System.Drawing.Point(64, 52);
+            this.dept_nameComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.dept_nameComboBox.Name = "dept_nameComboBox";
-            this.dept_nameComboBox.Size = new System.Drawing.Size(121, 21);
+            this.dept_nameComboBox.Size = new System.Drawing.Size(160, 24);
             this.dept_nameComboBox.TabIndex = 12;
             this.dept_nameComboBox.ValueMember = "dept_ID";
             this.dept_nameComboBox.SelectedIndexChanged += new System.EventHandler(this.deptNameComboBox_SelectedIndexChanged);
@@ -856,75 +1002,86 @@ namespace Institute_system
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(460, 117);
+            this.label32.Location = new System.Drawing.Point(613, 144);
+            this.label32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(37, 13);
+            this.label32.Size = new System.Drawing.Size(49, 17);
             this.label32.TabIndex = 11;
             this.label32.Text = "grade:";
             // 
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(336, 117);
+            this.label31.Location = new System.Drawing.Point(448, 144);
+            this.label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(50, 13);
+            this.label31.Size = new System.Drawing.Size(63, 17);
             this.label31.TabIndex = 10;
             this.label31.Text = "Exam ID:";
             // 
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(336, 69);
+            this.label30.Location = new System.Drawing.Point(448, 85);
+            this.label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(74, 13);
+            this.label30.Size = new System.Drawing.Size(98, 17);
             this.label30.TabIndex = 9;
             this.label30.Text = "student name:";
             // 
             // gradeTextBox
             // 
-            this.gradeTextBox.Location = new System.Drawing.Point(500, 114);
+            this.gradeTextBox.Location = new System.Drawing.Point(667, 140);
+            this.gradeTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.gradeTextBox.Name = "gradeTextBox";
-            this.gradeTextBox.Size = new System.Drawing.Size(54, 20);
+            this.gradeTextBox.Size = new System.Drawing.Size(71, 22);
             this.gradeTextBox.TabIndex = 8;
             // 
             // examIDTextBox
             // 
-            this.examIDTextBox.Location = new System.Drawing.Point(387, 114);
+            this.examIDTextBox.Location = new System.Drawing.Point(516, 140);
+            this.examIDTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.examIDTextBox.Name = "examIDTextBox";
-            this.examIDTextBox.Size = new System.Drawing.Size(54, 20);
+            this.examIDTextBox.Size = new System.Drawing.Size(71, 22);
             this.examIDTextBox.TabIndex = 7;
             // 
             // stdNameTextBox
             // 
-            this.stdNameTextBox.Location = new System.Drawing.Point(339, 88);
+            this.stdNameTextBox.Location = new System.Drawing.Point(452, 108);
+            this.stdNameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.stdNameTextBox.Name = "stdNameTextBox";
-            this.stdNameTextBox.Size = new System.Drawing.Size(215, 20);
+            this.stdNameTextBox.Size = new System.Drawing.Size(285, 22);
             this.stdNameTextBox.TabIndex = 6;
             // 
             // studentsListBox
             // 
             this.studentsListBox.FormattingEnabled = true;
-            this.studentsListBox.Location = new System.Drawing.Point(48, 69);
+            this.studentsListBox.ItemHeight = 16;
+            this.studentsListBox.Location = new System.Drawing.Point(64, 85);
+            this.studentsListBox.Margin = new System.Windows.Forms.Padding(4);
             this.studentsListBox.Name = "studentsListBox";
-            this.studentsListBox.Size = new System.Drawing.Size(120, 95);
+            this.studentsListBox.Size = new System.Drawing.Size(159, 116);
             this.studentsListBox.TabIndex = 1;
             this.studentsListBox.SelectedIndexChanged += new System.EventHandler(this.studentsListBox_SelectedIndexChanged);
             // 
             // examsIDsListBox
             // 
             this.examsIDsListBox.FormattingEnabled = true;
-            this.examsIDsListBox.Location = new System.Drawing.Point(190, 69);
+            this.examsIDsListBox.ItemHeight = 16;
+            this.examsIDsListBox.Location = new System.Drawing.Point(253, 85);
+            this.examsIDsListBox.Margin = new System.Windows.Forms.Padding(4);
             this.examsIDsListBox.Name = "examsIDsListBox";
-            this.examsIDsListBox.Size = new System.Drawing.Size(120, 95);
+            this.examsIDsListBox.Size = new System.Drawing.Size(159, 116);
             this.examsIDsListBox.TabIndex = 0;
             this.examsIDsListBox.SelectedIndexChanged += new System.EventHandler(this.examsIDsListBox_SelectedIndexChanged);
             // 
             // correctExamBtn
             // 
             this.correctExamBtn.Enabled = false;
-            this.correctExamBtn.Location = new System.Drawing.Point(367, 157);
+            this.correctExamBtn.Location = new System.Drawing.Point(489, 193);
+            this.correctExamBtn.Margin = new System.Windows.Forms.Padding(4);
             this.correctExamBtn.Name = "correctExamBtn";
-            this.correctExamBtn.Size = new System.Drawing.Size(158, 25);
+            this.correctExamBtn.Size = new System.Drawing.Size(211, 31);
             this.correctExamBtn.TabIndex = 5;
             this.correctExamBtn.Text = "Correct Exam";
             this.correctExamBtn.UseVisualStyleBackColor = true;
@@ -953,10 +1110,11 @@ namespace Institute_system
             this.tabPage6.Controls.Add(this.choice1_textBox);
             this.tabPage6.Controls.Add(this.choiceTypeComboBox);
             this.tabPage6.Controls.Add(this.questionDescTextBox);
-            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Location = new System.Drawing.Point(4, 25);
+            this.tabPage6.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage6.Size = new System.Drawing.Size(674, 354);
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage6.Size = new System.Drawing.Size(901, 439);
             this.tabPage6.TabIndex = 1;
             this.tabPage6.Text = "editing exam db";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -964,9 +1122,10 @@ namespace Institute_system
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(21, 220);
+            this.label33.Location = new System.Drawing.Point(28, 271);
+            this.label33.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(97, 13);
+            this.label33.Size = new System.Drawing.Size(130, 17);
             this.label33.TabIndex = 22;
             this.label33.Text = "course\'s questions:";
             // 
@@ -974,18 +1133,20 @@ namespace Institute_system
             // 
             this.coursesComboBox3.DisplayMember = "c_ID";
             this.coursesComboBox3.FormattingEnabled = true;
-            this.coursesComboBox3.Location = new System.Drawing.Point(80, 64);
+            this.coursesComboBox3.Location = new System.Drawing.Point(107, 79);
+            this.coursesComboBox3.Margin = new System.Windows.Forms.Padding(4);
             this.coursesComboBox3.Name = "coursesComboBox3";
-            this.coursesComboBox3.Size = new System.Drawing.Size(65, 21);
+            this.coursesComboBox3.Size = new System.Drawing.Size(85, 24);
             this.coursesComboBox3.TabIndex = 21;
             this.coursesComboBox3.ValueMember = "c_ID";
             this.coursesComboBox3.SelectedIndexChanged += new System.EventHandler(this.coursesComboBox3_SelectedIndexChanged);
             // 
             // deleteQBtn
             // 
-            this.deleteQBtn.Location = new System.Drawing.Point(494, 308);
+            this.deleteQBtn.Location = new System.Drawing.Point(659, 379);
+            this.deleteQBtn.Margin = new System.Windows.Forms.Padding(4);
             this.deleteQBtn.Name = "deleteQBtn";
-            this.deleteQBtn.Size = new System.Drawing.Size(75, 23);
+            this.deleteQBtn.Size = new System.Drawing.Size(100, 28);
             this.deleteQBtn.TabIndex = 19;
             this.deleteQBtn.Text = "delete";
             this.deleteQBtn.UseVisualStyleBackColor = true;
@@ -993,9 +1154,10 @@ namespace Institute_system
             // 
             // updateQBtn
             // 
-            this.updateQBtn.Location = new System.Drawing.Point(494, 270);
+            this.updateQBtn.Location = new System.Drawing.Point(659, 332);
+            this.updateQBtn.Margin = new System.Windows.Forms.Padding(4);
             this.updateQBtn.Name = "updateQBtn";
-            this.updateQBtn.Size = new System.Drawing.Size(75, 23);
+            this.updateQBtn.Size = new System.Drawing.Size(100, 28);
             this.updateQBtn.TabIndex = 18;
             this.updateQBtn.Text = "update";
             this.updateQBtn.UseVisualStyleBackColor = true;
@@ -1003,9 +1165,10 @@ namespace Institute_system
             // 
             // insertQBtn
             // 
-            this.insertQBtn.Location = new System.Drawing.Point(494, 235);
+            this.insertQBtn.Location = new System.Drawing.Point(659, 289);
+            this.insertQBtn.Margin = new System.Windows.Forms.Padding(4);
             this.insertQBtn.Name = "insertQBtn";
-            this.insertQBtn.Size = new System.Drawing.Size(75, 23);
+            this.insertQBtn.Size = new System.Drawing.Size(100, 28);
             this.insertQBtn.TabIndex = 17;
             this.insertQBtn.Text = "insert";
             this.insertQBtn.UseVisualStyleBackColor = true;
@@ -1014,18 +1177,21 @@ namespace Institute_system
             // questionsListBox
             // 
             this.questionsListBox.FormattingEnabled = true;
-            this.questionsListBox.Location = new System.Drawing.Point(24, 235);
+            this.questionsListBox.ItemHeight = 16;
+            this.questionsListBox.Location = new System.Drawing.Point(32, 289);
+            this.questionsListBox.Margin = new System.Windows.Forms.Padding(4);
             this.questionsListBox.Name = "questionsListBox";
-            this.questionsListBox.Size = new System.Drawing.Size(406, 95);
+            this.questionsListBox.Size = new System.Drawing.Size(540, 116);
             this.questionsListBox.TabIndex = 16;
             this.questionsListBox.SelectedIndexChanged += new System.EventHandler(this.questionsListBox_SelectedIndexChanged);
             // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(371, 107);
+            this.label23.Location = new System.Drawing.Point(495, 132);
+            this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(77, 13);
+            this.label23.Size = new System.Drawing.Size(101, 17);
             this.label23.TabIndex = 15;
             this.label23.Text = "correct answer";
             // 
@@ -1033,9 +1199,10 @@ namespace Institute_system
             // 
             this.radioButton3.AutoSize = true;
             this.radioButton3.Enabled = false;
-            this.radioButton3.Location = new System.Drawing.Point(370, 198);
+            this.radioButton3.Location = new System.Drawing.Point(493, 244);
+            this.radioButton3.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(68, 17);
+            this.radioButton3.Size = new System.Drawing.Size(86, 21);
             this.radioButton3.TabIndex = 14;
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "answer 3";
@@ -1045,9 +1212,10 @@ namespace Institute_system
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Enabled = false;
-            this.radioButton2.Location = new System.Drawing.Point(370, 161);
+            this.radioButton2.Location = new System.Drawing.Point(493, 198);
+            this.radioButton2.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(68, 17);
+            this.radioButton2.Size = new System.Drawing.Size(86, 21);
             this.radioButton2.TabIndex = 13;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "answer 2";
@@ -1057,9 +1225,10 @@ namespace Institute_system
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.Enabled = false;
-            this.radioButton1.Location = new System.Drawing.Point(370, 125);
+            this.radioButton1.Location = new System.Drawing.Point(493, 154);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(68, 17);
+            this.radioButton1.Size = new System.Drawing.Size(86, 21);
             this.radioButton1.TabIndex = 12;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "answer 1";
@@ -1068,79 +1237,88 @@ namespace Institute_system
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(77, 107);
+            this.label22.Location = new System.Drawing.Point(103, 132);
+            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(27, 13);
+            this.label22.Size = new System.Drawing.Size(35, 17);
             this.label22.TabIndex = 11;
             this.label22.Text = "type";
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(151, 48);
+            this.label21.Location = new System.Drawing.Point(201, 59);
+            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(47, 13);
+            this.label21.Size = new System.Drawing.Size(62, 17);
             this.label21.TabIndex = 10;
             this.label21.Text = "question";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(77, 48);
+            this.label20.Location = new System.Drawing.Point(103, 59);
+            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(39, 13);
+            this.label20.Size = new System.Drawing.Size(51, 17);
             this.label20.TabIndex = 9;
             this.label20.Text = "course";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(172, 201);
+            this.label19.Location = new System.Drawing.Point(229, 247);
+            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(63, 13);
+            this.label19.Size = new System.Drawing.Size(81, 17);
             this.label19.TabIndex = 8;
             this.label19.Text = "choice no.3";
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(172, 164);
+            this.label18.Location = new System.Drawing.Point(229, 202);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(63, 13);
+            this.label18.Size = new System.Drawing.Size(81, 17);
             this.label18.TabIndex = 7;
             this.label18.Text = "choice no.2";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(172, 127);
+            this.label17.Location = new System.Drawing.Point(229, 156);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(63, 13);
+            this.label17.Size = new System.Drawing.Size(81, 17);
             this.label17.TabIndex = 6;
             this.label17.Text = "choice no.1";
             // 
             // choice3_textBox
             // 
             this.choice3_textBox.Enabled = false;
-            this.choice3_textBox.Location = new System.Drawing.Point(240, 198);
+            this.choice3_textBox.Location = new System.Drawing.Point(320, 244);
+            this.choice3_textBox.Margin = new System.Windows.Forms.Padding(4);
             this.choice3_textBox.Name = "choice3_textBox";
-            this.choice3_textBox.Size = new System.Drawing.Size(100, 20);
+            this.choice3_textBox.Size = new System.Drawing.Size(132, 22);
             this.choice3_textBox.TabIndex = 5;
             // 
             // choice2_textBox
             // 
             this.choice2_textBox.Enabled = false;
-            this.choice2_textBox.Location = new System.Drawing.Point(240, 160);
+            this.choice2_textBox.Location = new System.Drawing.Point(320, 197);
+            this.choice2_textBox.Margin = new System.Windows.Forms.Padding(4);
             this.choice2_textBox.Name = "choice2_textBox";
-            this.choice2_textBox.Size = new System.Drawing.Size(100, 20);
+            this.choice2_textBox.Size = new System.Drawing.Size(132, 22);
             this.choice2_textBox.TabIndex = 4;
             // 
             // choice1_textBox
             // 
             this.choice1_textBox.Enabled = false;
-            this.choice1_textBox.Location = new System.Drawing.Point(240, 123);
+            this.choice1_textBox.Location = new System.Drawing.Point(320, 151);
+            this.choice1_textBox.Margin = new System.Windows.Forms.Padding(4);
             this.choice1_textBox.Name = "choice1_textBox";
-            this.choice1_textBox.Size = new System.Drawing.Size(100, 20);
+            this.choice1_textBox.Size = new System.Drawing.Size(132, 22);
             this.choice1_textBox.TabIndex = 3;
             // 
             // choiceTypeComboBox
@@ -1149,88 +1327,399 @@ namespace Institute_system
             this.choiceTypeComboBox.Items.AddRange(new object[] {
             "MCQ",
             "TorF"});
-            this.choiceTypeComboBox.Location = new System.Drawing.Point(80, 124);
+            this.choiceTypeComboBox.Location = new System.Drawing.Point(107, 153);
+            this.choiceTypeComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.choiceTypeComboBox.Name = "choiceTypeComboBox";
-            this.choiceTypeComboBox.Size = new System.Drawing.Size(65, 21);
+            this.choiceTypeComboBox.Size = new System.Drawing.Size(85, 24);
             this.choiceTypeComboBox.TabIndex = 2;
             this.choiceTypeComboBox.SelectedIndexChanged += new System.EventHandler(this.choiceTypeComboBox_SelectedIndexChanged);
             // 
             // questionDescTextBox
             // 
-            this.questionDescTextBox.Location = new System.Drawing.Point(154, 65);
+            this.questionDescTextBox.Location = new System.Drawing.Point(205, 80);
+            this.questionDescTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.questionDescTextBox.Name = "questionDescTextBox";
-            this.questionDescTextBox.Size = new System.Drawing.Size(431, 20);
+            this.questionDescTextBox.Size = new System.Drawing.Size(573, 22);
             this.questionDescTextBox.TabIndex = 1;
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.button6);
-            this.tabPage4.Controls.Add(this.button5);
-            this.tabPage4.Controls.Add(this.button4);
-            this.tabPage4.Controls.Add(this.button3);
-            this.tabPage4.Controls.Add(this.button2);
-            this.tabPage4.Controls.Add(this.button1);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Controls.Add(this.tabControl2);
+            this.tabPage4.Location = new System.Drawing.Point(4, 25);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage4.Size = new System.Drawing.Size(694, 391);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage4.Size = new System.Drawing.Size(928, 484);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "reports";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // tabControl2
             // 
-            this.button6.Location = new System.Drawing.Point(211, 247);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
+            this.tabControl2.Controls.Add(this.Report1);
+            this.tabControl2.Controls.Add(this.Report2);
+            this.tabControl2.Controls.Add(this.Report3);
+            this.tabControl2.Controls.Add(this.Report4);
+            this.tabControl2.Controls.Add(this.Report5);
+            this.tabControl2.Controls.Add(this.Report6);
+            this.tabControl2.Location = new System.Drawing.Point(12, 14);
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.SelectedIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(905, 460);
+            this.tabControl2.TabIndex = 0;
             // 
-            // button5
+            // Report1
             // 
-            this.button5.Location = new System.Drawing.Point(211, 204);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
+            this.Report1.Controls.Add(this.reportViewer1);
+            this.Report1.Controls.Add(this.groupBox4);
+            this.Report1.Location = new System.Drawing.Point(4, 25);
+            this.Report1.Name = "Report1";
+            this.Report1.Padding = new System.Windows.Forms.Padding(3);
+            this.Report1.Size = new System.Drawing.Size(897, 431);
+            this.Report1.TabIndex = 0;
+            this.Report1.Text = "Report1";
+            this.Report1.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // reportViewer1
             // 
-            this.button4.Location = new System.Drawing.Point(211, 161);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            reportDataSource7.Name = "DataSet1";
+            reportDataSource7.Value = this.report_studentInfo_ResultBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource7);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Institute_system.Report1.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(17, 102);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(873, 318);
+            this.reportViewer1.TabIndex = 20;
             // 
-            // button3
+            // groupBox4
             // 
-            this.button3.Location = new System.Drawing.Point(211, 118);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.groupBox4.Controls.Add(this.showbutton);
+            this.groupBox4.Controls.Add(this.DepartmentcomboBox);
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.groupBox4.Location = new System.Drawing.Point(17, 6);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(874, 89);
+            this.groupBox4.TabIndex = 19;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Choose Department";
             // 
-            // button2
+            // showbutton
             // 
-            this.button2.Location = new System.Drawing.Point(211, 78);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.showbutton.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.showbutton.ForeColor = System.Drawing.Color.White;
+            this.showbutton.Location = new System.Drawing.Point(698, 29);
+            this.showbutton.Name = "showbutton";
+            this.showbutton.Size = new System.Drawing.Size(149, 45);
+            this.showbutton.TabIndex = 17;
+            this.showbutton.Text = "View Report";
+            this.showbutton.UseVisualStyleBackColor = false;
+            this.showbutton.Click += new System.EventHandler(this.showbutton_Click);
+            // 
+            // DepartmentcomboBox
+            // 
+            this.DepartmentcomboBox.FormattingEnabled = true;
+            this.DepartmentcomboBox.Location = new System.Drawing.Point(78, 41);
+            this.DepartmentcomboBox.Name = "DepartmentcomboBox";
+            this.DepartmentcomboBox.Size = new System.Drawing.Size(295, 33);
+            this.DepartmentcomboBox.TabIndex = 18;
+            this.DepartmentcomboBox.SelectedIndexChanged += new System.EventHandler(this.DepartmentcomboBox_SelectedIndexChanged);
+            // 
+            // Report2
+            // 
+            this.Report2.Controls.Add(this.reportViewer2);
+            this.Report2.Controls.Add(this.groupBox5);
+            this.Report2.Location = new System.Drawing.Point(4, 25);
+            this.Report2.Name = "Report2";
+            this.Report2.Padding = new System.Windows.Forms.Padding(3);
+            this.Report2.Size = new System.Drawing.Size(897, 431);
+            this.Report2.TabIndex = 1;
+            this.Report2.Text = "Report2";
+            this.Report2.UseVisualStyleBackColor = true;
+            // 
+            // reportViewer2
+            // 
+            reportDataSource8.Name = "DataSet1";
+            reportDataSource8.Value = this.finalResults_ResultBindingSource;
+            this.reportViewer2.LocalReport.DataSources.Add(reportDataSource8);
+            this.reportViewer2.LocalReport.ReportEmbeddedResource = "Institute_system.Report2.rdlc";
+            this.reportViewer2.Location = new System.Drawing.Point(17, 103);
+            this.reportViewer2.Name = "reportViewer2";
+            this.reportViewer2.ServerReport.BearerToken = null;
+            this.reportViewer2.Size = new System.Drawing.Size(868, 327);
+            this.reportViewer2.TabIndex = 21;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.Show2button);
+            this.groupBox5.Controls.Add(this.StudentcomboBox1);
+            this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox5.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.groupBox5.Location = new System.Drawing.Point(12, 6);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(874, 89);
+            this.groupBox5.TabIndex = 20;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Choose Student";
+            // 
+            // Show2button
+            // 
+            this.Show2button.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.Show2button.ForeColor = System.Drawing.Color.White;
+            this.Show2button.Location = new System.Drawing.Point(698, 29);
+            this.Show2button.Name = "Show2button";
+            this.Show2button.Size = new System.Drawing.Size(149, 45);
+            this.Show2button.TabIndex = 17;
+            this.Show2button.Text = "View Report";
+            this.Show2button.UseVisualStyleBackColor = false;
+            this.Show2button.Click += new System.EventHandler(this.Show2button_Click);
+            // 
+            // StudentcomboBox1
+            // 
+            this.StudentcomboBox1.FormattingEnabled = true;
+            this.StudentcomboBox1.Location = new System.Drawing.Point(78, 41);
+            this.StudentcomboBox1.Name = "StudentcomboBox1";
+            this.StudentcomboBox1.Size = new System.Drawing.Size(295, 33);
+            this.StudentcomboBox1.TabIndex = 18;
+            this.StudentcomboBox1.SelectedIndexChanged += new System.EventHandler(this.StudentcomboBox1_SelectedIndexChanged);
+            // 
+            // Report3
+            // 
+            this.Report3.Controls.Add(this.reportViewer3);
+            this.Report3.Controls.Add(this.groupBox6);
+            this.Report3.Location = new System.Drawing.Point(4, 25);
+            this.Report3.Name = "Report3";
+            this.Report3.Size = new System.Drawing.Size(897, 431);
+            this.Report3.TabIndex = 2;
+            this.Report3.Text = "Report3";
+            this.Report3.UseVisualStyleBackColor = true;
+            // 
+            // reportViewer3
+            // 
+            reportDataSource9.Name = "DataSet1";
+            reportDataSource9.Value = this.Report_3_ResultBindingSource;
+            this.reportViewer3.LocalReport.DataSources.Add(reportDataSource9);
+            this.reportViewer3.LocalReport.ReportEmbeddedResource = "Institute_system.Report3.rdlc";
+            this.reportViewer3.Location = new System.Drawing.Point(11, 94);
+            this.reportViewer3.Name = "reportViewer3";
+            this.reportViewer3.ServerReport.BearerToken = null;
+            this.reportViewer3.Size = new System.Drawing.Size(874, 336);
+            this.reportViewer3.TabIndex = 22;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.Show3button1);
+            this.groupBox6.Controls.Add(this.InstructorcomboBox1);
+            this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox6.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.groupBox6.Location = new System.Drawing.Point(11, 3);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(874, 89);
+            this.groupBox6.TabIndex = 21;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Choose Instructor";
+            // 
+            // Show3button1
+            // 
+            this.Show3button1.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.Show3button1.ForeColor = System.Drawing.Color.White;
+            this.Show3button1.Location = new System.Drawing.Point(698, 29);
+            this.Show3button1.Name = "Show3button1";
+            this.Show3button1.Size = new System.Drawing.Size(149, 45);
+            this.Show3button1.TabIndex = 17;
+            this.Show3button1.Text = "View Report";
+            this.Show3button1.UseVisualStyleBackColor = false;
+            this.Show3button1.Click += new System.EventHandler(this.Show3button1_Click);
+            // 
+            // InstructorcomboBox1
+            // 
+            this.InstructorcomboBox1.FormattingEnabled = true;
+            this.InstructorcomboBox1.Location = new System.Drawing.Point(78, 41);
+            this.InstructorcomboBox1.Name = "InstructorcomboBox1";
+            this.InstructorcomboBox1.Size = new System.Drawing.Size(295, 33);
+            this.InstructorcomboBox1.TabIndex = 18;
+            this.InstructorcomboBox1.SelectedIndexChanged += new System.EventHandler(this.InstructorcomboBox1_SelectedIndexChanged);
+            // 
+            // Report4
+            // 
+            this.Report4.Controls.Add(this.reportViewer4);
+            this.Report4.Controls.Add(this.groupBox7);
+            this.Report4.Location = new System.Drawing.Point(4, 25);
+            this.Report4.Name = "Report4";
+            this.Report4.Size = new System.Drawing.Size(897, 431);
+            this.Report4.TabIndex = 3;
+            this.Report4.Text = "Report4";
+            this.Report4.UseVisualStyleBackColor = true;
+            // 
+            // reportViewer4
+            // 
+            reportDataSource10.Name = "DataSet1";
+            reportDataSource10.Value = this.report_courseTopics_ResultBindingSource;
+            this.reportViewer4.LocalReport.DataSources.Add(reportDataSource10);
+            this.reportViewer4.LocalReport.ReportEmbeddedResource = "Institute_system.Report4.rdlc";
+            this.reportViewer4.Location = new System.Drawing.Point(11, 95);
+            this.reportViewer4.Name = "reportViewer4";
+            this.reportViewer4.ServerReport.BearerToken = null;
+            this.reportViewer4.Size = new System.Drawing.Size(873, 335);
+            this.reportViewer4.TabIndex = 23;
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.Show3button);
+            this.groupBox7.Controls.Add(this.CoursecomboBox);
+            this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox7.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.groupBox7.Location = new System.Drawing.Point(11, 3);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(874, 89);
+            this.groupBox7.TabIndex = 22;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Choose Course";
+            // 
+            // Show3button
+            // 
+            this.Show3button.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.Show3button.ForeColor = System.Drawing.Color.White;
+            this.Show3button.Location = new System.Drawing.Point(698, 29);
+            this.Show3button.Name = "Show3button";
+            this.Show3button.Size = new System.Drawing.Size(149, 45);
+            this.Show3button.TabIndex = 17;
+            this.Show3button.Text = "View Report";
+            this.Show3button.UseVisualStyleBackColor = false;
+            this.Show3button.Click += new System.EventHandler(this.Show3button_Click);
+            // 
+            // CoursecomboBox
+            // 
+            this.CoursecomboBox.FormattingEnabled = true;
+            this.CoursecomboBox.Location = new System.Drawing.Point(78, 41);
+            this.CoursecomboBox.Name = "CoursecomboBox";
+            this.CoursecomboBox.Size = new System.Drawing.Size(295, 33);
+            this.CoursecomboBox.TabIndex = 18;
+            this.CoursecomboBox.SelectedIndexChanged += new System.EventHandler(this.CoursecomboBox_SelectedIndexChanged);
+            // 
+            // Report5
+            // 
+            this.Report5.Controls.Add(this.reportViewer5);
+            this.Report5.Controls.Add(this.groupBox8);
+            this.Report5.Location = new System.Drawing.Point(4, 25);
+            this.Report5.Name = "Report5";
+            this.Report5.Size = new System.Drawing.Size(897, 431);
+            this.Report5.TabIndex = 4;
+            this.Report5.Text = "Report5";
+            this.Report5.UseVisualStyleBackColor = true;
+            // 
+            // reportViewer5
+            // 
+            reportDataSource11.Name = "DataSet1";
+            reportDataSource11.Value = this.report_examQandA_ResultBindingSource;
+            this.reportViewer5.LocalReport.DataSources.Add(reportDataSource11);
+            this.reportViewer5.LocalReport.ReportEmbeddedResource = "Institute_system.Report5.rdlc";
+            this.reportViewer5.Location = new System.Drawing.Point(9, 97);
+            this.reportViewer5.Name = "reportViewer5";
+            this.reportViewer5.ServerReport.BearerToken = null;
+            this.reportViewer5.Size = new System.Drawing.Size(873, 347);
+            this.reportViewer5.TabIndex = 23;
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.Show5button1);
+            this.groupBox8.Controls.Add(this.ExamNocomboBox1);
+            this.groupBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox8.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.groupBox8.Location = new System.Drawing.Point(9, 6);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(874, 89);
+            this.groupBox8.TabIndex = 22;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Choose Exam Number";
+            // 
+            // Show5button1
+            // 
+            this.Show5button1.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.Show5button1.ForeColor = System.Drawing.Color.White;
+            this.Show5button1.Location = new System.Drawing.Point(698, 29);
+            this.Show5button1.Name = "Show5button1";
+            this.Show5button1.Size = new System.Drawing.Size(149, 45);
+            this.Show5button1.TabIndex = 17;
+            this.Show5button1.Text = "View Report";
+            this.Show5button1.UseVisualStyleBackColor = false;
+            this.Show5button1.Click += new System.EventHandler(this.Show5button1_Click);
+            // 
+            // ExamNocomboBox1
+            // 
+            this.ExamNocomboBox1.FormattingEnabled = true;
+            this.ExamNocomboBox1.Location = new System.Drawing.Point(78, 41);
+            this.ExamNocomboBox1.Name = "ExamNocomboBox1";
+            this.ExamNocomboBox1.Size = new System.Drawing.Size(295, 33);
+            this.ExamNocomboBox1.TabIndex = 18;
+            // 
+            // Report6
+            // 
+            this.Report6.Controls.Add(this.reportViewer6);
+            this.Report6.Controls.Add(this.groupBox9);
+            this.Report6.Location = new System.Drawing.Point(4, 25);
+            this.Report6.Name = "Report6";
+            this.Report6.Size = new System.Drawing.Size(897, 431);
+            this.Report6.TabIndex = 5;
+            this.Report6.Text = "Report6";
+            this.Report6.UseVisualStyleBackColor = true;
+            // 
+            // reportViewer6
+            // 
+            reportDataSource12.Name = "DataSet1";
+            reportDataSource12.Value = this.report_StudentExMA_ResultBindingSource;
+            this.reportViewer6.LocalReport.DataSources.Add(reportDataSource12);
+            this.reportViewer6.LocalReport.ReportEmbeddedResource = "Institute_system.Report6.rdlc";
+            this.reportViewer6.Location = new System.Drawing.Point(4, 93);
+            this.reportViewer6.Name = "reportViewer6";
+            this.reportViewer6.ServerReport.BearerToken = null;
+            this.reportViewer6.Size = new System.Drawing.Size(889, 337);
+            this.reportViewer6.TabIndex = 24;
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.StudentscomboBox1);
+            this.groupBox9.Controls.Add(this.button1);
+            this.groupBox9.Controls.Add(this.ExamcomboBox1);
+            this.groupBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox9.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.groupBox9.Location = new System.Drawing.Point(3, 3);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(891, 89);
+            this.groupBox9.TabIndex = 23;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Choose Exam Number";
+            // 
+            // StudentscomboBox1
+            // 
+            this.StudentscomboBox1.FormattingEnabled = true;
+            this.StudentscomboBox1.Location = new System.Drawing.Point(290, 36);
+            this.StudentscomboBox1.Name = "StudentscomboBox1";
+            this.StudentscomboBox1.Size = new System.Drawing.Size(260, 33);
+            this.StudentscomboBox1.TabIndex = 19;
+            this.StudentscomboBox1.SelectedIndexChanged += new System.EventHandler(this.StudentscomboBox1_SelectedIndexChanged);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(211, 34);
+            this.button1.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(698, 29);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Size = new System.Drawing.Size(149, 45);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "View Report";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // ExamcomboBox1
+            // 
+            this.ExamcomboBox1.FormattingEnabled = true;
+            this.ExamcomboBox1.Location = new System.Drawing.Point(56, 36);
+            this.ExamcomboBox1.Name = "ExamcomboBox1";
+            this.ExamcomboBox1.Size = new System.Drawing.Size(186, 33);
+            this.ExamcomboBox1.TabIndex = 18;
+            this.ExamcomboBox1.SelectedIndexChanged += new System.EventHandler(this.ExamcomboBox1_SelectedIndexChanged);
             // 
             // tabPage8
             // 
@@ -1240,10 +1729,11 @@ namespace Institute_system
             this.tabPage8.Controls.Add(this.label29);
             this.tabPage8.Controls.Add(this.textBox19);
             this.tabPage8.Controls.Add(this.button11);
-            this.tabPage8.Location = new System.Drawing.Point(4, 22);
+            this.tabPage8.Location = new System.Drawing.Point(4, 25);
+            this.tabPage8.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage8.Size = new System.Drawing.Size(694, 391);
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage8.Size = new System.Drawing.Size(928, 484);
             this.tabPage8.TabIndex = 4;
             this.tabPage8.Text = "info";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -1251,63 +1741,76 @@ namespace Institute_system
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(90, 126);
+            this.label24.Location = new System.Drawing.Point(120, 155);
+            this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(52, 13);
+            this.label24.Size = new System.Drawing.Size(68, 17);
             this.label24.TabIndex = 11;
             this.label24.Text = "password";
             // 
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(90, 87);
+            this.label28.Location = new System.Drawing.Point(120, 107);
+            this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(53, 13);
+            this.label28.Size = new System.Drawing.Size(71, 17);
             this.label28.TabIndex = 10;
             this.label28.Text = "username";
             // 
             // textBox18
             // 
-            this.textBox18.Location = new System.Drawing.Point(183, 87);
+            this.textBox18.Location = new System.Drawing.Point(244, 107);
+            this.textBox18.Margin = new System.Windows.Forms.Padding(4);
             this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(100, 20);
+            this.textBox18.Size = new System.Drawing.Size(132, 22);
             this.textBox18.TabIndex = 9;
             // 
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(107, 46);
+            this.label29.Location = new System.Drawing.Point(143, 57);
+            this.label29.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(85, 13);
+            this.label29.Size = new System.Drawing.Size(113, 17);
             this.label29.TabIndex = 8;
             this.label29.Text = "update login info";
             // 
             // textBox19
             // 
-            this.textBox19.Location = new System.Drawing.Point(183, 123);
+            this.textBox19.Location = new System.Drawing.Point(244, 151);
+            this.textBox19.Margin = new System.Windows.Forms.Padding(4);
             this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(100, 20);
+            this.textBox19.Size = new System.Drawing.Size(132, 22);
             this.textBox19.TabIndex = 7;
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(194, 156);
+            this.button11.Location = new System.Drawing.Point(259, 192);
+            this.button11.Margin = new System.Windows.Forms.Padding(4);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(75, 23);
+            this.button11.Size = new System.Drawing.Size(100, 28);
             this.button11.TabIndex = 6;
             this.button11.Text = "update info";
             this.button11.UseVisualStyleBackColor = true;
             // 
             // instructorF
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(701, 417);
+            this.ClientSize = new System.Drawing.Size(935, 513);
             this.Controls.Add(this.tabControl1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "instructorF";
             this.Text = "Staff";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.instructorF_FormClosing);
             this.Load += new System.EventHandler(this.instructorF_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.report_studentInfo_ResultBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.finalResults_ResultBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Report_3_ResultBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.report_courseTopics_ResultBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.report_StudentExMA_ResultBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.report_examQandA_ResultBindingSource)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -1329,6 +1832,19 @@ namespace Institute_system
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
             this.tabPage4.ResumeLayout(false);
+            this.tabControl2.ResumeLayout(false);
+            this.Report1.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.Report2.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.Report3.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
+            this.Report4.ResumeLayout(false);
+            this.groupBox7.ResumeLayout(false);
+            this.Report5.ResumeLayout(false);
+            this.groupBox8.ResumeLayout(false);
+            this.Report6.ResumeLayout(false);
+            this.groupBox9.ResumeLayout(false);
             this.tabPage8.ResumeLayout(false);
             this.tabPage8.PerformLayout();
             this.ResumeLayout(false);
@@ -1381,12 +1897,6 @@ namespace Institute_system
         private System.Windows.Forms.Button generateExamBtn;
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox coursesComboBox1;
         private System.Windows.Forms.Label label16;
@@ -1448,5 +1958,43 @@ namespace Institute_system
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.TabControl tabControl2;
+        private System.Windows.Forms.TabPage Report1;
+        private System.Windows.Forms.TabPage Report2;
+        private System.Windows.Forms.TabPage Report3;
+        private System.Windows.Forms.TabPage Report4;
+        private System.Windows.Forms.TabPage Report5;
+        private System.Windows.Forms.TabPage Report6;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button showbutton;
+        private System.Windows.Forms.ComboBox DepartmentcomboBox;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource report_studentInfo_ResultBindingSource;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Button Show2button;
+        private System.Windows.Forms.ComboBox StudentcomboBox1;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer2;
+        private System.Windows.Forms.BindingSource finalResults_ResultBindingSource;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Button Show3button1;
+        private System.Windows.Forms.ComboBox InstructorcomboBox1;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer3;
+        private System.Windows.Forms.BindingSource Report_3_ResultBindingSource;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Button Show3button;
+        private System.Windows.Forms.ComboBox CoursecomboBox;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.Button Show5button1;
+        private System.Windows.Forms.ComboBox ExamNocomboBox1;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.ComboBox StudentscomboBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox ExamcomboBox1;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer4;
+        private System.Windows.Forms.BindingSource report_courseTopics_ResultBindingSource;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer6;
+        private System.Windows.Forms.BindingSource report_StudentExMA_ResultBindingSource;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer5;
+        private System.Windows.Forms.BindingSource report_examQandA_ResultBindingSource;
     }
 }
