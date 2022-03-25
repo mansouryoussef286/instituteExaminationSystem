@@ -7,21 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MaterialSkin.Controls;
-using MaterialSkin;
+
 namespace Institute_system
 {
-    public partial class login : MaterialForm
+    public partial class login : Form
     {
         //to delete it after signout
-        public MaterialTextBox2 pwTextBox;
+        public TextBox pwTextBox;
 
         public login()
         {
             InitializeComponent();
             pwTextBox = passwordTextBox;
-
-
         }
 
 
@@ -96,6 +93,7 @@ namespace Institute_system
             //var std = appManager.entities.students_select(1);
             //std.First().
         }
+
     }
 }
 
