@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.Entity.Core.Objects;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,45 +12,28 @@ namespace Institute_system
 {
     public partial class studentF : Form
     {
-        KeyValuePair<int, string> SelectedCourse;
-        public static int SelectedExamID;
-
         public studentF()
         {
             InitializeComponent();
         }
 
-        private void studCoursesComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            SelectedCourse = (KeyValuePair<int, string>)studCoursesComboBox.SelectedItem;
-       
-            var ex = from es in appManager.entities.Exam_Student
-                     join ee in appManager.entities.exams on es.Exam_ID equals ee.exam_ID
-                     where ee.course_ID == SelectedCourse.Key
-                     where es.St_ID == appManager.currentUser.stud_ID
-                     where es.st_grade == null
-                     select es;
 
-            foreach (var EX in ex)
-            {
-                ExamscomboBox1.Items.Add(EX.Exam_ID);
-            }
-        }
-        private void startExamBtn_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            SelectedExamID = int.Parse(ExamscomboBox1.Text);
-            appManager.examForm = new examF();
-            appManager.examForm.Show();
-
+            appManager.loginForm.Hide();
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+        }
 
-        private void updateInfoBtn_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
            string user = textBox1.Text == "" ? appManager.currentUser.stud_Username : textBox1.Text;
            string pass = textBox2.Text == "" ? appManager.currentUser.stud_pw : textBox2.Text;
-            if (user == appManager.currentUser.stud_Username && pass == appManager.currentUser.stud_pw)
+            if (user == textBox1.Text & pass ==textBox2.Text)
             {
+
                 MessageBox.Show("You didn't enter new password or user name");
             }
             else
@@ -61,14 +43,20 @@ namespace Institute_system
                     appManager.entities.students_update(
                         appManager.currentUser.stud_ID, appManager.currentUser.stud_Fname,
                         appManager.currentUser.stud_Lname, appManager.currentUser.dept_ID,
-                        user, pass);
+                        user, pass
+
+                        );
+                 
                     MessageBox.Show("you update your credintials successfully");
                 }
                 catch (Exception)
                 {
+
                     MessageBox.Show("could not update credintials");
                 }
             }
+
+          
         }
 
         //on form closing (sigout)
@@ -103,32 +91,9 @@ namespace Institute_system
             }
             dataGridView1.DataSource = dt;
 
-            //Student_Exam Tab
-            foreach(var c in appManager.currentUser.courses)
-            {
-                studCoursesComboBox.Items.Add(new KeyValuePair<int,string>(c.c_ID,c.c_name));
-            }
-            studCoursesComboBox.DisplayMember = "Value";
-            studCoursesComboBox.ValueMember = "Key";
-        }
-    
-        public void fillExamsTab()
-        {
-            //needs modificATION
-            int id = appManager.currentUser.stud_ID;
-            var stud = (from d in appManager.entities.students
-                        where d.stud_ID == id
-                        select d.courses);
 
-            if (stud != null)
-            {
-                foreach (var course in stud)
-                {
-                    studCoursesComboBox.Items.Add(course);
-                }
-            }
-        }
 
-        
+
+        }
     }
 }

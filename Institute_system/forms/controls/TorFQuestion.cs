@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Institute_system
+namespace Institute_system.forms.controls
 {
-    public partial class examF : Form
+    public partial class TorFQuestion : UserControl
     {
-        public examF()
+        public TorFQuestion()
         {
             InitializeComponent();
         }

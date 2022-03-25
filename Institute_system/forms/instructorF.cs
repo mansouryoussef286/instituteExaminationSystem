@@ -12,13 +12,6 @@ namespace Institute_system
 {
     public partial class instructorF : Form
     {
-        KeyValuePair<int, string> SelectedDepartment;
-        KeyValuePair<int, string> SelectedStudent;
-        KeyValuePair<int, string> SelectedInstructor;
-        KeyValuePair<int, string> Selected_Course;
-        KeyValuePair<int, string> Selected_ExamStudent;
-
-
         int questionNo = 10;
         instructor instructor;
         int select_dep_id;
@@ -631,134 +624,6 @@ namespace Institute_system
         #region Load and Close
 
         /*********************************Load Event************************************/
-        #region report1 tab
-        public void FillDepartmentsComboBox()
-        {
-            DepartmentcomboBox.Items.Clear();
-            foreach(var dept in appManager.entities.departments)
-            {
-                DepartmentcomboBox.Items.Add(new KeyValuePair<int, string>(dept.dept_ID, dept.dept_name));
-            }
-            DepartmentcomboBox.DisplayMember = "Value";
-            DepartmentcomboBox.ValueMember = "Key";
-        }
-        private void DepartmentcomboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            SelectedDepartment = (KeyValuePair<int, string>)DepartmentcomboBox.SelectedItem;
-        }
-        private void showbutton_Click(object sender, EventArgs e)
-        {
-            report_studentInfo_ResultBindingSource.DataSource = appManager.entities.report_studentInfo(SelectedDepartment.Key);
-            this.reportViewer1.RefreshReport();
-        }
-        #endregion
-        #region report2 tab
-        public void FillStudentsComboBox()
-        {
-            StudentcomboBox1.Items.Clear();
-            foreach (var std in appManager.entities.students)
-            {
-                StudentcomboBox1.Items.Add(new KeyValuePair<int, string>(std.stud_ID,std.stud_Fname+" "+std.stud_Lname));
-            }
-            StudentcomboBox1.DisplayMember = "Value";
-            StudentcomboBox1.ValueMember = "Key";
-        }
-        private void StudentcomboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            SelectedStudent = (KeyValuePair<int, string>)StudentcomboBox1.SelectedItem;
-        }
-
-        private void Show2button_Click(object sender, EventArgs e)
-        {
-            finalResults_ResultBindingSource.DataSource = appManager.entities.finalResults(SelectedStudent.Key);
-            this.reportViewer2.RefreshReport();
-        }
-        #endregion
-        #region report3 tab
-        public void FillInstructorsComboBox()
-        {
-            InstructorcomboBox1.Items.Clear();
-            foreach (var inst in appManager.entities.instructors)
-            {
-                InstructorcomboBox1.Items.Add(new KeyValuePair<int, string>(inst.inst_ID,inst.inst_name));
-            }
-            InstructorcomboBox1.DisplayMember = "Value";
-            InstructorcomboBox1.ValueMember = "Key";
-        }
-        private void InstructorcomboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            SelectedInstructor = (KeyValuePair<int, string>)InstructorcomboBox1.SelectedItem;
-        }
-
-        private void Show3button1_Click(object sender, EventArgs e)
-        {
-            Report_3_ResultBindingSource.DataSource = appManager.entities.Report_3(SelectedInstructor.Key);
-            this.reportViewer3.RefreshReport();
-        }
-        #endregion
-        #region report4 tab
-        public void FillCoursesComboBox()
-        {
-            CoursecomboBox.Items.Clear();
-            foreach (var crs in appManager.entities.courses)
-            {
-                CoursecomboBox.Items.Add(new KeyValuePair<int, string>(crs.c_ID,crs.c_name));
-            }
-            CoursecomboBox.DisplayMember = "Value";
-            CoursecomboBox.ValueMember = "Key";
-        }
-        private void CoursecomboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Selected_Course = (KeyValuePair<int, string>)CoursecomboBox.SelectedItem;
-        }
-
-        private void Show3button_Click(object sender, EventArgs e)
-        {
-            report_courseTopics_ResultBindingSource.DataSource = appManager.entities.report_courseTopics(Selected_Course.Key);
-            this.reportViewer4.RefreshReport();
-        }
-        #endregion
-        #region report5 tab
-
-        public void FillExamIDsComboBox(ComboBox c)
-        {
-            c.Items.Clear();
-            foreach (var ex in appManager.entities.exams)
-            {
-                c.Items.Add(ex.exam_ID);
-            }
-        }
-
-        private void Show5button1_Click(object sender, EventArgs e)
-        {
-            report_examQandA_ResultBindingSource.DataSource = appManager.entities.report_examQandA(int.Parse(ExamNocomboBox1.Text));
-            this.reportViewer5.RefreshReport();
-        }
-        #endregion
-        #region report6 tab
-        private void ExamcomboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            StudentscomboBox1.Items.Clear();
-            foreach(ExamStudents_Result s in appManager.entities.ExamStudents(int.Parse(ExamcomboBox1.Text)).ToList())
-            {
-                MessageBox.Show(s.FullName.ToString());
-                StudentscomboBox1.Items.Add(new KeyValuePair<int, string>(s.stud_ID, s.FullName));
-            }
-            StudentscomboBox1.DisplayMember = "Value";
-            StudentscomboBox1.ValueMember = "Key";
-        }
-        private void StudentscomboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Selected_ExamStudent = (KeyValuePair<int, string>)StudentscomboBox1.SelectedItem;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            report_StudentExMA_ResultBindingSource.DataSource = appManager.entities.report_StudentExMA(int.Parse(ExamcomboBox1.Text), Selected_ExamStudent.Key);
-            this.reportViewer6.RefreshReport();
-        }
-        #endregion
-
         private void instructorF_Load(object sender, EventArgs e)
         {
 
@@ -783,19 +648,6 @@ namespace Institute_system
             fillTF(questionNo);
             //Students Assignment
             fillExamCourses(coursesComboBox2);
-
-            //Report1 tab
-            FillDepartmentsComboBox();
-            //Report2 tab
-            FillStudentsComboBox();
-            //Report3 tab
-            FillInstructorsComboBox();
-            //Report4 tab
-            FillCoursesComboBox();
-            //Report5 tab
-            FillExamIDsComboBox(ExamNocomboBox1);
-            //Report6 tab
-            FillExamIDsComboBox(ExamcomboBox1);
         }
         /****************************on form closing (signout)**************************/
         private void instructorF_FormClosing(object sender, FormClosingEventArgs e)
@@ -805,7 +657,7 @@ namespace Institute_system
         }
 
         #endregion
-        #region student tab
+
         //student
 
         //refreshh datagriddd
@@ -822,16 +674,21 @@ namespace Institute_system
         //insert
         private void insertStdBtn_Click_1(object sender, EventArgs e)
         {
+            string[] words = textBox1.Text.Split(' ');//split name to first and last name 
+
             if (textBox1.Text == String.Empty || textBox2.Text == String.Empty || textBox3.Text == String.Empty || textBox5.Text == String.Empty)
             {
                 MessageBox.Show("pleasee Enter all data");
+            }
+            else if(words.Length!=2)
+            {
+                MessageBox.Show("please leave a space bet firstname and lastname");
             }
             else
             {
                 int St_id = int.Parse(textBox2.Text);
 
                 string St_name = textBox1.Text;
-                string[] words = St_name.Split(' ');//split name to first and last name 
                 string st_Fname = words[0];
                 string st_Lname = words[1];
 
@@ -863,7 +720,6 @@ namespace Institute_system
                     {
                         appManager.entities.students_insert(St_id, st_Fname, st_Lname, dept_id, St_userName, st_password);
                         MessageBox.Show("Student inserted");
-                        //7n3ml insert fe table  student_courses b kol el courses 2le fel department bta3t el student dh
                         textBox1.Text = textBox2.Text = textBox3.Text = textBox5.Text = textBox4.Text = String.Empty;
                         appManager.entities.SaveChanges();
 
@@ -942,16 +798,21 @@ namespace Institute_system
         //update
         private void updateStdBtn_Click_1(object sender, EventArgs e)
         {
+            string[] words = textBox1.Text.Split(' ');//split name to first and last name 
+
             if (textBox1.Text == String.Empty || textBox2.Text == String.Empty || textBox3.Text == String.Empty || textBox5.Text == String.Empty)
             {
                 MessageBox.Show("pleasee Enter all data");
+            }
+            else if (words.Length != 2)
+            {
+                MessageBox.Show("please leave a space bet firstname and lastname");
             }
             else
             {
                 int St_id = int.Parse(textBox2.Text);
 
                 string St_name = textBox1.Text;
-                string[] words = St_name.Split(' ');//split name to first and last name 
                 string st_Fname = words[0];
                 string st_Lname = words[1];
 
@@ -1040,12 +901,6 @@ namespace Institute_system
 
         }
 
-
-
-
-
-        #endregion
-
-        
+      
     }
 }
