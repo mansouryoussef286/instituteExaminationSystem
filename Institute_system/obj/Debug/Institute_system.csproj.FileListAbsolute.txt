@@ -34,7 +34,6 @@ C:\iti\Sql Project\instituteExaminationSystem\Institute_system\bin\Debug\EntityF
 C:\iti\Sql Project\instituteExaminationSystem\Institute_system\bin\Debug\EntityFramework.SqlServer.dll
 C:\iti\Sql Project\instituteExaminationSystem\Institute_system\bin\Debug\EntityFramework.xml
 C:\iti\Sql Project\instituteExaminationSystem\Institute_system\bin\Debug\EntityFramework.SqlServer.xml
-C:\iti\Sql Project\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.csprojAssemblyReference.cache
 C:\iti\Sql Project\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.instructorF.resources
 C:\iti\Sql Project\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.login.resources
 C:\iti\Sql Project\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.Properties.Resources.resources
@@ -98,3 +97,8 @@ C:\Users\ahmed sokary\OneDrive\Desktop\instituteExaminationSystem\Institute_syst
 C:\Users\ahmed sokary\OneDrive\Desktop\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.csproj.CopyComplete
 C:\Users\ahmed sokary\OneDrive\Desktop\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.exe
 C:\Users\ahmed sokary\OneDrive\Desktop\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.pdb
+C:\iti\Sql Project\instituteExaminationSystem\Institute_system\bin\Debug\MaterialSkin.dll
+C:\iti\Sql Project\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.forms.controls.mcqQuestion.resources
+C:\iti\Sql Project\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.forms.controls.TorFQuestion.resources
+C:\iti\Sql Project\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.examF.resources
+C:\iti\Sql Project\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.csprojAssemblyReference.cache
