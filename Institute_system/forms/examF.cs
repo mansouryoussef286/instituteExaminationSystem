@@ -23,16 +23,18 @@ namespace Institute_system
             
         }
 
-        
+
         private void examF_Load(object sender, EventArgs e)
         {
             exam = new ExamClass();
+            exam.examID = studentF.SelectedExamID;
+            exam.studentID = appManager.currentUser.stud_ID;
             //get the 10 questions of that exam and student
-            var examQuestions = appManager.entities.exams_questions.Where(eq => eq.St_ID == 0 && eq.exam_ID== studentF.SelectedExamID )
+            var examQuestions = appManager.entities.exams_questions.Where(eq => eq.St_ID == exam.studentID && eq.exam_ID == exam.examID)
                 .Select(eq => eq);
             Question ques;
             int i = 0;
-            foreach(var examQuestion in examQuestions)
+            foreach (var examQuestion in examQuestions)
             {
                 q = new QuestionClass();
                 var question = appManager.entities.questions.Where(eq => eq.q_ID == examQuestion.q_ID)
@@ -55,17 +57,17 @@ namespace Institute_system
                 }
                 exam.questions[i] = q;
                 //generate the question control and add it to the form
-                ques = new Question(i+1, exam.questions[i].qDesc, exam.questions[i].choices[0].cDesc, exam.questions[i].choices[1].cDesc, exam.questions[i].choices[2]==null? null: exam.questions[i].choices[2].cDesc); //there was a problem with null refrencing so i had to check on it
+                ques = new Question(i + 1, exam.questions[i].qDesc, exam.questions[i].choices[0].cDesc, exam.questions[i].choices[1].cDesc, exam.questions[i].choices[2] == null ? null : exam.questions[i].choices[2].cDesc); //there was a problem with null refrencing so i had to check on it
                 questionFlowLayoutPanel.Controls.Add(ques);
                 i++;
             }
-        }
 
+        }
         private void submitBtn_Click(object sender, EventArgs e)
         {
             appManager.confirmDlg = new forms.ConfirmDialog("Are you sure to submit exam?");
             DialogResult res = appManager.confirmDlg.ShowDialog();
-            if(res == DialogResult.OK)
+            if (res == DialogResult.OK)
             {
                 int i = 0;
                 foreach (var q in questionFlowLayoutPanel.Controls)
@@ -79,9 +81,12 @@ namespace Institute_system
                     exam.questions[i].studentChoiceID = checkedID;
                     i++;
                 }
+                //adding the answers in the data base
+                appManager.entities.examAns(exam.examID, exam.studentID, exam.questions[0].studentChoiceID, exam.questions[1].studentChoiceID, exam.questions[2].studentChoiceID, exam.questions[3].studentChoiceID, exam.questions[4].studentChoiceID, exam.questions[5].studentChoiceID, exam.questions[6].studentChoiceID, exam.questions[7].studentChoiceID, exam.questions[8].studentChoiceID, exam.questions[9].studentChoiceID);
                 MessageBox.Show("submitted!");
-                MessageBox.Show($"{exam.questions[0].studentChoiceID},{exam.questions[1].studentChoiceID},{exam.questions[2].studentChoiceID},{exam.questions[3].studentChoiceID},{exam.questions[4].studentChoiceID},{exam.questions[5].studentChoiceID},{exam.questions[6].studentChoiceID},{exam.questions[7].studentChoiceID},{exam.questions[8].studentChoiceID},{exam.questions[9].studentChoiceID}");
+                //MessageBox.Show($"{exam.questions[0].studentChoiceID},{exam.questions[1].studentChoiceID},{exam.questions[2].studentChoiceID},{exam.questions[3].studentChoiceID},{exam.questions[4].studentChoiceID},{exam.questions[5].studentChoiceID},{exam.questions[6].studentChoiceID},{exam.questions[7].studentChoiceID},{exam.questions[8].studentChoiceID},{exam.questions[9].studentChoiceID}");
                 appManager.examForm.Close();
+
             }
         }
 

@@ -31,12 +31,18 @@ namespace Institute_system
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label dept_nameLabel;
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource7 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource8 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource9 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource10 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource11 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource12 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.report_studentInfo_ResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.finalResults_ResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Report_3_ResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.report_courseTopics_ResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.report_StudentExMA_ResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.report_examQandA_ResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.deleteStdBtn = new System.Windows.Forms.Button();
@@ -157,6 +163,7 @@ namespace Institute_system
             this.Show3button = new System.Windows.Forms.Button();
             this.CoursecomboBox = new System.Windows.Forms.ComboBox();
             this.Report5 = new System.Windows.Forms.TabPage();
+            this.reportViewer5 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.Show5button1 = new System.Windows.Forms.Button();
             this.ExamNocomboBox1 = new System.Windows.Forms.ComboBox();
@@ -173,14 +180,13 @@ namespace Institute_system
             this.label29 = new System.Windows.Forms.Label();
             this.textBox19 = new System.Windows.Forms.TextBox();
             this.button11 = new System.Windows.Forms.Button();
-            this.reportViewer5 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.report_studentInfo_ResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.finalResults_ResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.Report_3_ResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.report_courseTopics_ResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.report_examQandA_ResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.report_StudentExMA_ResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             dept_nameLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.report_studentInfo_ResultBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.finalResults_ResultBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Report_3_ResultBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.report_courseTopics_ResultBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.report_StudentExMA_ResultBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.report_examQandA_ResultBindingSource)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -210,12 +216,6 @@ namespace Institute_system
             this.Report6.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.tabPage8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.report_studentInfo_ResultBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.finalResults_ResultBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Report_3_ResultBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.report_courseTopics_ResultBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.report_examQandA_ResultBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.report_StudentExMA_ResultBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dept_nameLabel
@@ -227,6 +227,30 @@ namespace Institute_system
             dept_nameLabel.Size = new System.Drawing.Size(84, 17);
             dept_nameLabel.TabIndex = 11;
             dept_nameLabel.Text = "department:";
+            // 
+            // report_studentInfo_ResultBindingSource
+            // 
+            this.report_studentInfo_ResultBindingSource.DataSource = typeof(Institute_system.report_studentInfo_Result);
+            // 
+            // finalResults_ResultBindingSource
+            // 
+            this.finalResults_ResultBindingSource.DataSource = typeof(Institute_system.finalResults_Result);
+            // 
+            // Report_3_ResultBindingSource
+            // 
+            this.Report_3_ResultBindingSource.DataSource = typeof(Institute_system.Report_3_Result);
+            // 
+            // report_courseTopics_ResultBindingSource
+            // 
+            this.report_courseTopics_ResultBindingSource.DataSource = typeof(Institute_system.report_courseTopics_Result);
+            // 
+            // report_StudentExMA_ResultBindingSource
+            // 
+            this.report_StudentExMA_ResultBindingSource.DataSource = typeof(Institute_system.report_StudentExMA_Result);
+            // 
+            // report_examQandA_ResultBindingSource
+            // 
+            this.report_examQandA_ResultBindingSource.DataSource = typeof(Institute_system.report_examQandA_Result);
             // 
             // tabControl1
             // 
@@ -271,7 +295,7 @@ namespace Institute_system
             // 
             // deleteStdBtn
             // 
-            this.deleteStdBtn.Location = new System.Drawing.Point(312, 357);
+            this.deleteStdBtn.Location = new System.Drawing.Point(312, 364);
             this.deleteStdBtn.Margin = new System.Windows.Forms.Padding(4);
             this.deleteStdBtn.Name = "deleteStdBtn";
             this.deleteStdBtn.Size = new System.Drawing.Size(100, 28);
@@ -282,7 +306,7 @@ namespace Institute_system
             // 
             // updateStdBtn
             // 
-            this.updateStdBtn.Location = new System.Drawing.Point(183, 357);
+            this.updateStdBtn.Location = new System.Drawing.Point(183, 364);
             this.updateStdBtn.Margin = new System.Windows.Forms.Padding(4);
             this.updateStdBtn.Name = "updateStdBtn";
             this.updateStdBtn.Size = new System.Drawing.Size(100, 28);
@@ -293,7 +317,7 @@ namespace Institute_system
             // 
             // insertStdBtn
             // 
-            this.insertStdBtn.Location = new System.Drawing.Point(65, 357);
+            this.insertStdBtn.Location = new System.Drawing.Point(65, 364);
             this.insertStdBtn.Margin = new System.Windows.Forms.Padding(4);
             this.insertStdBtn.Name = "insertStdBtn";
             this.insertStdBtn.Size = new System.Drawing.Size(100, 28);
@@ -462,7 +486,7 @@ namespace Institute_system
             // 
             // deleteTopicBtn
             // 
-            this.deleteTopicBtn.Location = new System.Drawing.Point(280, 369);
+            this.deleteTopicBtn.Location = new System.Drawing.Point(280, 406);
             this.deleteTopicBtn.Margin = new System.Windows.Forms.Padding(4);
             this.deleteTopicBtn.Name = "deleteTopicBtn";
             this.deleteTopicBtn.Size = new System.Drawing.Size(100, 28);
@@ -473,7 +497,7 @@ namespace Institute_system
             // 
             // updateTopicBtn
             // 
-            this.updateTopicBtn.Location = new System.Drawing.Point(151, 369);
+            this.updateTopicBtn.Location = new System.Drawing.Point(151, 406);
             this.updateTopicBtn.Margin = new System.Windows.Forms.Padding(4);
             this.updateTopicBtn.Name = "updateTopicBtn";
             this.updateTopicBtn.Size = new System.Drawing.Size(100, 28);
@@ -484,7 +508,7 @@ namespace Institute_system
             // 
             // insertTopicBtn
             // 
-            this.insertTopicBtn.Location = new System.Drawing.Point(33, 369);
+            this.insertTopicBtn.Location = new System.Drawing.Point(33, 406);
             this.insertTopicBtn.Margin = new System.Windows.Forms.Padding(4);
             this.insertTopicBtn.Name = "insertTopicBtn";
             this.insertTopicBtn.Size = new System.Drawing.Size(100, 28);
@@ -495,7 +519,7 @@ namespace Institute_system
             // 
             // deleteCourseBtn
             // 
-            this.deleteCourseBtn.Location = new System.Drawing.Point(280, 169);
+            this.deleteCourseBtn.Location = new System.Drawing.Point(280, 184);
             this.deleteCourseBtn.Margin = new System.Windows.Forms.Padding(4);
             this.deleteCourseBtn.Name = "deleteCourseBtn";
             this.deleteCourseBtn.Size = new System.Drawing.Size(100, 28);
@@ -506,7 +530,7 @@ namespace Institute_system
             // 
             // updateCourseBtn
             // 
-            this.updateCourseBtn.Location = new System.Drawing.Point(151, 169);
+            this.updateCourseBtn.Location = new System.Drawing.Point(151, 184);
             this.updateCourseBtn.Margin = new System.Windows.Forms.Padding(4);
             this.updateCourseBtn.Name = "updateCourseBtn";
             this.updateCourseBtn.Size = new System.Drawing.Size(100, 28);
@@ -517,7 +541,7 @@ namespace Institute_system
             // 
             // insertCourseBtn
             // 
-            this.insertCourseBtn.Location = new System.Drawing.Point(33, 169);
+            this.insertCourseBtn.Location = new System.Drawing.Point(33, 184);
             this.insertCourseBtn.Margin = new System.Windows.Forms.Padding(4);
             this.insertCourseBtn.Name = "insertCourseBtn";
             this.insertCourseBtn.Size = new System.Drawing.Size(100, 28);
@@ -530,7 +554,7 @@ namespace Institute_system
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label13.Location = new System.Drawing.Point(12, 214);
+            this.label13.Location = new System.Drawing.Point(12, 251);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(62, 24);
@@ -550,7 +574,7 @@ namespace Institute_system
             // 
             // TopicID
             // 
-            this.TopicID.Location = new System.Drawing.Point(213, 321);
+            this.TopicID.Location = new System.Drawing.Point(213, 358);
             this.TopicID.Margin = new System.Windows.Forms.Padding(4);
             this.TopicID.Name = "TopicID";
             this.TopicID.Size = new System.Drawing.Size(195, 22);
@@ -558,7 +582,7 @@ namespace Institute_system
             // 
             // TopicName
             // 
-            this.TopicName.Location = new System.Drawing.Point(213, 257);
+            this.TopicName.Location = new System.Drawing.Point(213, 294);
             this.TopicName.Margin = new System.Windows.Forms.Padding(4);
             this.TopicName.Name = "TopicName";
             this.TopicName.Size = new System.Drawing.Size(195, 22);
@@ -568,7 +592,7 @@ namespace Institute_system
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label8.Location = new System.Drawing.Point(67, 319);
+            this.label8.Location = new System.Drawing.Point(67, 356);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(31, 24);
@@ -579,7 +603,7 @@ namespace Institute_system
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label9.Location = new System.Drawing.Point(67, 255);
+            this.label9.Location = new System.Drawing.Point(67, 292);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(62, 24);
@@ -1358,9 +1382,9 @@ namespace Institute_system
             // 
             // reportViewer1
             // 
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.report_studentInfo_ResultBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource7.Name = "DataSet1";
+            reportDataSource7.Value = this.report_studentInfo_ResultBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource7);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Institute_system.Report1.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(17, 102);
             this.reportViewer1.Name = "reportViewer1";
@@ -1416,9 +1440,9 @@ namespace Institute_system
             // 
             // reportViewer2
             // 
-            reportDataSource2.Name = "DataSet1";
-            reportDataSource2.Value = this.finalResults_ResultBindingSource;
-            this.reportViewer2.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource8.Name = "DataSet1";
+            reportDataSource8.Value = this.finalResults_ResultBindingSource;
+            this.reportViewer2.LocalReport.DataSources.Add(reportDataSource8);
             this.reportViewer2.LocalReport.ReportEmbeddedResource = "Institute_system.Report2.rdlc";
             this.reportViewer2.Location = new System.Drawing.Point(17, 103);
             this.reportViewer2.Name = "reportViewer2";
@@ -1473,9 +1497,9 @@ namespace Institute_system
             // 
             // reportViewer3
             // 
-            reportDataSource3.Name = "DataSet1";
-            reportDataSource3.Value = this.Report_3_ResultBindingSource;
-            this.reportViewer3.LocalReport.DataSources.Add(reportDataSource3);
+            reportDataSource9.Name = "DataSet1";
+            reportDataSource9.Value = this.Report_3_ResultBindingSource;
+            this.reportViewer3.LocalReport.DataSources.Add(reportDataSource9);
             this.reportViewer3.LocalReport.ReportEmbeddedResource = "Institute_system.Report3.rdlc";
             this.reportViewer3.Location = new System.Drawing.Point(11, 94);
             this.reportViewer3.Name = "reportViewer3";
@@ -1530,9 +1554,9 @@ namespace Institute_system
             // 
             // reportViewer4
             // 
-            reportDataSource4.Name = "DataSet1";
-            reportDataSource4.Value = this.report_courseTopics_ResultBindingSource;
-            this.reportViewer4.LocalReport.DataSources.Add(reportDataSource4);
+            reportDataSource10.Name = "DataSet1";
+            reportDataSource10.Value = this.report_courseTopics_ResultBindingSource;
+            this.reportViewer4.LocalReport.DataSources.Add(reportDataSource10);
             this.reportViewer4.LocalReport.ReportEmbeddedResource = "Institute_system.Report4.rdlc";
             this.reportViewer4.Location = new System.Drawing.Point(11, 95);
             this.reportViewer4.Name = "reportViewer4";
@@ -1585,6 +1609,18 @@ namespace Institute_system
             this.Report5.Text = "Report5";
             this.Report5.UseVisualStyleBackColor = true;
             // 
+            // reportViewer5
+            // 
+            reportDataSource11.Name = "DataSet1";
+            reportDataSource11.Value = this.report_examQandA_ResultBindingSource;
+            this.reportViewer5.LocalReport.DataSources.Add(reportDataSource11);
+            this.reportViewer5.LocalReport.ReportEmbeddedResource = "Institute_system.Report5.rdlc";
+            this.reportViewer5.Location = new System.Drawing.Point(9, 97);
+            this.reportViewer5.Name = "reportViewer5";
+            this.reportViewer5.ServerReport.BearerToken = null;
+            this.reportViewer5.Size = new System.Drawing.Size(873, 347);
+            this.reportViewer5.TabIndex = 23;
+            // 
             // groupBox8
             // 
             this.groupBox8.Controls.Add(this.Show5button1);
@@ -1631,9 +1667,9 @@ namespace Institute_system
             // 
             // reportViewer6
             // 
-            reportDataSource6.Name = "DataSet1";
-            reportDataSource6.Value = this.report_StudentExMA_ResultBindingSource;
-            this.reportViewer6.LocalReport.DataSources.Add(reportDataSource6);
+            reportDataSource12.Name = "DataSet1";
+            reportDataSource12.Value = this.report_StudentExMA_ResultBindingSource;
+            this.reportViewer6.LocalReport.DataSources.Add(reportDataSource12);
             this.reportViewer6.LocalReport.ReportEmbeddedResource = "Institute_system.Report6.rdlc";
             this.reportViewer6.Location = new System.Drawing.Point(4, 93);
             this.reportViewer6.Name = "reportViewer6";
@@ -1758,42 +1794,6 @@ namespace Institute_system
             this.button11.Text = "update info";
             this.button11.UseVisualStyleBackColor = true;
             // 
-            // reportViewer5
-            // 
-            reportDataSource5.Name = "DataSet1";
-            reportDataSource5.Value = this.report_examQandA_ResultBindingSource;
-            this.reportViewer5.LocalReport.DataSources.Add(reportDataSource5);
-            this.reportViewer5.LocalReport.ReportEmbeddedResource = "Institute_system.Report5.rdlc";
-            this.reportViewer5.Location = new System.Drawing.Point(9, 97);
-            this.reportViewer5.Name = "reportViewer5";
-            this.reportViewer5.ServerReport.BearerToken = null;
-            this.reportViewer5.Size = new System.Drawing.Size(873, 347);
-            this.reportViewer5.TabIndex = 23;
-            // 
-            // report_studentInfo_ResultBindingSource
-            // 
-            this.report_studentInfo_ResultBindingSource.DataSource = typeof(Institute_system.report_studentInfo_Result);
-            // 
-            // finalResults_ResultBindingSource
-            // 
-            this.finalResults_ResultBindingSource.DataSource = typeof(Institute_system.finalResults_Result);
-            // 
-            // Report_3_ResultBindingSource
-            // 
-            this.Report_3_ResultBindingSource.DataSource = typeof(Institute_system.Report_3_Result);
-            // 
-            // report_courseTopics_ResultBindingSource
-            // 
-            this.report_courseTopics_ResultBindingSource.DataSource = typeof(Institute_system.report_courseTopics_Result);
-            // 
-            // report_examQandA_ResultBindingSource
-            // 
-            this.report_examQandA_ResultBindingSource.DataSource = typeof(Institute_system.report_examQandA_Result);
-            // 
-            // report_StudentExMA_ResultBindingSource
-            // 
-            this.report_StudentExMA_ResultBindingSource.DataSource = typeof(Institute_system.report_StudentExMA_Result);
-            // 
             // instructorF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1805,6 +1805,12 @@ namespace Institute_system
             this.Text = "Staff";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.instructorF_FormClosing);
             this.Load += new System.EventHandler(this.instructorF_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.report_studentInfo_ResultBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.finalResults_ResultBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Report_3_ResultBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.report_courseTopics_ResultBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.report_StudentExMA_ResultBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.report_examQandA_ResultBindingSource)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -1841,12 +1847,6 @@ namespace Institute_system
             this.groupBox9.ResumeLayout(false);
             this.tabPage8.ResumeLayout(false);
             this.tabPage8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.report_studentInfo_ResultBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.finalResults_ResultBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Report_3_ResultBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.report_courseTopics_ResultBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.report_examQandA_ResultBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.report_StudentExMA_ResultBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

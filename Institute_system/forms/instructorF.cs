@@ -863,6 +863,7 @@ namespace Institute_system
                     {
                         appManager.entities.students_insert(St_id, st_Fname, st_Lname, dept_id, St_userName, st_password);
                         MessageBox.Show("Student inserted");
+                        //7n3ml insert fe table  student_courses b kol el courses 2le fel department bta3t el student dh
                         textBox1.Text = textBox2.Text = textBox3.Text = textBox5.Text = textBox4.Text = String.Empty;
                         appManager.entities.SaveChanges();
 

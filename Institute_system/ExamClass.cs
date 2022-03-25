@@ -8,6 +8,9 @@ namespace Institute_system
 {
     public class ExamClass
     {
+        public int examID { get; set; }
+        public int studentID { get; set; }
+
         public QuestionClass[] questions;
         public ExamClass()
         {
