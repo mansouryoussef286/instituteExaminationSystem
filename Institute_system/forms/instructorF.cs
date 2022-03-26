@@ -822,16 +822,22 @@ namespace Institute_system
         //insert
         private void insertStdBtn_Click_1(object sender, EventArgs e)
         {
+            string[] words = textBox1.Text.Split(' ');//split name to first and last name 
+
             if (textBox1.Text == String.Empty || textBox2.Text == String.Empty || textBox3.Text == String.Empty || textBox5.Text == String.Empty)
             {
                 MessageBox.Show("pleasee Enter all data");
+            }
+            else if(words.Length<2)
+            {
+                MessageBox.Show("Please leave a space between firstname and lastname");
             }
             else
             {
                 int St_id = int.Parse(textBox2.Text);
 
                 string St_name = textBox1.Text;
-                string[] words = St_name.Split(' ');//split name to first and last name 
+              
                 string st_Fname = words[0];
                 string st_Lname = words[1];
 
@@ -942,16 +948,29 @@ namespace Institute_system
         //update
         private void updateStdBtn_Click_1(object sender, EventArgs e)
         {
+            string[] words = textBox1.Text.Split(' ');//split name to first and last name 
+            var stud_username = (from s in appManager.entities.students
+                                 where s.stud_Username == textBox5.Text
+                                                      select s).Count();
+
             if (textBox1.Text == String.Empty || textBox2.Text == String.Empty || textBox3.Text == String.Empty || textBox5.Text == String.Empty)
             {
                 MessageBox.Show("pleasee Enter all data");
             }
+            else if (words.Length <2)
+            {
+                MessageBox.Show("Please leave a space between firstname and lastname");
+            }
+            else if (stud_username==0)
+            {
+                MessageBox.Show("Not found username ");
+            }
+
             else
             {
                 int St_id = int.Parse(textBox2.Text);
 
                 string St_name = textBox1.Text;
-                string[] words = St_name.Split(' ');//split name to first and last name 
                 string st_Fname = words[0];
                 string st_Lname = words[1];
 
@@ -986,7 +1005,7 @@ namespace Institute_system
                             student_update.stud_pw = st_password;
 
                             appManager.entities.SaveChanges();
-                            MessageBox.Show("Name is Changed");
+                            MessageBox.Show("updated");
                         }
                         else
                         {
@@ -1025,11 +1044,13 @@ namespace Institute_system
                 var stud_id = (from s in appManager.entities.students
                                where s.stud_ID == St_id
                                select s).Count();
+
                 if (stud_id > 0)
                 {
                     appManager.entities.students_delete(St_id);
                     MessageBox.Show("Student deleted");
                     appManager.entities.SaveChanges();
+                    textBox1.Text = textBox2.Text = textBox3.Text = textBox5.Text = textBox4.Text = String.Empty;
                     RefreshDatagrid();
                 }
                 else
