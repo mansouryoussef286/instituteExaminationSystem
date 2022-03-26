@@ -310,7 +310,6 @@ namespace Institute_system
         }
 
         /*******************************************Events********************************************/
-
         /******************************Select course from combobox handler****************************/
         private void coursesDropDown_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -330,76 +329,297 @@ namespace Institute_system
         /******************************Update Course name by course ID****************************/
         private void updateCourseBtn_Click(object sender, EventArgs e)
         {
-            int CID = int.Parse(CourseID.Text);
-            var Course = (from c in appManager.entities.courses  //edit on stored procedure courses_select
-                          where c.c_ID == CID
-                          select c).First();
-            if (Course != null)
+            if (String.IsNullOrWhiteSpace(CourseID.Text) || String.IsNullOrWhiteSpace(courseName.Text))
             {
-                Course.c_name = courseName.Text;
-                appManager.entities.SaveChanges();
-                FillCoursesDropDown();
-                fillExamCourses(coursesComboBox1);
-                fillExamCourses(coursesComboBox2);
-                MessageBox.Show("Course Name is Updated");
+                MessageBox.Show("Please enter all data");
+            }
+            else
+            {
+                try {
+                    int CID = int.Parse(CourseID.Text);
+                    var CheckID = (from c in appManager.entities.courses
+                                   where c.c_ID == CID
+                                   select c).Count();
+                    if (CheckID == 1)
+                    {
+                        var Course = (from c in appManager.entities.courses
+                                      where c.c_ID == CID
+                                      select c).First();
+
+                        var CheckName1 = (from c in appManager.entities.courses
+                                          where c.c_name == courseName.Text
+                                          select c).Count();
+
+                        if (CheckName1 == 0)
+                        {
+                            Course.c_name = courseName.Text;
+                            appManager.entities.SaveChanges();
+                            MessageBox.Show("Course Name is Updated");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Course name already exists");
+                        }
+
+                        FillCoursesDropDown();
+                        fillExamCourses(coursesComboBox1);
+                        fillExamCourses(coursesComboBox2);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Course doesn't exist");
+                    }
+                }
+                catch { MessageBox.Show("Invalid Data");  }
             }
         }
         /******************************Insert Course****************************/
         private void insertCourseBtn_Click(object sender, EventArgs e)
         {
-            int CID = int.Parse(CourseID.Text);
-            string CName = courseName.Text.ToString();
-            if (appManager.entities.courses_insert(CID, CName) == 1)
+            if (String.IsNullOrWhiteSpace(CourseID.Text) || String.IsNullOrWhiteSpace(courseName.Text))
             {
-                appManager.entities = new sqlProjectEntities();
-                appManager.entities.ins_courseInsert(CurrentInst_ID, CID); //>>>>stored procedure de feha mo4kla
+                MessageBox.Show("Please enter all data");
             }
-            //appManager.entities.ins_courseInsert(CurrentInst_ID, CID); //Exception?????????????
+            else
+            {
+                try
+                {
+                    int CID = int.Parse(CourseID.Text);
+                    string CName = courseName.Text.ToString();
 
-            FillCoursesDropDown();
-            fillExamCourses(coursesComboBox1);
-            fillExamCourses(coursesComboBox2);
-            MessageBox.Show("Course is inserted");
+                    var CheckID = (from c in appManager.entities.courses
+                                   where c.c_ID == CID
+                                   select c).Count();
 
+                    var CheckID1 = (from c in appManager.currentInstructor.courses
+                                    where c.c_ID == CID
+                                    select c).Count();
+
+                    var CheckName1 = (from c in appManager.entities.courses
+                                      where c.c_name == CName
+                                      select c).Count();
+
+
+                    if (CheckID == 1)//check if course already exists in course table
+                    {
+                        var CheckName = (from c in appManager.entities.courses
+                                         where c.c_ID == CID
+                                         select c).First().c_name;
+
+                        //check if course isnot already assigning to current instructor
+                        if (CheckID1 == 0)
+                        {
+                            if (CName == CheckName)
+                            {
+                                appManager.entities.ins_courseInsert(CurrentInst_ID, CID);
+                                MessageBox.Show("Course is inserted");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Course ID already exists with another name , Please change Course ID");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Course already exists");
+                        }
+                    }
+                    else
+                    {
+                        if (CheckName1 == 0)
+                        {
+                            appManager.entities.courses_insert(CID, CName);
+                            appManager.entities = new sqlProjectEntities();
+                            appManager.entities.ins_courseInsert(CurrentInst_ID, CID);
+
+                            foreach (var d in appManager.entities.departments)
+                            {
+                                appManager.entities = new sqlProjectEntities();
+                                appManager.entities.dept_coursesInsert(d.dept_ID, CID);
+
+                            }
+
+                            MessageBox.Show("Course is inserted");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Course already exists");
+                        }
+                    }
+
+                    FillCoursesDropDown();
+                    fillExamCourses(coursesComboBox1);
+                    fillExamCourses(coursesComboBox2);
+                }
+                catch { MessageBox.Show("Invalid Data"); }
+            }
         }
         /******************************Delete course****************************/
         private void deleteCourseBtn_Click(object sender, EventArgs e)
         {
-            appManager.entities.ins_courseDelete(CurrentInst_ID, int.Parse(CourseID.Text));
-            FillCoursesDropDown();
-            fillExamCourses(coursesComboBox1);
-            fillExamCourses(coursesComboBox2);
-            MessageBox.Show("Course is Deleted");
-        }
+            if (String.IsNullOrWhiteSpace(CourseID.Text) || String.IsNullOrWhiteSpace(courseName.Text))
+            {
+                MessageBox.Show("Please enter all data");
+            }
+            else
+            {
+                try
+                {
+                    int CID = int.Parse(CourseID.Text);
+                    string CName = courseName.Text.ToString();
 
+                    var CheckID = (from c in appManager.entities.courses
+                                   where c.c_ID == CID
+                                   select c).Count();
+
+                    var CheckID1 = (from c in appManager.currentInstructor.courses
+                                    where c.c_ID == CID
+                                    select c).Count();
+
+                    var CheckName1 = (from c in appManager.entities.courses
+                                      where c.c_name == CName
+                                      select c).Count();
+
+                    if (CheckID == 1 && CheckID1 == 1 && CheckName1 == 1)
+                    {
+                        appManager.entities.ins_courseDelete(CurrentInst_ID, int.Parse(CourseID.Text));
+                        FillCoursesDropDown();
+                        fillExamCourses(coursesComboBox1);
+                        fillExamCourses(coursesComboBox2);
+                        MessageBox.Show("Course is Deleted");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Course doesn't exist");
+                    }
+                }
+                catch { MessageBox.Show("Invalid Data"); }
+            }
+        }
         /******************************Update Topic name by course ID***************************/
         private void updateTopicBtn_Click(object sender, EventArgs e)
         {
-            int TID = int.Parse(TopicID.Text);
-            var Topic = (from t in appManager.entities.topics //edit topic_select procedure
-                         where t.topic_ID == TID
-                         select t).First();
-            if (Topic != null)
+            if (String.IsNullOrWhiteSpace(TopicID.Text) || String.IsNullOrWhiteSpace(TopicName.Text))
             {
-                Topic.topic_name = TopicName.Text;
-                appManager.entities.SaveChanges();
-                FillTopicsGrid();
-                MessageBox.Show("Topic Name is Updated");
+                MessageBox.Show("Please enter all data");
+            }
+            else
+            {
+                try
+                {
+                    int TID = int.Parse(TopicID.Text);
+
+                    var CheckID = (from t in appManager.entities.topics
+                                   where t.topic_ID == TID
+                                   select t).Count();
+
+                    if (CheckID == 1)
+                    {
+                        var Topic = (from t in appManager.entities.topics //edit topic_select procedure
+                                     where t.topic_ID == TID
+                                     select t).First();
+
+                        var CheckName1 = (from t in appManager.entities.topics
+                                          where t.topic_name == TopicName.Text
+                                          select t).Count();
+
+                        if (CheckName1 == 0)
+                        {
+                            Topic.topic_name = TopicName.Text;
+                            appManager.entities.SaveChanges();
+                            FillTopicsGrid();
+                            MessageBox.Show("Topic Name is Updated");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Topic name already exists");
+                        }
+
+                        FillCoursesDropDown();
+                        fillExamCourses(coursesComboBox1);
+                        fillExamCourses(coursesComboBox2);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Topic doesn't exist");
+                    }
+                }
+                catch { MessageBox.Show("Invalid Data"); }
             }
         }
         /******************************Insert Topic****************************/
         private void insertTopicBtn_Click(object sender, EventArgs e)
         {
-            appManager.entities.topic_insert(int.Parse(TopicID.Text), TopicName.Text.ToString(), SelectedCourse.Key);
-            FillTopicsGrid();
-            MessageBox.Show("Topic is inserted");
+            if (String.IsNullOrWhiteSpace(TopicID.Text) || String.IsNullOrWhiteSpace(TopicName.Text))
+            {
+                MessageBox.Show("Please enter all data");
+            }
+            else
+            {
+                try
+                {
+                    int TID = int.Parse(TopicID.Text);
+                    string TName = TopicName.Text.ToString();
+
+                    var CheckID = (from t in appManager.entities.topics
+                                   where t.topic_ID == TID
+                                   select t).Count();
+
+                    var CheckName1 = (from t in appManager.entities.topics
+                                      where t.topic_name == TName
+                                      select t).Count();
+
+
+                    if (CheckID == 1 || CheckName1 == 1)//check if topic already exists in topic table
+                    {
+                        MessageBox.Show("Topic already exists");
+                    }
+                    else
+                    {
+                        appManager.entities.topic_insert(int.Parse(TopicID.Text), TopicName.Text.ToString(), SelectedCourse.Key);
+                        FillTopicsGrid();
+                        MessageBox.Show("Topic is inserted");
+                    }
+                }
+                catch { MessageBox.Show("Invalid Data"); }
+            }
+           
         }
         /******************************Delete Topic****************************/
         private void deleteTopicBtn_Click(object sender, EventArgs e)
         {
-            appManager.entities.topic_delete(int.Parse(TopicID.Text));
-            FillTopicsGrid();
-            MessageBox.Show("Course is Deleted");
+            if (String.IsNullOrWhiteSpace(TopicID.Text) || String.IsNullOrWhiteSpace(TopicName.Text))
+            {
+                MessageBox.Show("Please enter all data");
+            }
+            else
+            {
+                try
+                {
+                    int TID = int.Parse(TopicID.Text);
+                    string TName = TopicName.Text.ToString();
+
+                    var CheckID = (from t in appManager.entities.topics
+                                   where t.topic_ID == TID
+                                   select t).Count();
+
+                    var CheckName1 = (from t in appManager.entities.topics
+                                      where t.topic_name == TName
+                                      select t).Count();
+
+                    if (CheckID == 1 && CheckName1 == 1)
+                    {
+                        appManager.entities.topic_delete(int.Parse(TopicID.Text));
+                        FillTopicsGrid();
+                        MessageBox.Show("Topic is Deleted");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Topic doesn't exist");
+                    }
+                }
+                catch { MessageBox.Show("Invalid Data"); }
+            }
         }
         #endregion
 
@@ -631,134 +851,6 @@ namespace Institute_system
         #region Load and Close
 
         /*********************************Load Event************************************/
-        #region report1 tab
-        public void FillDepartmentsComboBox()
-        {
-            DepartmentcomboBox.Items.Clear();
-            foreach(var dept in appManager.entities.departments)
-            {
-                DepartmentcomboBox.Items.Add(new KeyValuePair<int, string>(dept.dept_ID, dept.dept_name));
-            }
-            DepartmentcomboBox.DisplayMember = "Value";
-            DepartmentcomboBox.ValueMember = "Key";
-        }
-        private void DepartmentcomboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            SelectedDepartment = (KeyValuePair<int, string>)DepartmentcomboBox.SelectedItem;
-        }
-        private void showbutton_Click(object sender, EventArgs e)
-        {
-            report_studentInfo_ResultBindingSource.DataSource = appManager.entities.report_studentInfo(SelectedDepartment.Key);
-            this.reportViewer1.RefreshReport();
-        }
-        #endregion
-        #region report2 tab
-        public void FillStudentsComboBox()
-        {
-            StudentcomboBox1.Items.Clear();
-            foreach (var std in appManager.entities.students)
-            {
-                StudentcomboBox1.Items.Add(new KeyValuePair<int, string>(std.stud_ID,std.stud_Fname+" "+std.stud_Lname));
-            }
-            StudentcomboBox1.DisplayMember = "Value";
-            StudentcomboBox1.ValueMember = "Key";
-        }
-        private void StudentcomboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            SelectedStudent = (KeyValuePair<int, string>)StudentcomboBox1.SelectedItem;
-        }
-
-        private void Show2button_Click(object sender, EventArgs e)
-        {
-            finalResults_ResultBindingSource.DataSource = appManager.entities.finalResults(SelectedStudent.Key);
-            this.reportViewer2.RefreshReport();
-        }
-        #endregion
-        #region report3 tab
-        public void FillInstructorsComboBox()
-        {
-            InstructorcomboBox1.Items.Clear();
-            foreach (var inst in appManager.entities.instructors)
-            {
-                InstructorcomboBox1.Items.Add(new KeyValuePair<int, string>(inst.inst_ID,inst.inst_name));
-            }
-            InstructorcomboBox1.DisplayMember = "Value";
-            InstructorcomboBox1.ValueMember = "Key";
-        }
-        private void InstructorcomboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            SelectedInstructor = (KeyValuePair<int, string>)InstructorcomboBox1.SelectedItem;
-        }
-
-        private void Show3button1_Click(object sender, EventArgs e)
-        {
-            Report_3_ResultBindingSource.DataSource = appManager.entities.Report_3(SelectedInstructor.Key);
-            this.reportViewer3.RefreshReport();
-        }
-        #endregion
-        #region report4 tab
-        public void FillCoursesComboBox()
-        {
-            CoursecomboBox.Items.Clear();
-            foreach (var crs in appManager.entities.courses)
-            {
-                CoursecomboBox.Items.Add(new KeyValuePair<int, string>(crs.c_ID,crs.c_name));
-            }
-            CoursecomboBox.DisplayMember = "Value";
-            CoursecomboBox.ValueMember = "Key";
-        }
-        private void CoursecomboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Selected_Course = (KeyValuePair<int, string>)CoursecomboBox.SelectedItem;
-        }
-
-        private void Show3button_Click(object sender, EventArgs e)
-        {
-            report_courseTopics_ResultBindingSource.DataSource = appManager.entities.report_courseTopics(Selected_Course.Key);
-            this.reportViewer4.RefreshReport();
-        }
-        #endregion
-        #region report5 tab
-
-        public void FillExamIDsComboBox(ComboBox c)
-        {
-            c.Items.Clear();
-            foreach (var ex in appManager.entities.exams)
-            {
-                c.Items.Add(ex.exam_ID);
-            }
-        }
-
-        private void Show5button1_Click(object sender, EventArgs e)
-        {
-            report_examQandA_ResultBindingSource.DataSource = appManager.entities.report_examQandA(int.Parse(ExamNocomboBox1.Text));
-            this.reportViewer5.RefreshReport();
-        }
-        #endregion
-        #region report6 tab
-        private void ExamcomboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            StudentscomboBox1.Items.Clear();
-            foreach(ExamStudents_Result s in appManager.entities.ExamStudents(int.Parse(ExamcomboBox1.Text)).ToList())
-            {
-                MessageBox.Show(s.FullName.ToString());
-                StudentscomboBox1.Items.Add(new KeyValuePair<int, string>(s.stud_ID, s.FullName));
-            }
-            StudentscomboBox1.DisplayMember = "Value";
-            StudentscomboBox1.ValueMember = "Key";
-        }
-        private void StudentscomboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Selected_ExamStudent = (KeyValuePair<int, string>)StudentscomboBox1.SelectedItem;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            report_StudentExMA_ResultBindingSource.DataSource = appManager.entities.report_StudentExMA(int.Parse(ExamcomboBox1.Text), Selected_ExamStudent.Key);
-            this.reportViewer6.RefreshReport();
-        }
-        #endregion
-
         private void instructorF_Load(object sender, EventArgs e)
         {
 
@@ -805,6 +897,7 @@ namespace Institute_system
         }
 
         #endregion
+
         #region student tab
         //student
 
@@ -1060,13 +1153,138 @@ namespace Institute_system
             }
 
         }
-
-
-
-
-
         #endregion
 
-        
+        #region reports tab
+
+        #region report1 tab
+        public void FillDepartmentsComboBox()
+        {
+            DepartmentcomboBox.Items.Clear();
+            foreach (var dept in appManager.entities.departments)
+            {
+                DepartmentcomboBox.Items.Add(new KeyValuePair<int, string>(dept.dept_ID, dept.dept_name));
+            }
+            DepartmentcomboBox.DisplayMember = "Value";
+            DepartmentcomboBox.ValueMember = "Key";
+        }
+        private void DepartmentcomboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SelectedDepartment = (KeyValuePair<int, string>)DepartmentcomboBox.SelectedItem;
+        }
+        private void showbutton_Click(object sender, EventArgs e)
+        {
+            report_studentInfo_ResultBindingSource.DataSource = appManager.entities.report_studentInfo(SelectedDepartment.Key);
+            this.reportViewer1.RefreshReport();
+        }
+        #endregion
+        #region report2 tab
+        public void FillStudentsComboBox()
+        {
+            StudentcomboBox1.Items.Clear();
+            foreach (var std in appManager.entities.students)
+            {
+                StudentcomboBox1.Items.Add(new KeyValuePair<int, string>(std.stud_ID, std.stud_Fname + " " + std.stud_Lname));
+            }
+            StudentcomboBox1.DisplayMember = "Value";
+            StudentcomboBox1.ValueMember = "Key";
+        }
+        private void StudentcomboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SelectedStudent = (KeyValuePair<int, string>)StudentcomboBox1.SelectedItem;
+        }
+
+        private void Show2button_Click(object sender, EventArgs e)
+        {
+            finalResults_ResultBindingSource.DataSource = appManager.entities.finalResults(SelectedStudent.Key);
+            this.reportViewer2.RefreshReport();
+        }
+        #endregion
+        #region report3 tab
+        public void FillInstructorsComboBox()
+        {
+            InstructorcomboBox1.Items.Clear();
+            foreach (var inst in appManager.entities.instructors)
+            {
+                InstructorcomboBox1.Items.Add(new KeyValuePair<int, string>(inst.inst_ID, inst.inst_name));
+            }
+            InstructorcomboBox1.DisplayMember = "Value";
+            InstructorcomboBox1.ValueMember = "Key";
+        }
+        private void InstructorcomboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SelectedInstructor = (KeyValuePair<int, string>)InstructorcomboBox1.SelectedItem;
+        }
+
+        private void Show3button1_Click(object sender, EventArgs e)
+        {
+            Report_3_ResultBindingSource.DataSource = appManager.entities.Report_3(SelectedInstructor.Key);
+            this.reportViewer3.RefreshReport();
+        }
+        #endregion
+        #region report4 tab
+        public void FillCoursesComboBox()
+        {
+            CoursecomboBox.Items.Clear();
+            foreach (var crs in appManager.entities.courses)
+            {
+                CoursecomboBox.Items.Add(new KeyValuePair<int, string>(crs.c_ID, crs.c_name));
+            }
+            CoursecomboBox.DisplayMember = "Value";
+            CoursecomboBox.ValueMember = "Key";
+        }
+        private void CoursecomboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Selected_Course = (KeyValuePair<int, string>)CoursecomboBox.SelectedItem;
+        }
+
+        private void Show3button_Click(object sender, EventArgs e)
+        {
+            report_courseTopics_ResultBindingSource.DataSource = appManager.entities.report_courseTopics(Selected_Course.Key);
+            this.reportViewer4.RefreshReport();
+        }
+        #endregion
+        #region report5 tab
+
+        public void FillExamIDsComboBox(ComboBox c)
+        {
+            c.Items.Clear();
+            foreach (var ex in appManager.entities.exams)
+            {
+                c.Items.Add(ex.exam_ID);
+            }
+        }
+
+        private void Show5button1_Click(object sender, EventArgs e)
+        {
+            report_examQandA_ResultBindingSource.DataSource = appManager.entities.report_examQandA(int.Parse(ExamNocomboBox1.Text));
+            this.reportViewer5.RefreshReport();
+        }
+        #endregion
+        #region report6 tab
+        private void ExamcomboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            StudentscomboBox1.Items.Clear();
+            foreach (ExamStudents_Result s in appManager.entities.ExamStudents(int.Parse(ExamcomboBox1.Text)).ToList())
+            {
+                MessageBox.Show(s.FullName.ToString());
+                StudentscomboBox1.Items.Add(new KeyValuePair<int, string>(s.stud_ID, s.FullName));
+            }
+            StudentscomboBox1.DisplayMember = "Value";
+            StudentscomboBox1.ValueMember = "Key";
+        }
+        private void StudentscomboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Selected_ExamStudent = (KeyValuePair<int, string>)StudentscomboBox1.SelectedItem;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            report_StudentExMA_ResultBindingSource.DataSource = appManager.entities.report_StudentExMA(int.Parse(ExamcomboBox1.Text), Selected_ExamStudent.Key);
+            this.reportViewer6.RefreshReport();
+        }
+        #endregion
+        #endregion
+
     }
 }

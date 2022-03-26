@@ -253,12 +253,12 @@
     <EmbeddedResource Include="forms\studentF.resx">
       <DependentUpon>studentF.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report1.rdlc" />
-    <EmbeddedResource Include="Report2.rdlc" />
-    <EmbeddedResource Include="Report3.rdlc" />
-    <EmbeddedResource Include="Report4.rdlc" />
-    <EmbeddedResource Include="Report5.rdlc" />
-    <EmbeddedResource Include="Report6.rdlc" />
+    <EmbeddedResource Include="Reports\Report1.rdlc" />
+    <EmbeddedResource Include="Reports\Report2.rdlc" />
+    <EmbeddedResource Include="Reports\Report3.rdlc" />
+    <EmbeddedResource Include="Reports\Report4.rdlc" />
+    <EmbeddedResource Include="Reports\Report5.rdlc" />
+    <EmbeddedResource Include="Reports\Report6.rdlc" />
     <EntityDeploy Include="itiDBmodel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>itiDBmodel.Designer.cs</LastGenOutput>
@@ -315,8 +315,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Reports\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

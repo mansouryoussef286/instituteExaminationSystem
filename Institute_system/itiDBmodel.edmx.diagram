@@ -29,6 +29,7 @@
         <AssociationConnector Association="sqlProjectModel.FK_exams_questions_students" ManuallyRouted="false" />
         <AssociationConnector Association="sqlProjectModel.Inst_Courses" ManuallyRouted="false" />
         <AssociationConnector Association="sqlProjectModel.stud_courses" ManuallyRouted="false" />
+        <AssociationConnector Association="sqlProjectModel.Dept_Courses" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

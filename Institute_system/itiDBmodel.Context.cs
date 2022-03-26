@@ -313,19 +313,6 @@ namespace Institute_system
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ins_courseDelete", s_idParameter, c_idParameter);
         }
     
-        public virtual ObjectResult<string> ins_courseInsert(Nullable<int> s_id, Nullable<int> c_id)
-        {
-            var s_idParameter = s_id.HasValue ?
-                new ObjectParameter("s_id", s_id) :
-                new ObjectParameter("s_id", typeof(int));
-    
-            var c_idParameter = c_id.HasValue ?
-                new ObjectParameter("c_id", c_id) :
-                new ObjectParameter("c_id", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("ins_courseInsert", s_idParameter, c_idParameter);
-        }
-    
         public virtual ObjectResult<ins_Courseselect_Result> ins_Courseselect(Nullable<int> s_id, Nullable<int> c_id)
         {
             var s_idParameter = s_id.HasValue ?
@@ -901,6 +888,32 @@ namespace Institute_system
                 new ObjectParameter("SID", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("ExamCoursesStudents", cIDParameter, sIDParameter);
+        }
+    
+        public virtual int ins_courseInsert(Nullable<int> s_id, Nullable<int> c_id)
+        {
+            var s_idParameter = s_id.HasValue ?
+                new ObjectParameter("s_id", s_id) :
+                new ObjectParameter("s_id", typeof(int));
+    
+            var c_idParameter = c_id.HasValue ?
+                new ObjectParameter("c_id", c_id) :
+                new ObjectParameter("c_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ins_courseInsert", s_idParameter, c_idParameter);
+        }
+    
+        public virtual int dept_coursesInsert(Nullable<int> dID, Nullable<int> cID)
+        {
+            var dIDParameter = dID.HasValue ?
+                new ObjectParameter("DID", dID) :
+                new ObjectParameter("DID", typeof(int));
+    
+            var cIDParameter = cID.HasValue ?
+                new ObjectParameter("CID", cID) :
+                new ObjectParameter("CID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("dept_coursesInsert", dIDParameter, cIDParameter);
         }
     }
 }

@@ -192,7 +192,6 @@
       </ResultMapping>
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="ins_courseDelete" FunctionName="sqlProjectModel.Store.ins_courseDelete" />
-    <FunctionImportMapping FunctionImportName="ins_courseInsert" FunctionName="sqlProjectModel.Store.ins_courseInsert" />
     <FunctionImportMapping FunctionImportName="ins_Courseselect" FunctionName="sqlProjectModel.Store.ins_Courseselect">
       <ResultMapping>
         <ComplexTypeMapping TypeName="sqlProjectModel.ins_Courseselect_Result">
@@ -357,5 +356,15 @@
       </ResultMapping>
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="ExamCoursesStudents" FunctionName="sqlProjectModel.Store.ExamCoursesStudents" />
+    <AssociationSetMapping Name="Dept_Courses" TypeName="sqlProjectModel.Dept_Courses" StoreEntitySet="Dept_Courses">
+      <EndProperty Name="department">
+        <ScalarProperty Name="dept_ID" ColumnName="dept_ID" />
+      </EndProperty>
+      <EndProperty Name="cours">
+        <ScalarProperty Name="c_ID" ColumnName="Crs_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="ins_courseInsert" FunctionName="sqlProjectModel.Store.ins_courseInsert" />
+    <FunctionImportMapping FunctionImportName="dept_coursesInsert" FunctionName="sqlProjectModel.Store.dept_coursesInsert" />
   </EntityContainerMapping>
 </Mapping>

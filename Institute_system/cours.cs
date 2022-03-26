@@ -22,6 +22,7 @@ namespace Institute_system
             this.topics = new HashSet<topic>();
             this.instructors = new HashSet<instructor>();
             this.students = new HashSet<student>();
+            this.departments = new HashSet<department>();
         }
     
         public int c_ID { get; set; }
@@ -37,5 +38,7 @@ namespace Institute_system
         public virtual ICollection<instructor> instructors { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<student> students { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<department> departments { get; set; }
     }
 }

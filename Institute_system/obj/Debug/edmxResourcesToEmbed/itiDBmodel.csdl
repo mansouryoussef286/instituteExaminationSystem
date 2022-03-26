@@ -21,6 +21,7 @@
     <NavigationProperty Name="topics" Relationship="Self.FK_topics_courses" FromRole="courses" ToRole="topics" />
     <NavigationProperty Name="instructors" Relationship="Self.Inst_Courses" FromRole="courses" ToRole="instructor" />
     <NavigationProperty Name="students" Relationship="Self.stud_courses" FromRole="courses" ToRole="students" />
+    <NavigationProperty Name="departments" Relationship="sqlProjectModel.Dept_Courses" FromRole="cours" ToRole="department" />
   </EntityType>
   <EntityType Name="department">
     <Key>
@@ -31,6 +32,7 @@
     <Property Name="manager_ID" Type="Int32" Nullable="false" />
     <NavigationProperty Name="instructor" Relationship="Self.FK_department_instructor" FromRole="department" ToRole="instructor" />
     <NavigationProperty Name="students" Relationship="Self.FK_students_department" FromRole="department" ToRole="students" />
+    <NavigationProperty Name="courses" Relationship="sqlProjectModel.Dept_Courses" FromRole="department" ToRole="cours" />
   </EntityType>
   <EntityType Name="Exam_Student">
     <Key>
@@ -410,10 +412,6 @@
       <Parameter Name="s_id" Mode="In" Type="Int32" />
       <Parameter Name="c_id" Mode="In" Type="Int32" />
     </FunctionImport>
-    <FunctionImport Name="ins_courseInsert" ReturnType="Collection(String)">
-      <Parameter Name="s_id" Mode="In" Type="Int32" />
-      <Parameter Name="c_id" Mode="In" Type="Int32" />
-    </FunctionImport>
     <FunctionImport Name="ins_Courseselect" ReturnType="Collection(sqlProjectModel.ins_Courseselect_Result)">
       <Parameter Name="s_id" Mode="In" Type="Int32" />
       <Parameter Name="c_id" Mode="In" Type="Int32" />
@@ -584,6 +582,18 @@
       <Parameter Name="CID" Mode="In" Type="Int32" />
       <Parameter Name="SID" Mode="In" Type="Int32" />
     </FunctionImport>
+    <AssociationSet Name="Dept_Courses" Association="sqlProjectModel.Dept_Courses">
+      <End Role="cours" EntitySet="courses" />
+      <End Role="department" EntitySet="departments" />
+    </AssociationSet>
+    <FunctionImport Name="ins_courseInsert">
+      <Parameter Name="s_id" Mode="In" Type="Int32" />
+      <Parameter Name="c_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="dept_coursesInsert">
+      <Parameter Name="DID" Mode="In" Type="Int32" />
+      <Parameter Name="CID" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="choices_select_Result">
     <Property Type="Int32" Name="choice_ID" Nullable="false" />
@@ -692,4 +702,8 @@
     <Property Type="Int32" Name="choice_ID" Nullable="false" />
     <Property Type="String" Name="choice_desc" Nullable="false" />
   </ComplexType>
+  <Association Name="Dept_Courses">
+    <End Type="sqlProjectModel.cours" Role="cours" Multiplicity="*" />
+    <End Type="sqlProjectModel.department" Role="department" Multiplicity="*" />
+  </Association>
 </Schema>

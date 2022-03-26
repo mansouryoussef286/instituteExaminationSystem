@@ -18,6 +18,7 @@ namespace Institute_system
         public department()
         {
             this.students = new HashSet<student>();
+            this.courses = new HashSet<cours>();
         }
     
         public int dept_ID { get; set; }
@@ -27,5 +28,7 @@ namespace Institute_system
         public virtual instructor instructor { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<student> students { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<cours> courses { get; set; }
     }
 }

@@ -29,6 +29,14 @@
           <Property Name="dept_name" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="manager_ID" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="Dept_Courses">
+          <Key>
+            <PropertyRef Name="dept_ID" />
+            <PropertyRef Name="Crs_ID" />
+          </Key>
+          <Property Name="dept_ID" Type="int" Nullable="false" />
+          <Property Name="Crs_ID" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="Exam_Student">
           <Key>
             <PropertyRef Name="St_ID" />
@@ -140,6 +148,30 @@
             </Principal>
             <Dependent Role="department">
               <PropertyRef Name="manager_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Dept_Courses_courses">
+          <End Role="courses" Type="Self.courses" Multiplicity="1" />
+          <End Role="Dept_Courses" Type="Self.Dept_Courses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="courses">
+              <PropertyRef Name="c_ID" />
+            </Principal>
+            <Dependent Role="Dept_Courses">
+              <PropertyRef Name="Crs_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Dept_Courses_department">
+          <End Role="department" Type="Self.department" Multiplicity="1" />
+          <End Role="Dept_Courses" Type="Self.Dept_Courses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="department">
+              <PropertyRef Name="dept_ID" />
+            </Principal>
+            <Dependent Role="Dept_Courses">
+              <PropertyRef Name="dept_ID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -341,6 +373,10 @@
           <Parameter Name="Col_Name" Type="varchar" Mode="In" />
           <Parameter Name="Old_Value" Type="nvarchar" Mode="In" />
           <Parameter Name="New_Value" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="dept_coursesInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DID" Type="int" Mode="In" />
+          <Parameter Name="CID" Type="int" Mode="In" />
         </Function>
         <Function Name="ExamCoursesStudents" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CID" Type="int" Mode="In" />
@@ -560,6 +596,7 @@
           <EntitySet Name="choices" EntityType="Self.choices" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="courses" EntityType="Self.courses" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="department" EntityType="Self.department" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Dept_Courses" EntityType="Self.Dept_Courses" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Exam_Student" EntityType="Self.Exam_Student" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="exams" EntityType="Self.exams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="exams_questions" EntityType="Self.exams_questions" Schema="dbo" store:Type="Tables" />
@@ -577,6 +614,14 @@
           <AssociationSet Name="FK_department_instructor" Association="Self.FK_department_instructor">
             <End Role="instructor" EntitySet="instructor" />
             <End Role="department" EntitySet="department" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Dept_Courses_courses" Association="Self.FK_Dept_Courses_courses">
+            <End Role="courses" EntitySet="courses" />
+            <End Role="Dept_Courses" EntitySet="Dept_Courses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Dept_Courses_department" Association="Self.FK_Dept_Courses_department">
+            <End Role="department" EntitySet="department" />
+            <End Role="Dept_Courses" EntitySet="Dept_Courses" />
           </AssociationSet>
           <AssociationSet Name="FK_Exam_Student_exams" Association="Self.FK_Exam_Student_exams">
             <End Role="exams" EntitySet="exams" />
@@ -656,6 +701,7 @@
           <NavigationProperty Name="topics" Relationship="Self.FK_topics_courses" FromRole="courses" ToRole="topics" />
           <NavigationProperty Name="instructors" Relationship="Self.Inst_Courses" FromRole="courses" ToRole="instructor" />
           <NavigationProperty Name="students" Relationship="Self.stud_courses" FromRole="courses" ToRole="students" />
+          <NavigationProperty Name="departments" Relationship="sqlProjectModel.Dept_Courses" FromRole="cours" ToRole="department" />
         </EntityType>
         <EntityType Name="department">
           <Key>
@@ -666,6 +712,7 @@
           <Property Name="manager_ID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="instructor" Relationship="Self.FK_department_instructor" FromRole="department" ToRole="instructor" />
           <NavigationProperty Name="students" Relationship="Self.FK_students_department" FromRole="department" ToRole="students" />
+          <NavigationProperty Name="courses" Relationship="sqlProjectModel.Dept_Courses" FromRole="department" ToRole="cours" />
         </EntityType>
         <EntityType Name="Exam_Student">
           <Key>
@@ -1046,10 +1093,6 @@
             <Parameter Name="s_id" Mode="In" Type="Int32" />
             <Parameter Name="c_id" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="ins_courseInsert" ReturnType="Collection(String)">
-            <Parameter Name="s_id" Mode="In" Type="Int32" />
-            <Parameter Name="c_id" Mode="In" Type="Int32" />
-          </FunctionImport>
           <FunctionImport Name="ins_Courseselect" ReturnType="Collection(sqlProjectModel.ins_Courseselect_Result)">
             <Parameter Name="s_id" Mode="In" Type="Int32" />
             <Parameter Name="c_id" Mode="In" Type="Int32" />
@@ -1220,6 +1263,18 @@
             <Parameter Name="CID" Mode="In" Type="Int32" />
             <Parameter Name="SID" Mode="In" Type="Int32" />
           </FunctionImport>
+          <AssociationSet Name="Dept_Courses" Association="sqlProjectModel.Dept_Courses">
+            <End Role="cours" EntitySet="courses" />
+            <End Role="department" EntitySet="departments" />
+          </AssociationSet>
+          <FunctionImport Name="ins_courseInsert">
+            <Parameter Name="s_id" Mode="In" Type="Int32" />
+            <Parameter Name="c_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="dept_coursesInsert">
+            <Parameter Name="DID" Mode="In" Type="Int32" />
+            <Parameter Name="CID" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="choices_select_Result">
           <Property Type="Int32" Name="choice_ID" Nullable="false" />
@@ -1328,6 +1383,10 @@
           <Property Type="Int32" Name="choice_ID" Nullable="false" />
           <Property Type="String" Name="choice_desc" Nullable="false" />
         </ComplexType>
+        <Association Name="Dept_Courses">
+          <End Type="sqlProjectModel.cours" Role="cours" Multiplicity="*" />
+          <End Type="sqlProjectModel.department" Role="department" Multiplicity="*" />
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1525,7 +1584,6 @@
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="ins_courseDelete" FunctionName="sqlProjectModel.Store.ins_courseDelete" />
-          <FunctionImportMapping FunctionImportName="ins_courseInsert" FunctionName="sqlProjectModel.Store.ins_courseInsert" />
           <FunctionImportMapping FunctionImportName="ins_Courseselect" FunctionName="sqlProjectModel.Store.ins_Courseselect">
             <ResultMapping>
               <ComplexTypeMapping TypeName="sqlProjectModel.ins_Courseselect_Result">
@@ -1690,6 +1748,16 @@
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="ExamCoursesStudents" FunctionName="sqlProjectModel.Store.ExamCoursesStudents" />
+          <AssociationSetMapping Name="Dept_Courses" TypeName="sqlProjectModel.Dept_Courses" StoreEntitySet="Dept_Courses">
+            <EndProperty Name="department">
+              <ScalarProperty Name="dept_ID" ColumnName="dept_ID" />
+            </EndProperty>
+            <EndProperty Name="cours">
+              <ScalarProperty Name="c_ID" ColumnName="Crs_ID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <FunctionImportMapping FunctionImportName="ins_courseInsert" FunctionName="sqlProjectModel.Store.ins_courseInsert" />
+          <FunctionImportMapping FunctionImportName="dept_coursesInsert" FunctionName="sqlProjectModel.Store.dept_coursesInsert" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
