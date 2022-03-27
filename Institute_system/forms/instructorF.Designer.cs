@@ -41,8 +41,8 @@ namespace Institute_system
             this.finalResults_ResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Report_3_ResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.report_courseTopics_ResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.report_StudentExMA_ResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.report_examQandA_ResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.report_StudentExMA_ResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.deleteStdBtn = new System.Windows.Forms.Button();
@@ -176,17 +176,17 @@ namespace Institute_system
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.label24 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
-            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.InstructorUsernametextBox = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
-            this.textBox19 = new System.Windows.Forms.TextBox();
-            this.button11 = new System.Windows.Forms.Button();
+            this.InstructorPasswordtextBox = new System.Windows.Forms.TextBox();
+            this.instructorinfobutton = new System.Windows.Forms.Button();
             dept_nameLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.report_studentInfo_ResultBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.finalResults_ResultBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Report_3_ResultBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.report_courseTopics_ResultBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.report_StudentExMA_ResultBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.report_examQandA_ResultBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.report_StudentExMA_ResultBindingSource)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -244,13 +244,13 @@ namespace Institute_system
             // 
             this.report_courseTopics_ResultBindingSource.DataSource = typeof(Institute_system.report_courseTopics_Result);
             // 
-            // report_StudentExMA_ResultBindingSource
-            // 
-            this.report_StudentExMA_ResultBindingSource.DataSource = typeof(Institute_system.report_StudentExMA_Result);
-            // 
             // report_examQandA_ResultBindingSource
             // 
             this.report_examQandA_ResultBindingSource.DataSource = typeof(Institute_system.report_examQandA_Result);
+            // 
+            // report_StudentExMA_ResultBindingSource
+            // 
+            this.report_StudentExMA_ResultBindingSource.DataSource = typeof(Institute_system.report_StudentExMA_Result);
             // 
             // tabControl1
             // 
@@ -775,7 +775,7 @@ namespace Institute_system
             this.Column1.HeaderText = "";
             this.Column1.MinimumWidth = 8;
             this.Column1.Name = "Column1";
-            this.Column1.Width = 8;
+            this.Column1.Width = 125;
             // 
             // Column2
             // 
@@ -1725,10 +1725,10 @@ namespace Institute_system
             // 
             this.tabPage8.Controls.Add(this.label24);
             this.tabPage8.Controls.Add(this.label28);
-            this.tabPage8.Controls.Add(this.textBox18);
+            this.tabPage8.Controls.Add(this.InstructorUsernametextBox);
             this.tabPage8.Controls.Add(this.label29);
-            this.tabPage8.Controls.Add(this.textBox19);
-            this.tabPage8.Controls.Add(this.button11);
+            this.tabPage8.Controls.Add(this.InstructorPasswordtextBox);
+            this.tabPage8.Controls.Add(this.instructorinfobutton);
             this.tabPage8.Location = new System.Drawing.Point(4, 25);
             this.tabPage8.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage8.Name = "tabPage8";
@@ -1758,13 +1758,13 @@ namespace Institute_system
             this.label28.TabIndex = 10;
             this.label28.Text = "username";
             // 
-            // textBox18
+            // InstructorUsernametextBox
             // 
-            this.textBox18.Location = new System.Drawing.Point(244, 107);
-            this.textBox18.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(132, 22);
-            this.textBox18.TabIndex = 9;
+            this.InstructorUsernametextBox.Location = new System.Drawing.Point(244, 107);
+            this.InstructorUsernametextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.InstructorUsernametextBox.Name = "InstructorUsernametextBox";
+            this.InstructorUsernametextBox.Size = new System.Drawing.Size(132, 22);
+            this.InstructorUsernametextBox.TabIndex = 9;
             // 
             // label29
             // 
@@ -1776,23 +1776,24 @@ namespace Institute_system
             this.label29.TabIndex = 8;
             this.label29.Text = "update login info";
             // 
-            // textBox19
+            // InstructorPasswordtextBox
             // 
-            this.textBox19.Location = new System.Drawing.Point(244, 151);
-            this.textBox19.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(132, 22);
-            this.textBox19.TabIndex = 7;
+            this.InstructorPasswordtextBox.Location = new System.Drawing.Point(244, 151);
+            this.InstructorPasswordtextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.InstructorPasswordtextBox.Name = "InstructorPasswordtextBox";
+            this.InstructorPasswordtextBox.Size = new System.Drawing.Size(132, 22);
+            this.InstructorPasswordtextBox.TabIndex = 7;
             // 
-            // button11
+            // instructorinfobutton
             // 
-            this.button11.Location = new System.Drawing.Point(259, 192);
-            this.button11.Margin = new System.Windows.Forms.Padding(4);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(100, 28);
-            this.button11.TabIndex = 6;
-            this.button11.Text = "update info";
-            this.button11.UseVisualStyleBackColor = true;
+            this.instructorinfobutton.Location = new System.Drawing.Point(259, 192);
+            this.instructorinfobutton.Margin = new System.Windows.Forms.Padding(4);
+            this.instructorinfobutton.Name = "instructorinfobutton";
+            this.instructorinfobutton.Size = new System.Drawing.Size(100, 28);
+            this.instructorinfobutton.TabIndex = 6;
+            this.instructorinfobutton.Text = "update info";
+            this.instructorinfobutton.UseVisualStyleBackColor = true;
+            this.instructorinfobutton.Click += new System.EventHandler(this.instructorinfobutton_Click);
             // 
             // instructorF
             // 
@@ -1809,8 +1810,8 @@ namespace Institute_system
             ((System.ComponentModel.ISupportInitialize)(this.finalResults_ResultBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Report_3_ResultBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.report_courseTopics_ResultBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.report_StudentExMA_ResultBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.report_examQandA_ResultBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.report_StudentExMA_ResultBindingSource)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -1942,10 +1943,10 @@ namespace Institute_system
         private System.Windows.Forms.TabPage tabPage8;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.TextBox textBox18;
+        private System.Windows.Forms.TextBox InstructorUsernametextBox;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.TextBox textBox19;
-        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.TextBox InstructorPasswordtextBox;
+        private System.Windows.Forms.Button instructorinfobutton;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label30;

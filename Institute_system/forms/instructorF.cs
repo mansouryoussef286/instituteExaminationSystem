@@ -848,6 +848,33 @@ namespace Institute_system
 
         #endregion
 
+        #region instructor form -> info tab 
+        private void instructorinfobutton_Click(object sender, EventArgs e)
+        {
+            string user = InstructorUsernametextBox.Text == "" ? appManager.currentInstructor.inst_name : InstructorUsernametextBox.Text;
+            string pass = InstructorPasswordtextBox.Text == "" ? appManager.currentInstructor.inst_pw : InstructorPasswordtextBox.Text;
+            if (user == appManager.currentInstructor.inst_name && pass == appManager.currentInstructor.inst_pw)
+            {
+                MessageBox.Show("You didn't enter new password or user name");
+            }
+            else
+            {
+                try
+                {
+                    appManager.entities.instructor_update(appManager.currentInstructor.inst_ID,
+                        appManager.currentInstructor.inst_name, user, pass);
+
+                    MessageBox.Show("Credentials Updated Successfully");
+                    appManager.entities = new sqlProjectEntities();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Username Already Exists");
+                }
+            }
+        }
+        #endregion
+
         #region Load and Close
 
         /*********************************Load Event************************************/
@@ -1284,7 +1311,7 @@ namespace Institute_system
             this.reportViewer6.RefreshReport();
         }
         #endregion
-        #endregion
 
+        #endregion
     }
 }
