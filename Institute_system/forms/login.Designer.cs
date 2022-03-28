@@ -29,69 +29,16 @@ namespace Institute_system
         /// </summary>
         private void InitializeComponent()
         {
-            this.logInBtn = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.userNameTextBox = new System.Windows.Forms.TextBox();
-            this.passwordTextBox = new System.Windows.Forms.TextBox();
-            this.loginTypeComboBox = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.Logo = new System.Windows.Forms.PictureBox();
+            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialComboBox1 = new MaterialSkin.Controls.MaterialComboBox();
+            this.LoginTextBox = new MaterialSkin.Controls.MaterialTextBox2();
+            this.PasswordTextBox = new MaterialSkin.Controls.MaterialTextBox2();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.SuspendLayout();
-            // 
-            // logInBtn
-            // 
-            this.logInBtn.Location = new System.Drawing.Point(95, 163);
-            this.logInBtn.Name = "logInBtn";
-            this.logInBtn.Size = new System.Drawing.Size(75, 23);
-            this.logInBtn.TabIndex = 3;
-            this.logInBtn.Text = "Log In";
-            this.logInBtn.UseVisualStyleBackColor = true;
-            this.logInBtn.Click += new System.EventHandler(this.logInBtn_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(38, 41);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "userName";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(38, 84);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "password";
-            // 
-            // userNameTextBox
-            // 
-            this.userNameTextBox.Location = new System.Drawing.Point(99, 41);
-            this.userNameTextBox.Name = "userNameTextBox";
-            this.userNameTextBox.Size = new System.Drawing.Size(100, 20);
-            this.userNameTextBox.TabIndex = 0;
-            // 
-            // passwordTextBox
-            // 
-            this.passwordTextBox.Location = new System.Drawing.Point(99, 84);
-            this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.Size = new System.Drawing.Size(100, 20);
-            this.passwordTextBox.TabIndex = 1;
-            // 
-            // loginTypeComboBox
-            // 
-            this.loginTypeComboBox.FormattingEnabled = true;
-            this.loginTypeComboBox.Items.AddRange(new object[] {
-            "student",
-            "instructor"});
-            this.loginTypeComboBox.Location = new System.Drawing.Point(79, 136);
-            this.loginTypeComboBox.Name = "loginTypeComboBox";
-            this.loginTypeComboBox.Size = new System.Drawing.Size(108, 21);
-            this.loginTypeComboBox.TabIndex = 2;
             // 
             // button1
             // 
@@ -107,7 +54,7 @@ namespace Institute_system
             // Logo
             // 
             this.Logo.Image = global::Institute_system.Properties.Resources.iti_logo;
-            this.Logo.Location = new System.Drawing.Point(226, 10);
+            this.Logo.Location = new System.Drawing.Point(124, 95);
             this.Logo.Margin = new System.Windows.Forms.Padding(2);
             this.Logo.Name = "Logo";
             this.Logo.Size = new System.Drawing.Size(79, 118);
@@ -116,20 +63,148 @@ namespace Institute_system
             this.Logo.TabStop = false;
             this.Logo.WaitOnLoad = true;
             // 
+            // materialButton1
+            // 
+            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton1.Depth = 0;
+            this.materialButton1.ForeColor = System.Drawing.Color.Black;
+            this.materialButton1.HighEmphasis = true;
+            this.materialButton1.Icon = null;
+            this.materialButton1.Location = new System.Drawing.Point(215, 570);
+            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton1.Name = "materialButton1";
+            this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton1.Size = new System.Drawing.Size(64, 36);
+            this.materialButton1.TabIndex = 9;
+            this.materialButton1.Text = "Login";
+            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton1.UseAccentColor = false;
+            this.materialButton1.UseVisualStyleBackColor = false;
+            this.materialButton1.Click += new System.EventHandler(this.materialButton1_Click);
+            // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel1.Location = new System.Drawing.Point(129, 272);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(74, 19);
+            this.materialLabel1.TabIndex = 10;
+            this.materialLabel1.Text = "UserName";
+            // 
+            // materialLabel2
+            // 
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel2.Location = new System.Drawing.Point(132, 400);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(71, 19);
+            this.materialLabel2.TabIndex = 11;
+            this.materialLabel2.Text = "Password";
+            // 
+            // materialComboBox1
+            // 
+            this.materialComboBox1.AutoResize = false;
+            this.materialComboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialComboBox1.Depth = 0;
+            this.materialComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.materialComboBox1.DropDownHeight = 174;
+            this.materialComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.materialComboBox1.DropDownWidth = 121;
+            this.materialComboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.materialComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialComboBox1.FormattingEnabled = true;
+            this.materialComboBox1.IntegralHeight = false;
+            this.materialComboBox1.ItemHeight = 43;
+            this.materialComboBox1.Items.AddRange(new object[] {
+            "student",
+            "instructor"});
+            this.materialComboBox1.Location = new System.Drawing.Point(30, 557);
+            this.materialComboBox1.MaxDropDownItems = 4;
+            this.materialComboBox1.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialComboBox1.Name = "materialComboBox1";
+            this.materialComboBox1.Size = new System.Drawing.Size(120, 49);
+            this.materialComboBox1.StartIndex = 0;
+            this.materialComboBox1.TabIndex = 12;
+            // 
+            // LoginTextBox
+            // 
+            this.LoginTextBox.AnimateReadOnly = false;
+            this.LoginTextBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.LoginTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.LoginTextBox.Depth = 0;
+            this.LoginTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.LoginTextBox.HideSelection = true;
+            this.LoginTextBox.LeadingIcon = null;
+            this.LoginTextBox.Location = new System.Drawing.Point(75, 316);
+            this.LoginTextBox.MaxLength = 32767;
+            this.LoginTextBox.MouseState = MaterialSkin.MouseState.OUT;
+            this.LoginTextBox.Name = "LoginTextBox";
+            this.LoginTextBox.PasswordChar = '\0';
+            this.LoginTextBox.PrefixSuffixText = null;
+            this.LoginTextBox.ReadOnly = false;
+            this.LoginTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.LoginTextBox.SelectedText = "";
+            this.LoginTextBox.SelectionLength = 0;
+            this.LoginTextBox.SelectionStart = 0;
+            this.LoginTextBox.ShortcutsEnabled = true;
+            this.LoginTextBox.Size = new System.Drawing.Size(165, 48);
+            this.LoginTextBox.TabIndex = 13;
+            this.LoginTextBox.TabStop = false;
+            this.LoginTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.LoginTextBox.TrailingIcon = null;
+            this.LoginTextBox.UseSystemPasswordChar = false;
+            // 
+            // PasswordTextBox
+            // 
+            this.PasswordTextBox.AnimateReadOnly = false;
+            this.PasswordTextBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.PasswordTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.PasswordTextBox.Depth = 0;
+            this.PasswordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.PasswordTextBox.HideSelection = true;
+            this.PasswordTextBox.LeadingIcon = null;
+            this.PasswordTextBox.Location = new System.Drawing.Point(75, 441);
+            this.PasswordTextBox.MaxLength = 32767;
+            this.PasswordTextBox.MouseState = MaterialSkin.MouseState.OUT;
+            this.PasswordTextBox.Name = "PasswordTextBox";
+            this.PasswordTextBox.PasswordChar = '\0';
+            this.PasswordTextBox.PrefixSuffixText = null;
+            this.PasswordTextBox.ReadOnly = false;
+            this.PasswordTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.PasswordTextBox.SelectedText = "";
+            this.PasswordTextBox.SelectionLength = 0;
+            this.PasswordTextBox.SelectionStart = 0;
+            this.PasswordTextBox.ShortcutsEnabled = true;
+            this.PasswordTextBox.Size = new System.Drawing.Size(165, 48);
+            this.PasswordTextBox.TabIndex = 14;
+            this.PasswordTextBox.TabStop = false;
+            this.PasswordTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.PasswordTextBox.TrailingIcon = null;
+            this.PasswordTextBox.UseSystemPasswordChar = false;
+            this.PasswordTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PasswordTextBox_KeyPress_1);
+            // 
             // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(326, 217);
+            this.ClientSize = new System.Drawing.Size(286, 592);
+            this.Controls.Add(this.PasswordTextBox);
+            this.Controls.Add(this.LoginTextBox);
+            this.Controls.Add(this.materialComboBox1);
+            this.Controls.Add(this.materialLabel2);
+            this.Controls.Add(this.materialLabel1);
+            this.Controls.Add(this.materialButton1);
             this.Controls.Add(this.Logo);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.loginTypeComboBox);
-            this.Controls.Add(this.passwordTextBox);
-            this.Controls.Add(this.userNameTextBox);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.logInBtn);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "login";
@@ -142,15 +217,14 @@ namespace Institute_system
         }
 
         #endregion
-
-        private System.Windows.Forms.Button logInBtn;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox userNameTextBox;
-        private System.Windows.Forms.TextBox passwordTextBox;
-        private System.Windows.Forms.ComboBox loginTypeComboBox;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox Logo;
+        private MaterialSkin.Controls.MaterialButton materialButton1;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private MaterialSkin.Controls.MaterialComboBox materialComboBox1;
+        private MaterialSkin.Controls.MaterialTextBox2 LoginTextBox;
+        private MaterialSkin.Controls.MaterialTextBox2 PasswordTextBox;
     }
 }
 

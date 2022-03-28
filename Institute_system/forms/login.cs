@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialSkin.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,32 +11,49 @@ using System.Windows.Forms;
 
 namespace Institute_system
 {
-    public partial class login : Form
+    public partial class login : MaterialForm
     {
+        readonly MaterialSkin.MaterialSkinManager materialSkinManager;
         //to delete it after signout
-        public TextBox pwTextBox;
+        public MaterialSkin.Controls.MaterialTextBox2 pwTextBox;
 
         public login()
         {
             InitializeComponent();
-            pwTextBox = passwordTextBox;
+            materialSkinManager = MaterialSkin.MaterialSkinManager.Instance;
+            materialSkinManager.EnforceBackcolorOnAllComponents = true;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.DARK;
+            materialSkinManager.ColorScheme=new MaterialSkin.ColorScheme(MaterialSkin.Primary.Red900, MaterialSkin. Primary.Red800,
+           MaterialSkin. Primary.Red900, MaterialSkin. Accent.Red700, MaterialSkin.TextShade.BLACK);
+
+
+
+            pwTextBox = PasswordTextBox;
         }
 
+       
+        private void button1_Click(object sender, EventArgs e)
+        {
+            appManager.entities.students_update(-1, "signin", "sign", null, "admin", "123");
+            //var std = appManager.entities.students_select(1);
+            //std.First().
+        }
 
-        private void logInBtn_Click(object sender, EventArgs e)
+        private void materialButton1_Click(object sender, EventArgs e)//login
         {
             //if no type was selected !
-            if (loginTypeComboBox.SelectedIndex == -1)
+            if (materialComboBox1.SelectedIndex == -1)
             {
                 MessageBox.Show("select a type");
             }
             else
             {
-                string username = userNameTextBox.Text;
-                string password = passwordTextBox.Text;
+                string username = LoginTextBox.Text;
+                string password = PasswordTextBox.Text;
                 bool success = false;
                 //check if the login user is student or staff
-                if (loginTypeComboBox.SelectedIndex == 0)   //student
+                if (materialComboBox1.SelectedIndex == 0)   //student
                 {
                     foreach (var student in appManager.entities.students)
                     {
@@ -60,7 +78,7 @@ namespace Institute_system
                 //chech if the user credintials are correct
                 if (success)
                 {
-                    if (loginTypeComboBox.SelectedIndex == 0)
+                    if (materialComboBox1.SelectedIndex == 0)
                     {
                         appManager.studentForm = new studentF();
                         appManager.studentForm.Show();
@@ -79,21 +97,14 @@ namespace Institute_system
                 }
             }
         }
-        private void passwordTextBox_KeyPress(object sender, KeyPressEventArgs e)
+
+        private void PasswordTextBox_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                logInBtn_Click(null, null);
+                materialButton1_Click(null, null);
             }
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            appManager.entities.students_update(-1, "signin", "sign", null, "admin", "123");
-            //var std = appManager.entities.students_select(1);
-            //std.First().
-        }
-
     }
 }
 
