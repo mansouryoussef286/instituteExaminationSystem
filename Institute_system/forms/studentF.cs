@@ -48,8 +48,8 @@ namespace Institute_system
 
         private void updateInfoBtn_Click(object sender, EventArgs e)
         {
-           string user = textBox1.Text == "" ? appManager.currentUser.stud_Username : textBox1.Text;
-           string pass = textBox2.Text == "" ? appManager.currentUser.stud_pw : textBox2.Text;
+            string user = StudentUsernameTextBox.Text == "" ? appManager.currentUser.stud_Username : StudentUsernameTextBox.Text;
+            string pass = StudentPasswordTextBox.Text == "" ? appManager.currentUser.stud_pw : StudentPasswordTextBox.Text;
             if (user == appManager.currentUser.stud_Username && pass == appManager.currentUser.stud_pw)
             {
                 MessageBox.Show("You didn't enter new password or user name");
@@ -62,11 +62,12 @@ namespace Institute_system
                         appManager.currentUser.stud_ID, appManager.currentUser.stud_Fname,
                         appManager.currentUser.stud_Lname, appManager.currentUser.dept_ID,
                         user, pass);
-                    MessageBox.Show("you update your credintials successfully");
+                    MessageBox.Show("Credentials Updated Successfully");
+                    appManager.entities = new sqlProjectEntities();
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("could not update credintials");
+                    MessageBox.Show("Username Already Exists");
                 }
             }
         }

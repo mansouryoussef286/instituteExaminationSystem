@@ -42,9 +42,9 @@ namespace Institute_system
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.StudentPasswordTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.StudentUsernameTextBox = new System.Windows.Forms.TextBox();
             this.updateInfoBtn = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -59,10 +59,10 @@ namespace Institute_system
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Location = new System.Drawing.Point(0, 1);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(895, 425);
+            this.tabControl1.Size = new System.Drawing.Size(1007, 531);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage2
@@ -72,11 +72,11 @@ namespace Institute_system
             this.tabPage2.Controls.Add(this.startExamBtn);
             this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Controls.Add(this.studCoursesComboBox);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Size = new System.Drawing.Size(887, 396);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabPage2.Size = new System.Drawing.Size(999, 498);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "exams";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -84,28 +84,28 @@ namespace Institute_system
             // ExamscomboBox1
             // 
             this.ExamscomboBox1.FormattingEnabled = true;
-            this.ExamscomboBox1.Location = new System.Drawing.Point(508, 84);
-            this.ExamscomboBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.ExamscomboBox1.Location = new System.Drawing.Point(572, 105);
+            this.ExamscomboBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ExamscomboBox1.Name = "ExamscomboBox1";
-            this.ExamscomboBox1.Size = new System.Drawing.Size(160, 24);
+            this.ExamscomboBox1.Size = new System.Drawing.Size(180, 28);
             this.ExamscomboBox1.TabIndex = 6;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(130, 87);
+            this.label5.Location = new System.Drawing.Point(146, 109);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 17);
+            this.label5.Size = new System.Drawing.Size(72, 20);
             this.label5.TabIndex = 5;
             this.label5.Text = "Courses ";
             // 
             // startExamBtn
             // 
-            this.startExamBtn.Location = new System.Drawing.Point(305, 218);
-            this.startExamBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.startExamBtn.Location = new System.Drawing.Point(343, 272);
+            this.startExamBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.startExamBtn.Name = "startExamBtn";
-            this.startExamBtn.Size = new System.Drawing.Size(195, 28);
+            this.startExamBtn.Size = new System.Drawing.Size(219, 35);
             this.startExamBtn.TabIndex = 4;
             this.startExamBtn.Text = "start exam";
             this.startExamBtn.UseVisualStyleBackColor = true;
@@ -115,20 +115,20 @@ namespace Institute_system
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label1.Location = new System.Drawing.Point(432, 84);
+            this.label1.Location = new System.Drawing.Point(486, 105);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 24);
+            this.label1.Size = new System.Drawing.Size(82, 29);
             this.label1.TabIndex = 3;
             this.label1.Text = "exams";
             // 
             // studCoursesComboBox
             // 
             this.studCoursesComboBox.FormattingEnabled = true;
-            this.studCoursesComboBox.Location = new System.Drawing.Point(202, 84);
-            this.studCoursesComboBox.Margin = new System.Windows.Forms.Padding(4);
+            this.studCoursesComboBox.Location = new System.Drawing.Point(227, 105);
+            this.studCoursesComboBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.studCoursesComboBox.Name = "studCoursesComboBox";
-            this.studCoursesComboBox.Size = new System.Drawing.Size(160, 24);
+            this.studCoursesComboBox.Size = new System.Drawing.Size(180, 28);
             this.studCoursesComboBox.TabIndex = 2;
             this.studCoursesComboBox.SelectedIndexChanged += new System.EventHandler(this.studCoursesComboBox_SelectedIndexChanged);
             // 
@@ -136,11 +136,11 @@ namespace Institute_system
             // 
             this.tabPage3.Controls.Add(this.label6);
             this.tabPage3.Controls.Add(this.dataGridView1);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage3.Location = new System.Drawing.Point(4, 29);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage3.Size = new System.Drawing.Size(887, 396);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabPage3.Size = new System.Drawing.Size(999, 498);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "grade progress";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -149,37 +149,37 @@ namespace Institute_system
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label6.Location = new System.Drawing.Point(56, 31);
+            this.label6.Location = new System.Drawing.Point(63, 39);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(106, 24);
+            this.label6.Size = new System.Drawing.Size(127, 29);
             this.label6.TabIndex = 2;
             this.label6.Text = "Transcript:";
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(177, 31);
+            this.dataGridView1.Location = new System.Drawing.Point(199, 39);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(520, 338);
+            this.dataGridView1.Size = new System.Drawing.Size(585, 422);
             this.dataGridView1.TabIndex = 1;
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.textBox2);
+            this.tabPage1.Controls.Add(this.StudentPasswordTextBox);
             this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Controls.Add(this.StudentUsernameTextBox);
             this.tabPage1.Controls.Add(this.updateInfoBtn);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage1.Size = new System.Drawing.Size(887, 396);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabPage1.Size = new System.Drawing.Size(999, 498);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "info";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -187,55 +187,55 @@ namespace Institute_system
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(48, 137);
+            this.label4.Location = new System.Drawing.Point(54, 171);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 17);
+            this.label4.Size = new System.Drawing.Size(77, 20);
             this.label4.TabIndex = 5;
             this.label4.Text = "password";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(48, 89);
+            this.label3.Location = new System.Drawing.Point(54, 111);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 17);
+            this.label3.Size = new System.Drawing.Size(80, 20);
             this.label3.TabIndex = 4;
             this.label3.Text = "username";
             // 
-            // textBox2
+            // StudentPasswordTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(155, 137);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(132, 22);
-            this.textBox2.TabIndex = 3;
+            this.StudentPasswordTextBox.Location = new System.Drawing.Point(174, 171);
+            this.StudentPasswordTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.StudentPasswordTextBox.Name = "StudentPasswordTextBox";
+            this.StudentPasswordTextBox.Size = new System.Drawing.Size(148, 26);
+            this.StudentPasswordTextBox.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(71, 38);
+            this.label2.Location = new System.Drawing.Point(80, 48);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 17);
+            this.label2.Size = new System.Drawing.Size(126, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "update login info";
             // 
-            // textBox1
+            // StudentUsernameTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(155, 89);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(132, 22);
-            this.textBox1.TabIndex = 1;
+            this.StudentUsernameTextBox.Location = new System.Drawing.Point(174, 111);
+            this.StudentUsernameTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.StudentUsernameTextBox.Name = "StudentUsernameTextBox";
+            this.StudentUsernameTextBox.Size = new System.Drawing.Size(148, 26);
+            this.StudentUsernameTextBox.TabIndex = 1;
             // 
             // updateInfoBtn
             // 
-            this.updateInfoBtn.Location = new System.Drawing.Point(187, 174);
-            this.updateInfoBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.updateInfoBtn.Location = new System.Drawing.Point(210, 218);
+            this.updateInfoBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.updateInfoBtn.Name = "updateInfoBtn";
-            this.updateInfoBtn.Size = new System.Drawing.Size(100, 28);
+            this.updateInfoBtn.Size = new System.Drawing.Size(112, 35);
             this.updateInfoBtn.TabIndex = 0;
             this.updateInfoBtn.Text = "update info";
             this.updateInfoBtn.UseVisualStyleBackColor = true;
@@ -243,11 +243,11 @@ namespace Institute_system
             // 
             // studentF
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(896, 430);
+            this.ClientSize = new System.Drawing.Size(1008, 538);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "studentF";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "student";
@@ -275,9 +275,9 @@ namespace Institute_system
         private System.Windows.Forms.Button startExamBtn;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox StudentPasswordTextBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox StudentUsernameTextBox;
         private System.Windows.Forms.Button updateInfoBtn;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TabPage tabPage3;

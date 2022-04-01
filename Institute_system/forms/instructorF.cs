@@ -802,13 +802,19 @@ namespace Institute_system
 
         private void GenerateExamBtn_Click(object sender, EventArgs e)
         {
-            string course = coursesComboBox1.Text;
-            int McqNo = int.Parse(examMcqComboBox.Text);
-            int TFNo = int.Parse(examTFComboBox.Text);
-            appManager.entities.generateExam(course, TFNo, McqNo);
-            MessageBox.Show("Exam Generated Successfully");
-
-            fillExamIDTextBox();
+            if (IsEmptyGenerate())
+            {
+                MessageBox.Show("Please Enter Valid Data");
+            }
+            else
+            {
+                string course = coursesComboBox1.Text;
+                int McqNo = int.Parse(examMcqComboBox.Text);
+                int TFNo = int.Parse(examTFComboBox.Text);
+                appManager.entities.generateExam(course, TFNo, McqNo);
+                MessageBox.Show("Exam Generated Successfully");
+                fillExamIDTextBox();
+            }
         }
 
 
@@ -816,34 +822,74 @@ namespace Institute_system
 
         private void assignStudentBtn_Click(object sender, EventArgs e)
         {
-            int stdCount = 0;
-            List<string> checkedStds = new List<string>();
-            for (int i = 0; i < studentsExamGridView.RowCount; i++)
+            if (IsEmptyAssign())
             {
-
-                if (Convert.ToBoolean(studentsExamGridView.Rows[i].Cells[0].Value))
+                MessageBox.Show("Please Enter Valid Data");
+            }
+            else
+            {
+                int stdCount = 0;
+                List<string> checkedStds = new List<string>();
+                for (int i = 0; i < studentsExamGridView.RowCount; i++)
                 {
-                    checkedStds.Add(studentsExamGridView.Rows[i].Cells[1].Value.ToString());
+
+                    if (Convert.ToBoolean(studentsExamGridView.Rows[i].Cells[0].Value))
+                    {
+                        checkedStds.Add(studentsExamGridView.Rows[i].Cells[1].Value.ToString());
+                    }
+
+                }
+                if (checkedStds.Count == 0)
+                {
+                    MessageBox.Show("No Student/s Chosen");
+                }
+                else
+                {
+                    foreach (string checkedStd in checkedStds)
+                    {
+                        stdCount++;
+                        int examID = int.Parse(examsIDComboBox1.Text);
+
+                        appManager.entities.AssignExamStudent(examID, int.Parse(checkedStd));
+
+                        if (stdCount == checkedStds.Count)
+                        {
+                            MessageBox.Show("Student/s assigned to exam successfully");
+                        }
+
+                    }
+                    checkedStds.Clear();
+                    removeAssignedStudents();
                 }
 
             }
 
-            foreach (string checkedStd in checkedStds)
+
+        }
+
+        private bool IsEmptyGenerate()
+        {
+            if (string.IsNullOrWhiteSpace(coursesComboBox1.Text) ||
+                string.IsNullOrWhiteSpace(examMcqComboBox.Text) ||
+                string.IsNullOrWhiteSpace(examTFComboBox.Text)
+              )
             {
-                stdCount++;
-                int examID = int.Parse(examsIDComboBox1.Text);
-
-                appManager.entities.AssignExamStudent(examID, int.Parse(checkedStd));
-
-                if (stdCount == checkedStds.Count)
-                {
-                    MessageBox.Show("Student assigned to exam successfully");
-                }
-
+                return true;
             }
-            checkedStds.Clear();
-            removeAssignedStudents();
 
+            return false;
+        }
+
+        private bool IsEmptyAssign()
+        {
+            if (string.IsNullOrWhiteSpace(coursesComboBox2.Text) ||
+                string.IsNullOrWhiteSpace(examsIDComboBox1.Text) 
+               )
+            {
+                return true;
+            }
+
+            return false;
         }
 
         #endregion
