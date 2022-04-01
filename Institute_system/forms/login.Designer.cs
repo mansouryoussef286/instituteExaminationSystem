@@ -29,7 +29,6 @@ namespace Institute_system
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
             this.Logo = new System.Windows.Forms.PictureBox();
             this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
@@ -40,24 +39,13 @@ namespace Institute_system
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(226, 150);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "update student";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Logo
             // 
             this.Logo.Image = global::Institute_system.Properties.Resources.iti_logo;
-            this.Logo.Location = new System.Drawing.Point(124, 95);
-            this.Logo.Margin = new System.Windows.Forms.Padding(2);
+            this.Logo.Location = new System.Drawing.Point(165, 117);
+            this.Logo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Logo.Name = "Logo";
-            this.Logo.Size = new System.Drawing.Size(79, 118);
+            this.Logo.Size = new System.Drawing.Size(105, 145);
             this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Logo.TabIndex = 8;
             this.Logo.TabStop = false;
@@ -72,8 +60,8 @@ namespace Institute_system
             this.materialButton1.ForeColor = System.Drawing.Color.Black;
             this.materialButton1.HighEmphasis = true;
             this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(215, 570);
-            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton1.Location = new System.Drawing.Point(287, 692);
+            this.materialButton1.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton1.Name = "materialButton1";
             this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
@@ -90,7 +78,8 @@ namespace Institute_system
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(129, 272);
+            this.materialLabel1.Location = new System.Drawing.Point(172, 335);
+            this.materialLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(74, 19);
@@ -102,7 +91,8 @@ namespace Institute_system
             this.materialLabel2.AutoSize = true;
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel2.Location = new System.Drawing.Point(132, 400);
+            this.materialLabel2.Location = new System.Drawing.Point(176, 492);
+            this.materialLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(71, 19);
@@ -126,11 +116,12 @@ namespace Institute_system
             this.materialComboBox1.Items.AddRange(new object[] {
             "student",
             "instructor"});
-            this.materialComboBox1.Location = new System.Drawing.Point(30, 557);
+            this.materialComboBox1.Location = new System.Drawing.Point(48, 686);
+            this.materialComboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.materialComboBox1.MaxDropDownItems = 4;
             this.materialComboBox1.MouseState = MaterialSkin.MouseState.OUT;
             this.materialComboBox1.Name = "materialComboBox1";
-            this.materialComboBox1.Size = new System.Drawing.Size(120, 49);
+            this.materialComboBox1.Size = new System.Drawing.Size(159, 49);
             this.materialComboBox1.StartIndex = 0;
             this.materialComboBox1.TabIndex = 12;
             // 
@@ -143,7 +134,8 @@ namespace Institute_system
             this.LoginTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.LoginTextBox.HideSelection = true;
             this.LoginTextBox.LeadingIcon = null;
-            this.LoginTextBox.Location = new System.Drawing.Point(75, 316);
+            this.LoginTextBox.Location = new System.Drawing.Point(100, 389);
+            this.LoginTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.LoginTextBox.MaxLength = 32767;
             this.LoginTextBox.MouseState = MaterialSkin.MouseState.OUT;
             this.LoginTextBox.Name = "LoginTextBox";
@@ -155,7 +147,7 @@ namespace Institute_system
             this.LoginTextBox.SelectionLength = 0;
             this.LoginTextBox.SelectionStart = 0;
             this.LoginTextBox.ShortcutsEnabled = true;
-            this.LoginTextBox.Size = new System.Drawing.Size(165, 48);
+            this.LoginTextBox.Size = new System.Drawing.Size(220, 48);
             this.LoginTextBox.TabIndex = 13;
             this.LoginTextBox.TabStop = false;
             this.LoginTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -171,7 +163,8 @@ namespace Institute_system
             this.PasswordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.PasswordTextBox.HideSelection = true;
             this.PasswordTextBox.LeadingIcon = null;
-            this.PasswordTextBox.Location = new System.Drawing.Point(75, 441);
+            this.PasswordTextBox.Location = new System.Drawing.Point(100, 543);
+            this.PasswordTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PasswordTextBox.MaxLength = 32767;
             this.PasswordTextBox.MouseState = MaterialSkin.MouseState.OUT;
             this.PasswordTextBox.Name = "PasswordTextBox";
@@ -183,7 +176,7 @@ namespace Institute_system
             this.PasswordTextBox.SelectionLength = 0;
             this.PasswordTextBox.SelectionStart = 0;
             this.PasswordTextBox.ShortcutsEnabled = true;
-            this.PasswordTextBox.Size = new System.Drawing.Size(165, 48);
+            this.PasswordTextBox.Size = new System.Drawing.Size(220, 48);
             this.PasswordTextBox.TabIndex = 14;
             this.PasswordTextBox.TabStop = false;
             this.PasswordTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -193,10 +186,10 @@ namespace Institute_system
             // 
             // login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(286, 592);
+            this.ClientSize = new System.Drawing.Size(393, 766);
             this.Controls.Add(this.PasswordTextBox);
             this.Controls.Add(this.LoginTextBox);
             this.Controls.Add(this.materialComboBox1);
@@ -204,10 +197,11 @@ namespace Institute_system
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.materialButton1);
             this.Controls.Add(this.Logo);
-            this.Controls.Add(this.button1);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "login";
+            this.Padding = new System.Windows.Forms.Padding(4, 79, 4, 4);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "login";
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
@@ -217,7 +211,6 @@ namespace Institute_system
         }
 
         #endregion
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox Logo;
         private MaterialSkin.Controls.MaterialButton materialButton1;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;

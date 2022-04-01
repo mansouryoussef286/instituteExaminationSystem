@@ -207,41 +207,62 @@ namespace Institute_system
             int courseID = 0;
             string qDesc = questionDescTextBox.Text;
             string qType = choiceTypeComboBox.SelectedItem.ToString();
+            var q = new question();
             //assign the course ID
-            foreach (var course in appManager.entities.courses)
+            if (coursesComboBox3.SelectedItem != null)
             {
-                if (course.c_name == coursesComboBox3.SelectedItem.ToString())
-                    courseID = course.c_ID;
-            }
-            //appManager.entities.Questions_Insert();
-            //--------------------------------------------------
-            //insert the choices for the question
-            int qIDEntered = 0;
-            string choiceDesc = "";
-            //string isCorrect = "F";
-            //assign the question ID just entered
-            foreach (var question in appManager.entities.questions)
-            {
-                if (question.q_desc == qDesc)
-                    qIDEntered = question.q_ID;
-            }
-            int j = choiceTypeComboBox.SelectedItem.ToString() == "mcq" ? 3 : 2;
-            string[] choices = { choice1_textBox.Text, choice2_textBox.Text, choice3_textBox.Text };
-            RadioButton[] radioButtons = { radioButton1, radioButton2, radioButton3};
-            for (int i = 0; i < j; i++)
-            {
-                choiceDesc = choices[i];
-                if (radioButtons[i].Checked)
+                foreach (var course in appManager.entities.courses)
                 {
-                    //isCorrect = "T";
+                    if (course.c_name == coursesComboBox3.SelectedItem.ToString())
+                        courseID = course.c_ID;
                 }
-                //appManager.entities.choices_insert();
+                //add the question to the data base
+                if (courseID != 0)
+                {
+                    q.c_ID = courseID;
+                    q.q_desc = qDesc;
+                    q.q_type = qType;
+                    q.q_ID = appManager.entities.questions.Max(qu => qu.q_ID) + 1;
+                    appManager.entities.questions.Add(q);
+                    appManager.entities.SaveChanges();
+                }
+                //--------------------------------------------------
+                //insert the choices for the question
+                int qIDEntered = 0;
+                choice choice;
+                //assign the question ID just entered
+                foreach (var question in appManager.entities.questions)
+                {
+                    if (question.q_desc == qDesc)
+                        qIDEntered = question.q_ID;
+                }
+                int j = choiceTypeComboBox.SelectedItem.ToString() == "mcq" ? 3 : 2;
+                string[] choices = { choice1_textBox.Text, choice2_textBox.Text, choice3_textBox.Text };
+                RadioButton[] radioButtons = { radioButton1, radioButton2, radioButton3 };
+                for (int i = 0; i < j; i++)
+                {
+                    choice = new choice();
+                    choice.choice_ID = appManager.entities.choices.Max(qu => qu.choice_ID) + i + 1;
+                    choice.choice_desc = choices[i];
+                    choice.isCorrect = "F";
+                    if (radioButtons[i].Checked)
+                    {
+                        choice.isCorrect = "T";
+                    }
+                    choice.q_ID = qIDEntered;
+                    appManager.entities.choices.Add(choice);
+                    //appManager.entities.choices_insert();
+                }
+                appManager.entities.SaveChanges();
+                coursesComboBox3_SelectedIndexChanged(null, null);
             }
-
+            else
+            {
+                MessageBox.Show("please select a course");
+            }
         }
         private void updateQBtn_Click(object sender, EventArgs e)
         {
-            //we need update to take all parameters
             int courseID = 0;
             //assign the course ID
             foreach (var course in appManager.entities.courses)
@@ -253,11 +274,41 @@ namespace Institute_system
             string qType = choiceTypeComboBox.SelectedItem.ToString();
             int qID = int.Parse(questionsListBox.SelectedItem.ToString().Split(':')[0]);
             //appManager.entities.Questions_Update()
+            var question = appManager.entities.questions.Find(qID);
+            //var choices = appManager.entities.choices.Where(c => c.q_ID == qID);
+            question.q_desc = qDesc;
+            question.choices.ElementAt(0).choice_desc = choice1_textBox.Text;
+            question.choices.ElementAt(1).choice_desc = choice2_textBox.Text;
+            question.choices.ElementAt(0).isCorrect = radioButton1.Checked == true ? "T" : "F";
+            question.choices.ElementAt(1).isCorrect = radioButton2.Checked == true ? "T" : "F";
+            if (question.q_type == "mcq")
+            {
+                question.choices.ElementAt(2).choice_desc = choice3_textBox.Text;
+                question.choices.ElementAt(2).isCorrect = radioButton3.Checked == true ? "T" : "F";
+            }
+            appManager.entities.SaveChanges();
+            coursesComboBox3_SelectedIndexChanged(null, null);
         }
         private void deleteQBtn_Click(object sender, EventArgs e)
         {
-            int qID = int.Parse(questionsListBox.SelectedItem.ToString().Split(':')[0]);
-            appManager.entities.Questions_Delete(qID);
+            try
+            {
+                int qID = int.Parse(questionsListBox.SelectedItem.ToString().Split(':')[0]);
+                var choices = appManager.entities.choices.Where(c => c.q_ID == qID);
+                foreach (var c in choices)
+                {
+                    appManager.entities.choices.Remove(c);
+                }
+                var q = appManager.entities.questions.Find(qID);
+                appManager.entities.questions.Remove(q);
+                appManager.entities.SaveChanges();
+                coursesComboBox3_SelectedIndexChanged(null, null);
+            }
+            catch
+            {
+                MessageBox.Show("this question is used in previous exams so it cannot be deleted");
+            }
+            //cannot delete a question because it was used in previous exams
         }
         #endregion
 
@@ -472,15 +523,7 @@ namespace Institute_system
                                    where c.c_ID == CID
                                    select c).Count();
 
-                    var CheckID1 = (from c in appManager.currentInstructor.courses
-                                    where c.c_ID == CID
-                                    select c).Count();
-
-                    var CheckName1 = (from c in appManager.entities.courses
-                                      where c.c_name == CName
-                                      select c).Count();
-
-                    if (CheckID == 1 && CheckID1 == 1 && CheckName1 == 1)
+                    if (CheckID != 0 )
                     {
                         appManager.entities.ins_courseDelete(CurrentInst_ID, int.Parse(CourseID.Text));
                         FillCoursesDropDown();
@@ -1054,10 +1097,6 @@ namespace Institute_system
                     else if (stud_username > 0)
                         MessageBox.Show("This username is already used");
                 }
-
-
-
-
 
             }
         }

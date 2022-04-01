@@ -369,3 +369,4 @@ C:\Users\Gnrl-30\Source\Repos\instituteExaminationSystem\Institute_system\obj\De
 C:\Users\Gnrl-30\Source\Repos\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.examF.resources
 C:\Users\Gnrl-30\Source\Repos\instituteExaminationSystem\Institute_system\obj\Debug\RdlCompile.cache
 C:\Users\Gnrl-30\Source\Repos\instituteExaminationSystem\Institute_system\obj\Debug\RdlCompile.compiled
+H:\ITI\subjects\Advanced SQL\project\VS\Institute_system\bin\Debug\MaterialSkin.dll
