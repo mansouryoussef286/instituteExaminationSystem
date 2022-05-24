@@ -349,7 +349,6 @@ E:\iti\Advanced Sql\finsl project\instituteExaminationSystem\Institute_system\bi
 E:\iti\Advanced Sql\finsl project\instituteExaminationSystem\Institute_system\bin\Debug\EnvDTE.dll
 E:\iti\Advanced Sql\finsl project\instituteExaminationSystem\Institute_system\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll
 E:\iti\Advanced Sql\finsl project\instituteExaminationSystem\Institute_system\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll
-E:\iti\Advanced Sql\finsl project\instituteExaminationSystem\Institute_system\bin\Debug\stdole.dll
 E:\iti\Advanced Sql\finsl project\instituteExaminationSystem\Institute_system\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
 E:\iti\Advanced Sql\finsl project\instituteExaminationSystem\Institute_system\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll
 E:\iti\Advanced Sql\finsl project\instituteExaminationSystem\Institute_system\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
@@ -425,9 +424,8 @@ E:\iti\Advanced Sql\finsl project\instituteExaminationSystem\Institute_system\ob
 E:\iti\Advanced Sql\finsl project\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.Properties.Resources.resources
 E:\iti\Advanced Sql\finsl project\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.studentF.resources
 E:\iti\Advanced Sql\finsl project\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.csproj.GenerateResource.cache
-E:\iti\Advanced Sql\finsl project\instituteExaminationSystem\Institute_system\obj\Debug\RdlCompile.cache
-E:\iti\Advanced Sql\finsl project\instituteExaminationSystem\Institute_system\obj\Debug\RdlCompile.compiled
 E:\iti\Advanced Sql\finsl project\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.csproj.CoreCompileInputs.cache
 E:\iti\Advanced Sql\finsl project\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.csproj.CopyComplete
 E:\iti\Advanced Sql\finsl project\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.exe
 E:\iti\Advanced Sql\finsl project\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.pdb
+E:\iti\Advanced Sql\finsl project\instituteExaminationSystem\Institute_system\obj\Debug\Institute_system.csproj.SuggestedBindingRedirects.cache
